@@ -55,7 +55,7 @@ public class ColliderBase : MonoBehaviour
 
     protected void OnTriggerExit2D(Collider2D collision)
     {
-        //Debug.Log("こんにちは"+direction);
+        Debug.Log("壁衝突解除");
         if (collision.gameObject.tag == "wall")
         {
             touch = false;
