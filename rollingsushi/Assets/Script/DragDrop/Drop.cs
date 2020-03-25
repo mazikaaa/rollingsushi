@@ -9,7 +9,7 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
     private GameObject dropobject;
     private string dropname;
 
-    void Start()
+    protected void Start()
     {
         base.Start();
         nowSprite = null;

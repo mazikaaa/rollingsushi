@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\DragDrop\Drag.cs" />
+    <Compile Include="Assets\Script\DragDrop\Dragbase.cs" />
     <Compile Include="Assets\Script\DragDrop\Drop.cs" />
     <Compile Include="Assets\Script\DragDrop\Dropbase.cs" />
     <Compile Include="Assets\Script\Enemy\Base_EnemyGenerate.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Script\Enemy\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyGenerator.cs" />
     <Compile Include="Assets\Script\unit\CharactorBase.cs" />
+    <Compile Include="Assets\Script\unit\Generatedata.cs" />
     <Compile Include="Assets\Script\unit\Guest.cs" />
     <Compile Include="Assets\Script\unit\guestCollider.cs" />
     <Compile Include="Assets\Script\unit\unitBase.cs" />

@@ -1,7 +1,79 @@
 fileFormatVersion: 2
 guid: 6a8a89867aee7e841a66cced830195a2
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -108199681762814758
+    second: sozai_image_108984_0
+  - first:
+      213: 5494315022610620689
+    second: sozai_image_108984_1
+  - first:
+      213: -1655889030635700475
+    second: sozai_image_108984_2
+  - first:
+      213: 3261565540728474675
+    second: sozai_image_108984_3
+  - first:
+      213: -6713291819777758844
+    second: sozai_image_108984_4
+  - first:
+      213: -4526325493743591229
+    second: sozai_image_108984_5
+  - first:
+      213: 4415504119822469085
+    second: sozai_image_108984_6
+  - first:
+      213: -8120438892854671017
+    second: sozai_image_108984_7
+  - first:
+      213: -4134905567829513962
+    second: sozai_image_108984_8
+  - first:
+      213: -3075133756465439712
+    second: sozai_image_108984_9
+  - first:
+      213: 7060257286651533340
+    second: sozai_image_108984_10
+  - first:
+      213: -1128801467656631021
+    second: sozai_image_108984_11
+  - first:
+      213: -9203744378965415721
+    second: sozai_image_108984_12
+  - first:
+      213: -7506132705057332938
+    second: sozai_image_108984_13
+  - first:
+      213: -3176533904156006361
+    second: sozai_image_108984_14
+  - first:
+      213: -7732389214498154397
+    second: sozai_image_108984_15
+  - first:
+      213: 8497444530190464302
+    second: sozai_image_108984_16
+  - first:
+      213: -6427042992128923562
+    second: sozai_image_108984_17
+  - first:
+      213: 951984274489791790
+    second: sozai_image_108984_18
+  - first:
+      213: 7091458063530543408
+    second: sozai_image_108984_19
+  - first:
+      213: -293482690999367050
+    second: sozai_image_108984_20
+  - first:
+      213: -6242170070410045631
+    second: sozai_image_108984_21
+  - first:
+      213: -8568092168845785642
+    second: sozai_image_108984_22
+  - first:
+      213: -5238748275563969456
+    second: sozai_image_108984_23
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +112,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +141,579 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sozai_image_108984_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 461
+        width: 113
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1f8a91da636af41aefbdb57676fe19
+      internalID: -108199681762814758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 461
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055a0c3b8c483084b8873fde3277fc00
+      internalID: 5494315022610620689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 461
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb63f118ebadee14a97cbac8736f6e96
+      internalID: -1655889030635700475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_3
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 461
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1c3e7172065f143a9b952c0e112e17
+      internalID: 3261565540728474675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_4
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 461
+        width: 111
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286d78fffc8735e4d9288fe440564dac
+      internalID: -6713291819777758844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_5
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 461
+        width: 126
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8497c6dccb5024bb474505eeff28a1
+      internalID: -4526325493743591229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_6
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 324
+        width: 111
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ae27e35c93b9d4d93d5345c91cd6b4
+      internalID: 4415504119822469085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_7
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 324
+        width: 104
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b88ec81c661e8d4b81dcb521b3babd2
+      internalID: -8120438892854671017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_8
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 324
+        width: 106
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90dcc801cbcb61b4e80f52a5d6f02e81
+      internalID: -4134905567829513962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_9
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 324
+        width: 105
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afec7eb397ce548449c10a69d2229e1b
+      internalID: -3075133756465439712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_10
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 324
+        width: 111
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499b8b90ab161034c8b138bcbdae1a22
+      internalID: 7060257286651533340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_11
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 324
+        width: 105
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0854fcdd1350d04daf4c0442aa81ed4
+      internalID: -1128801467656631021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_12
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 172
+        width: 111
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82d1e24f435135428b854eab8d254a7
+      internalID: -9203744378965415721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_13
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 172
+        width: 109
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f5efb9c861c284da426191ac4ea965
+      internalID: -7506132705057332938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_14
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 172
+        width: 112
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e130260fb433204b8b61d06af1767f9
+      internalID: -3176533904156006361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_15
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 172
+        width: 105
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a755208c9aaa043821e9c3d84598ba
+      internalID: -7732389214498154397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_16
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 172
+        width: 111
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310063052984871488a8ecc4e3f660a3
+      internalID: 8497444530190464302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_17
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 172
+        width: 121
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4cea1953da5784ea0c1fddca55a9e5
+      internalID: -6427042992128923562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_18
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 27
+        width: 89
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0275b33a391cdc14f908bf9290b911ad
+      internalID: 951984274489791790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_19
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 27
+        width: 94
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af06d26bce3b4f345861ec406267272b
+      internalID: 7091458063530543408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_20
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 27
+        width: 90
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de80f493fc81154383c6186f6f86598
+      internalID: -293482690999367050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_21
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 27
+        width: 108
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7171e4454aecbc40947f65061e0ed10
+      internalID: -6242170070410045631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_22
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 27
+        width: 109
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadcbeef101dd64459136aafc3630beb
+      internalID: -8568092168845785642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sozai_image_108984_23
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 27
+        width: 102
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3150fc8e37078684d819a153ead410c5
+      internalID: -5238748275563969456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

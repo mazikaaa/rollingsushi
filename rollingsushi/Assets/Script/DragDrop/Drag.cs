@@ -3,15 +3,31 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Image))]
-public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Transform canvasTran;
     private GameObject draggingObject;
+    public Image guage;
 
     void Awake()
     {
         canvasTran = this.gameObject.transform;
     }
+
+    private void Start()
+    {
+        guage.color = Vector4.one * 0.2f;
+    }
+    private void Update()
+    {
+        guage.fillAmount -= 0.001f;
+        if (guage.fillAmount <= 0.0f)
+        {
+            guage.fillAmount = 1.0f;
+            GenerateUnit();
+        }
+    }
+
 
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
@@ -34,6 +50,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private void CreateDragObject()
     {
         draggingObject = new GameObject("Dragging Object");
+        draggingObject.name = iconname;
         draggingObject.transform.SetParent(canvasTran);
         draggingObject.transform.SetAsLastSibling();
         draggingObject.transform.localScale = Vector3.one;
