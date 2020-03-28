@@ -13,43 +13,46 @@ public class Dropbase : MonoBehaviour
 
     public Image iconImage;
 
-    protected string[] guestname = { "maguro","guest" };
-    public GameObject[] guestobject = new GameObject[10];
+    public string[] unitname = new string[10];
+    public GameObject[] unitobject = new GameObject[10];
 
     protected void Start()
     {
         GuestSort();
     }
 
+    //ユニットを名前の順にソート
     public void GuestSort()
     {
-        string[] guestname_copy = new string[guestname.Length];
-        GameObject[] guestobject_copy = new GameObject[guestobject.Length];
-        Array.Copy(guestname, guestname_copy, guestname.Length);
-        Array.Copy(guestobject, guestobject_copy, guestname.Length);
-        Array.Sort(guestname);
+        string[] guestname_copy = new string[unitname.Length];
+        GameObject[] guestobject_copy = new GameObject[unitobject.Length];
+        Array.Copy(unitname, guestname_copy, unitname.Length);
+        Array.Copy(unitobject, guestobject_copy, unitname.Length);
+        Array.Sort(unitname);
 
-        for (i = 0; i < guestname.Length; i++)
+        for (i = 0; i < unitname.Length; i++)
         {
             for (j=0; j < guestname_copy.Length; j++)
             {
-                if (guestname[i] == guestname_copy[j])
-                    guestobject[i] = guestobject_copy[j];
+                if (unitname[i] == guestname_copy[j])
+                    unitobject[i] = guestobject_copy[j];
 
             }
         }
         
     }
+
+    //ソート済みのユニットから名前による検索
     public int GuestSearch(string name)
     {
-        for (i = 0; i <guestname.Length; i++)
+        Debug.Log(name);
+        for (i = 0; i <unitname.Length; i++)
         {
-            if (name == guestname[i])
+            if (name == unitname[i])
             {
                 return i;
             }
         }
-
         return 0;
     }
 }

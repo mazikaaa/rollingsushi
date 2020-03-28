@@ -19,9 +19,14 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         if (pointerEventData.pointerDrag == null) return;
-        Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
-        iconImage.sprite = droppedImage.sprite;
-        iconImage.color = Vector4.one * 0.6f;
+
+        //ドラック側でユニットを生成している時だけ画像を表示する
+        if (pointerEventData.pointerDrag.GetComponent<Drag>().iconflag)
+        {
+            Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
+            iconImage.sprite = droppedImage.sprite;
+            iconImage.color = Vector4.one * 0.6f;
+        }
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
@@ -35,18 +40,23 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
     }
     public void OnDrop(PointerEventData pointerEventData)
     {
-        Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
-        iconImage.sprite = droppedImage.sprite;
-        nowSprite = droppedImage.sprite;
-        iconImage.color = Vector4.one;
+        //ドラック側でユニットを生成している時だけ画像を切り替える
+        if (pointerEventData.pointerDrag.GetComponent<Drag>().iconflag)
+        {
+            Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
+            iconImage.sprite = droppedImage.sprite;
+            nowSprite = droppedImage.sprite;
+            iconImage.color = Vector4.one;
 
-        dropname = pointerEventData.pointerDrag.name;
-        Debug.Log(dropname);
+            dropname = pointerEventData.pointerDrag.transform.GetChild(2).name;
+            Debug.Log(dropname);
 
-       objectindex=base.GuestSearch(dropname);
+            //ドロップした画像と適合する名前のオブジェクトがあればオブジェクトを生成
+            objectindex = base.GuestSearch(dropname);
 
-        dropobject = Instantiate(guestobject[objectindex], new Vector3(transform.position.x, transform.position.y, 0),Quaternion.identity);
-        dropobject.transform.SetParent(this.gameObject.transform);
-    }
+            dropobject = Instantiate(unitobject[objectindex], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            dropobject.transform.SetParent(this.gameObject.transform);
+        }
+     }
 }
 

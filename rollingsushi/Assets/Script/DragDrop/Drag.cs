@@ -5,6 +5,11 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(Image))]
 public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [SerializeField] string guageflag = "generate";
+
+    private float deletetime,generatetime;
+
+
     private Transform canvasTran;
     private GameObject draggingObject;
     public Image guage;
@@ -20,24 +25,50 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
     }
     private void Update()
     {
-        guage.fillAmount -= 0.001f;
-        if (guage.fillAmount <= 0.0f)
+        //時間経過によるユニット生成
+        if (guageflag == "generate")
         {
-            guage.fillAmount = 1.0f;
-            GenerateUnit();
+            generatetime += Time.deltaTime;
+            guage.fillAmount = 1.0f - generatetime / generateicon;
+            if (generatetime>=generateicon)
+            {
+                GenerateUnit();
+                guageflag = "delete";
+                generatetime = 0.0f;
+            }
+        }
+        //時間経過によるユニット消去
+        else if (guageflag == "delete")
+        {
+            deletetime += Time.deltaTime;
+            guage.fillAmount = deletetime / deleteicon;
+            if (deletetime >= deleteicon)
+            {
+                DeleteUnit();
+                guageflag = "generate";
+                deletetime = 0.0f;
+            }
         }
     }
 
 
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
-        CreateDragObject();
-        draggingObject.transform.position = pointerEventData.position;
-    }
+        //ユニットの画像が表示されているときだけオブジェクトを生成
+        if (guageflag == "delete")
+        {
+            CreateDragObject();
+            draggingObject.transform.position = pointerEventData.position;
+        }
+     }
 
     public void OnDrag(PointerEventData pointerEventData)
     {
-        draggingObject.transform.position = pointerEventData.position;
+        //ユニットの画像が表示されているときだけオブジェクトを生成
+        if (guageflag == "delete")
+        {
+            draggingObject.transform.position = pointerEventData.position;
+        }
     }
 
     public void OnEndDrag(PointerEventData pointerEventData)

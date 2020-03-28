@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Generateicon: {fileID: -3316873653801185896, guid: 1f47d2051955e354286be7bf3ae03cb1,
     type: 3}
+  unitname: salaryman
   deletespan: 20
   generatelack: 0
 --- !u!1 &5848101917423437899
