@@ -63,8 +63,9 @@ public class unitBase : MonoBehaviour
     public void Eat(string name,string type ,GameObject sushi)
     {
         eat_flag = Random.Range(1, 10);
-        Debug.Log(type);
-        if (type==sushi_like)
+        sushi_like = like;
+        sushi_dislike = dislike;
+        if (name==sushi_like)
         {
             Debug.Log("好きですが何か？");
             if (eat_flag < eat_like)

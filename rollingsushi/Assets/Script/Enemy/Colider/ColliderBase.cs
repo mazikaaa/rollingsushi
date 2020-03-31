@@ -34,16 +34,16 @@ public class ColliderBase : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                enemy.GetComponent<Enemy>().MoveUpdate(0.0f, 0.03f, 2);
+                                enemy.GetComponent<Enemy>().MoveUpdate(0.0f, 2.0f, 2);
                                 break;
                             case 1:
-                                enemy.GetComponent<Enemy>().MoveUpdate(0.03f, 0.0f, 3);
+                                enemy.GetComponent<Enemy>().MoveUpdate(2.0f, 0.0f, 3);
                                 break;
                             case 2:
-                                enemy.GetComponent<Enemy>().MoveUpdate(0.0f,-0.03f, 0);
+                                enemy.GetComponent<Enemy>().MoveUpdate(0.0f,-2.0f, 0);
                                 break;
                             case 3:
-                                enemy.GetComponent<Enemy>().MoveUpdate(-0.03f, 0.0f, 1);
+                                enemy.GetComponent<Enemy>().MoveUpdate(-2.0f, 0.0f, 1);
                                 break;
                         }
                         return;

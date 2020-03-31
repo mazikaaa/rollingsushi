@@ -77,11 +77,11 @@
     <Compile Include="Assets\Script\Enemy\Enemy\Enemy.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyGenerator.cs" />
-    <Compile Include="Assets\Script\unit\CharactorBase.cs" />
     <Compile Include="Assets\Script\unit\Generatedata.cs" />
-    <Compile Include="Assets\Script\unit\Guest.cs" />
-    <Compile Include="Assets\Script\unit\guestCollider.cs" />
     <Compile Include="Assets\Script\unit\unitBase.cs" />
+    <Compile Include="Assets\Script\unit\UnitCollider.cs" />
+    <Compile Include="Assets\Script\unit\Unitdata.cs" />
+    <Compile Include="Assets\Script\unit\UnitManagr.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/mazik/rollingsushi/rollingsushi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

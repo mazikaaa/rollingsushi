@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guest : unitBase
+public class UnitManagr : unitBase
 {
-
+    // Start is called before the first frame update
     new void Start()
     {
         base.Start();
@@ -15,6 +15,4 @@ public class Guest : unitBase
     {
         
     }
-    
-
 }

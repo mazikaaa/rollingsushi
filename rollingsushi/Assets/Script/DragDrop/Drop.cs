@@ -53,9 +53,10 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
 
             //ドロップした画像と適合する名前のオブジェクトがあればオブジェクトを生成
             objectindex = base.GuestSearch(dropname);
+            this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
 
-            dropobject = Instantiate(unitobject[objectindex], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            dropobject.transform.SetParent(this.gameObject.transform);
+            //dropobject = Instantiate(unitobject[objectindex], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            //dropobject.transform.SetParent(this.gameObject.transform);
         }
      }
 }

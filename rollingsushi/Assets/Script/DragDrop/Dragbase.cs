@@ -7,7 +7,7 @@ public class Dragbase : MonoBehaviour
 {
     int i;
     public GameObject[] unit = new GameObject[10];
-    protected float deleteicon,generateicon=10.0f;
+    protected float deleteicon,generateicon=5.0f;
     protected string iconname;
     public bool iconflag = false;
     public Sprite test;

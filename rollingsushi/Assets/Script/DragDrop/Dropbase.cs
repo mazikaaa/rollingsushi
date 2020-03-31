@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class Dropbase : MonoBehaviour
 {
     int i,j;
-   protected Guest[] guest = new Guest[10];
+   //protected Guest[] guest = new Guest[10];
 
     public Image iconImage;
 
@@ -50,6 +50,12 @@ public class Dropbase : MonoBehaviour
         {
             if (name == unitname[i])
             {
+                GetComponent<UnitManagr>().eat_like=unitobject[i].GetComponent<Unitdata>().eat_like;
+                GetComponent<UnitManagr>().eat_normal = unitobject[i].GetComponent<Unitdata>().eat_normal;
+                GetComponent<UnitManagr>().waittime_like = unitobject[i].GetComponent<Unitdata>().waittime_like;
+                GetComponent<UnitManagr>().waittime_normal = unitobject[i].GetComponent<Unitdata>().waittime_normal;
+                GetComponent<UnitManagr>().like = unitobject[i].GetComponent<Unitdata>().like;
+                GetComponent<UnitManagr>().dislike = unitobject[i].GetComponent<Unitdata>().dislike;
                 return i;
             }
         }
