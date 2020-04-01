@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class unitBase : MonoBehaviour
 {
-    public int eat_like;
-    public int eat_normal;
+    //ユニットごとの情報
+    public int probability_like;
+    public int probability_normal;
     public float waittime_like;
     public float waittime_normal;
     public string like;
     public string dislike;
+    public int eatamount=0;
+    public float leavetime=0.0f;
+
+    //ユニットが変わるたびに初期化
+    protected int amount;//食べた寿司の量を計測
+    protected float leave;//ドロップしてから離席までの時間を計測
 
     protected int eat_flag;
     public string sushi_like
@@ -68,9 +75,10 @@ public class unitBase : MonoBehaviour
         if (name==sushi_like)
         {
             Debug.Log("好きですが何か？");
-            if (eat_flag < eat_like)
+            if (eat_flag < probability_like)
             {
                 Destroy(sushi);
+                amount += 1;
                 waittime_base = waittime_like;
             }
         }
@@ -81,14 +89,21 @@ public class unitBase : MonoBehaviour
         else
         {
             Debug.Log("普通ですが何か？");
-            if (eat_flag < eat_normal)
+            if (eat_flag < probability_normal)
             {
                 Destroy(sushi);
+                amount += 1;
                 waittime_base = waittime_normal;
             }
 
         }
     }
 
-
+    protected void Leave(){
+        amount = 0;
+        leave = 0.0f;
+        this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
+        this.gameObject.GetComponent<Drop>().iconImage.sprite = null;
+        this.gameObject.GetComponent<Drop>().iconImage.color= Vector4.zero;
+    }
 }

@@ -16,6 +16,7 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
         iconImage.sprite = nowSprite;
     }
 
+
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         if (pointerEventData.pointerDrag == null) return;

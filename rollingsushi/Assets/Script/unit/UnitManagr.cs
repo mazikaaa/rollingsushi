@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UnitManagr : unitBase
 {
+ 
     // Start is called before the first frame update
     new void Start()
     {
@@ -13,6 +14,9 @@ public class UnitManagr : unitBase
     // Update is called once per frame
     void Update()
     {
-        
+        if (amount > eatamount)
+        {
+            Leave();
+        }
     }
 }

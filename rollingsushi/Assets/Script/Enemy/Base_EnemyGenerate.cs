@@ -9,11 +9,12 @@ public class Base_EnemyGenerate : MonoBehaviour
     public GameObject[] normalsushi = new GameObject[4];
     public GameObject[] expensivesushi = new GameObject[4];
 
-    public float GenerateCheapSushi()
+    protected void GenerateCheapSushi()
     {
         i = Random.Range(0, 2);
-            Instantiate(cheapsushi[i], new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
-  
-        return 0.0f;
+        GameObject sushi=Instantiate(cheapsushi[i], new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
+        sushi.GetComponent<Enemy>().init_other_direction = 3;
+        sushi.GetComponent<Enemy>().init_x = 2.0f;
+        sushi.GetComponent<Enemy>().init_y = 0.0f;
     }
 }

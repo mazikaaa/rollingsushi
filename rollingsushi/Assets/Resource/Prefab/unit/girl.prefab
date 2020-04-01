@@ -93,12 +93,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5241a74223619409627eca4e0428e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eat_like: 7
-  eat_normal: 0
+  probability_like: 8
+  probability_normal: 4
   waittime_like: 5
   waittime_normal: 12
-  like: maguro
+  like: ebi
   dislike: 
+  eatamount: 1
+  leavetime: 10
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

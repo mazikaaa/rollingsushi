@@ -23,7 +23,8 @@ public class EnemyGenerator : Base_EnemyGenerate
 
         if(sushitime[0]>cheapspan)
         {
-            sushitime[0] = GenerateCheapSushi();
+            GenerateCheapSushi();
+            sushitime[0] = 0.0f;
         }
     }
 }
