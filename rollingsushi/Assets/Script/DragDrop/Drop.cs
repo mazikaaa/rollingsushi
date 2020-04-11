@@ -2,9 +2,9 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
 public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private int objectindex;
     private Sprite nowSprite;
     private GameObject dropobject;
     private string dropname;
@@ -16,23 +16,29 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
         iconImage.sprite = nowSprite;
     }
 
-
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         if (pointerEventData.pointerDrag == null) return;
 
         //ドラック側でユニットを生成している時だけ画像を表示する
-        if (pointerEventData.pointerDrag.GetComponent<Drag>().iconflag)
+        //またユニットがすでにいる時は表示しない
+        if (pointerEventData.pointerDrag.GetComponent<Drag>().iconflag==true && setUnit==false)
         {
             Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
             iconImage.sprite = droppedImage.sprite;
             iconImage.color = Vector4.one * 0.6f;
+            shadowUnit = true;
+
         }
+     
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        if (pointerEventData.pointerDrag == null) return;
+
+        if (pointerEventData.pointerDrag == null)
+            return;
+
         iconImage.sprite = nowSprite;
         if (nowSprite == null)
             iconImage.color = Vector4.zero;
@@ -42,7 +48,7 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
     public void OnDrop(PointerEventData pointerEventData)
     {
         //ドラック側でユニットを生成している時だけ画像を切り替える
-        if (pointerEventData.pointerDrag.GetComponent<Drag>().iconflag)
+        if (pointerEventData.pointerDrag.GetComponent<Drag>().iconflag==true && setUnit==false)
         {
             Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
             iconImage.sprite = droppedImage.sprite;
@@ -53,12 +59,14 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
             Debug.Log(dropname);
 
             //ドロップした画像と適合する名前のオブジェクトがあればオブジェクトを生成
-            objectindex = base.GuestSearch(dropname);
+            base.UnitSearch(dropname);
             this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
 
-            //dropobject = Instantiate(unitobject[objectindex], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            //dropobject.transform.SetParent(this.gameObject.transform);
+            //ドロップしたらドラック側の画像を消す,そしてshadowUnitをfalseに
+            pointerEventData.pointerDrag.GetComponent<Drag>().DeleteUnit();
+            shadowUnit = false;
         }
-     }
+    }
+
 }
 

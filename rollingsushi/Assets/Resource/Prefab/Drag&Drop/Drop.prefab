@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 129746847}
   m_Layer: 0
   m_Name: Drop
-  m_TagString: Untagged
+  m_TagString: drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786299347f7ae674dbaefb412acfe6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setUnit: 0
   iconImage: {fileID: 8256891544871657056}
   unitname:
   - salaryman
@@ -280,9 +281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a09afe69cf779c4ca40d5553ec4ff25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eat_like: 0
-  eat_normal: 0
+  probability_like: 0
+  probability_normal: 0
   waittime_like: 0
   waittime_normal: 0
   like: 
   dislike: 
+  eatamount: 0
+  leavetime: 0

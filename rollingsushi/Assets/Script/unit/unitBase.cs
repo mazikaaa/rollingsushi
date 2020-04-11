@@ -105,5 +105,6 @@ public class unitBase : MonoBehaviour
         this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
         this.gameObject.GetComponent<Drop>().iconImage.sprite = null;
         this.gameObject.GetComponent<Drop>().iconImage.color= Vector4.zero;
+        this.gameObject.GetComponent<Drop>().setUnit = false;
     }
 }

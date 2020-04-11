@@ -5,11 +5,6 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(Image))]
 public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] string guageflag = "generate";
-
-    private float deletetime,generatetime;
-
-
     private Transform canvasTran;
     private GameObject draggingObject;
     public Image guage;
@@ -33,8 +28,6 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
             if (generatetime>=generateicon)
             {
                 GenerateUnit();
-                guageflag = "delete";
-                generatetime = 0.0f;
             }
         }
         //時間経過によるユニット消去
@@ -45,8 +38,11 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
             if (deletetime >= deleteicon)
             {
                 DeleteUnit();
-                guageflag = "generate";
-                deletetime = 0.0f;
+                if (draggingObject)
+                {
+                   DeleteShadowUnit();
+                   Destroy(draggingObject);
+                }
             }
         }
     }
@@ -74,7 +70,7 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
     public void OnEndDrag(PointerEventData pointerEventData)
     {
         gameObject.GetComponent<Image>().color = Vector4.one;
-        Destroy(draggingObject);
+       Destroy(draggingObject);
     }
 
     // ドラッグオブジェクト作成

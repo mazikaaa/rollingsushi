@@ -9,6 +9,7 @@ TagManager:
   - wall
   - sushi.col
   - sushi.type
+  - drop
   layers:
   - Default
   - TransparentFX
