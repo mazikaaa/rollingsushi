@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGenerator : Base_EnemyGenerate
+public class sushiGenerator : Base_sushiGenerate
 {
     public float cheapspan;
     public float normalspan;

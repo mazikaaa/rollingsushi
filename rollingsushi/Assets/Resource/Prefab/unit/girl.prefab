@@ -99,8 +99,8 @@ MonoBehaviour:
   waittime_normal: 12
   like: ebi
   dislike: 
-  eatamount: 1
-  leavetime: 10
+  eatamount: 3
+  leavetime: 7
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

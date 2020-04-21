@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 
 public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private Sprite nowSprite;
+    public Sprite nowSprite;
     private GameObject dropobject;
     private string dropname;
 
-    protected void Start()
+    protected new void Start()
     {
         base.Start();
         nowSprite = null;
@@ -28,7 +28,6 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
             iconImage.sprite = droppedImage.sprite;
             iconImage.color = Vector4.one * 0.6f;
             shadowUnit = true;
-
         }
      
     }

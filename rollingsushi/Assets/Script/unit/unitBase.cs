@@ -13,12 +13,17 @@ public class unitBase : MonoBehaviour
     public string dislike;
     public int eatamount=0;
     public float leavetime=0.0f;
+    public bool setUnit=false;
 
     //ユニットが変わるたびに初期化
     protected int amount;//食べた寿司の量を計測
     protected float leave;//ドロップしてから離席までの時間を計測
 
-    protected int eat_flag;
+
+    protected int eat_flag;//寿司を食べるかどうかの乱数を生成
+
+    GameObject gamemanager;
+
     public string sushi_like
     {
         get
@@ -28,7 +33,7 @@ public class unitBase : MonoBehaviour
         set
         {
             _like = value;
-            Debug.Log(_like);
+           // Debug.Log(_like);
         }
     }
     protected string _like;
@@ -65,14 +70,23 @@ public class unitBase : MonoBehaviour
        
         sushi_like=like;
         sushi_dislike=dislike;
+
+        gamemanager = GameObject.Find("GameManager");
     }
 
-    public void Eat(string name,string type ,GameObject sushi)
+
+    public void Eat(GameObject sushi)
     {
         eat_flag = Random.Range(1, 10);
         sushi_like = like;
         sushi_dislike = dislike;
-        if (name==sushi_like)
+
+        //寿司のデータを所得
+        string name = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().sushi_name;
+        string type = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().sushi_type;
+        int price = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().price;
+
+        if (name == sushi_like)
         {
             Debug.Log("好きですが何か？");
             if (eat_flag < probability_like)
@@ -80,9 +94,10 @@ public class unitBase : MonoBehaviour
                 Destroy(sushi);
                 amount += 1;
                 waittime_base = waittime_like;
+                gamemanager.GetComponent<GameManager>().GainProfit(price);
             }
         }
-        else if (type== sushi_dislike)
+        else if (type == sushi_dislike)
         {
             Debug.Log("嫌いですが何か？");
         }
@@ -94,8 +109,8 @@ public class unitBase : MonoBehaviour
                 Destroy(sushi);
                 amount += 1;
                 waittime_base = waittime_normal;
+                gamemanager.GetComponent<GameManager>().GainProfit(price);
             }
-
         }
     }
 
@@ -106,5 +121,6 @@ public class unitBase : MonoBehaviour
         this.gameObject.GetComponent<Drop>().iconImage.sprite = null;
         this.gameObject.GetComponent<Drop>().iconImage.color= Vector4.zero;
         this.gameObject.GetComponent<Drop>().setUnit = false;
+        this.gameObject.GetComponent<Drop>().nowSprite = null;
     }
 }

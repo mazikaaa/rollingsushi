@@ -14,7 +14,17 @@ public class UnitManagr : unitBase
     // Update is called once per frame
     void Update()
     {
+        if (setUnit == true)
+        {
+            leave += Time.deltaTime;
+        }
+
         if (amount > eatamount)
+        {
+            Leave();
+        }
+
+        if (leave > leavetime)
         {
             Leave();
         }

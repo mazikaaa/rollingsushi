@@ -99,8 +99,8 @@ MonoBehaviour:
   waittime_normal: 12
   like: maguro
   dislike: 
-  eatamount: 1
-  leavetime: 7
+  eatamount: 4
+  leavetime: 8
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -9,8 +9,7 @@ using UnityEngine.EventSystems;
 public class Dropbase : MonoBehaviour
 {
     int i,j;
-    //protected Guest[] guest = new Guest[10];
-
+    
     public bool setUnit = false;//ユニットがすでに設置されているかを判断
     public bool shadowUnit = false;//色が薄いユニットが表示される状態にあるか。
     public Image iconImage;
@@ -22,7 +21,8 @@ public class Dropbase : MonoBehaviour
         UnitSort();
     }
 
-    //ユニットを名前の順にソート
+    
+    //ユニットのオブジェクトを名前の順にソート
     public void UnitSort()
     {
         string[] guestname_copy = new string[unitname.Length];
@@ -42,11 +42,12 @@ public class Dropbase : MonoBehaviour
         }
         
     }
+    
 
     //ソート済みのユニットから名前による検索
     public void UnitSearch(string name)
     {
-        Debug.Log(name);
+        //Debug.Log(name);
         for (i = 0; i < unitname.Length; i++)
         {
             if (name == unitname[i])
@@ -59,6 +60,7 @@ public class Dropbase : MonoBehaviour
                 GetComponent<UnitManagr>().dislike = unitobject[i].GetComponent<Unitdata>().dislike;
                 GetComponent<UnitManagr>().eatamount = unitobject[i].GetComponent<Unitdata>().eatamount;
                 GetComponent<UnitManagr>().leavetime = unitobject[i].GetComponent<Unitdata>().leavetime;
+                GetComponent<UnitManagr>().setUnit = true;
                 setUnit = true;
             }
         }

@@ -6,6 +6,7 @@ public class sushidata : MonoBehaviour
 {
     public string sushi_type;
     public string sushi_name;
+    public int price;
     void Start()
     {
         

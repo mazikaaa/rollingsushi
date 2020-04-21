@@ -28,22 +28,22 @@ public class ColliderBase : MonoBehaviour
             {
                 if (dir_touch[i] == false)
                 {
-                    if (i != enemy.GetComponent<Enemy>().other_direction)
+                    if (i != enemy.GetComponent<sushi>().other_direction)
                     {
-                        Debug.Log(i);
+                        //Debug.Log(i);otherdirectionの方向を検出
                         switch (i)
                         {
                             case 0:
-                                enemy.GetComponent<Enemy>().MoveUpdate(0.0f, 2.0f, 2);
+                                enemy.GetComponent<sushi>().MoveUpdate(0.0f, 2.0f, 2);
                                 break;
                             case 1:
-                                enemy.GetComponent<Enemy>().MoveUpdate(2.0f, 0.0f, 3);
+                                enemy.GetComponent<sushi>().MoveUpdate(2.0f, 0.0f, 3);
                                 break;
                             case 2:
-                                enemy.GetComponent<Enemy>().MoveUpdate(0.0f,-2.0f, 0);
+                                enemy.GetComponent<sushi>().MoveUpdate(0.0f,-2.0f, 0);
                                 break;
                             case 3:
-                                enemy.GetComponent<Enemy>().MoveUpdate(-2.0f, 0.0f, 1);
+                                enemy.GetComponent<sushi>().MoveUpdate(-2.0f, 0.0f, 1);
                                 break;
                         }
                         return;
@@ -55,7 +55,7 @@ public class ColliderBase : MonoBehaviour
 
     protected void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("壁衝突解除");
+       // Debug.Log("壁衝突解除");
         if (collision.gameObject.tag == "wall")
         {
             touch = false;

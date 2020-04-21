@@ -12,7 +12,6 @@ public class Unitdata : unitBase
     // Update is called once per frame
     void Update()
     {
-        
     }
     
 

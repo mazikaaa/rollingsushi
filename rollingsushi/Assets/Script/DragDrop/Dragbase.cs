@@ -18,7 +18,7 @@ public class Dragbase : MonoBehaviour
 
     protected void GenerateUnit()
     {
-        i = Random.Range(0, 2);
+        i = Random.Range(0, 3);//寿司の追加時に変更忘れずに
         iconname = unit[i].name;
         deleteicon=unit[i].GetComponentInChildren<Generatedata>().deletespan;
         this.gameObject.GetComponent<Image>().sprite = unit[i].GetComponentInChildren<Generatedata>().Generateicon;

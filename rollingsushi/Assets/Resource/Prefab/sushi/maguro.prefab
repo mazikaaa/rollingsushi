@@ -62,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sushi_type: akami
   sushi_name: maguro
+  price: 120
 --- !u!1 &3086683871337179711
 GameObject:
   m_ObjectHideFlags: 0

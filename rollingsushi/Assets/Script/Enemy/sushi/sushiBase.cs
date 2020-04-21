@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public class sushiBase : MonoBehaviour
 {
     /// <summary>
     /// 移動関係

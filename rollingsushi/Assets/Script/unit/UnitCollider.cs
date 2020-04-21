@@ -10,10 +10,10 @@ public class UnitCollider :MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject guest = transform.parent.gameObject;
+        GameObject unit = transform.parent.gameObject;
         if (collision.gameObject.tag == "sushi.type")
         {
-         guest .GetComponent<UnitManagr>().Eat(collision.GetComponent<sushidata>().sushi_name, collision.GetComponent<sushidata>().sushi_type, collision.gameObject.transform.parent.gameObject);
+            unit.GetComponent<UnitManagr>().Eat(collision.gameObject.transform.parent.gameObject);
         }
     }
 }
