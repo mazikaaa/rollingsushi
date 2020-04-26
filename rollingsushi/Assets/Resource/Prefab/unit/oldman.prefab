@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
   m_Name: oldman
-  m_TagString: guest
+  m_TagString: unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   eatamount: 3
   leavetime: 10
   setUnit: 0
+  eat_SE: {fileID: 0}
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -14,8 +14,9 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
         canvasTran = this.gameObject.transform;
     }
 
-    private void Start()
+    new void Start()
     {
+        base.Start();
         guage.color = Vector4.one * 0.2f;
     }
     private void Update()
@@ -37,6 +38,7 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
             guage.fillAmount = deletetime / deleteicon;
             if (deletetime >= deleteicon)
             {
+                gamemanager.GetComponent<GameManager>().LowerRep();
                 DeleteUnit();
                 if (draggingObject)
                 {
@@ -78,6 +80,7 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         draggingObject = new GameObject("Dragging Object");
         draggingObject.name = iconname;
+        draggingObject.tag = "dragingobject";
         draggingObject.transform.SetParent(canvasTran);
         draggingObject.transform.SetAsLastSibling();
         draggingObject.transform.localScale = Vector3.one;

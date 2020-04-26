@@ -15,6 +15,9 @@ public class unitBase : MonoBehaviour
     public float leavetime=0.0f;
     public bool setUnit=false;
 
+    //効果音
+    public AudioClip eat_SE;
+
     //ユニットが変わるたびに初期化
     protected int amount;//食べた寿司の量を計測
     protected float leave;//ドロップしてから離席までの時間を計測
@@ -23,6 +26,7 @@ public class unitBase : MonoBehaviour
     protected int eat_flag;//寿司を食べるかどうかの乱数を生成
 
     GameObject gamemanager;
+    AudioSource audiosource;
 
     public string sushi_like
     {
@@ -72,6 +76,7 @@ public class unitBase : MonoBehaviour
         sushi_dislike=dislike;
 
         gamemanager = GameObject.Find("GameManager");
+        audiosource = GetComponent<AudioSource>();
     }
 
 
@@ -94,7 +99,9 @@ public class unitBase : MonoBehaviour
                 Destroy(sushi);
                 amount += 1;
                 waittime_base = waittime_like;
+                audiosource.PlayOneShot(eat_SE);
                 gamemanager.GetComponent<GameManager>().GainProfit(price);
+                gamemanager.GetComponent<GameManager>().RaiseRep();
             }
         }
         else if (type == sushi_dislike)
@@ -109,6 +116,7 @@ public class unitBase : MonoBehaviour
                 Destroy(sushi);
                 amount += 1;
                 waittime_base = waittime_normal;
+                audiosource.PlayOneShot(eat_SE);
                 gamemanager.GetComponent<GameManager>().GainProfit(price);
             }
         }

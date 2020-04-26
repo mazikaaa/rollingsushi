@@ -15,6 +15,12 @@ public class Dragbase : MonoBehaviour
     protected string iconname;
     protected string guageflag = "generate";
     protected float deletetime, generatetime;
+    protected GameObject gamemanager;
+
+    protected void Start()
+    {
+        gamemanager = GameObject.Find("GameManager");
+    }
 
     protected void GenerateUnit()
     {

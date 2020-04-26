@@ -10,6 +10,9 @@ TagManager:
   - sushi.col
   - sushi.type
   - drop
+  - drag
+  - unit
+  - dragingobject
   layers:
   - Default
   - TransparentFX
