@@ -7,6 +7,7 @@ public class sushidata : MonoBehaviour
     public string sushi_type;
     public string sushi_name;
     public int price;
+    public float rate=15.0f;//この寿司の出やすさを決める
     void Start()
     {
         

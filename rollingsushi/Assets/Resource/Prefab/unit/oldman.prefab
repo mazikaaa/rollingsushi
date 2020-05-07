@@ -95,12 +95,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   probability_like: 6
   probability_normal: 3
-  waittime_like: 7
-  waittime_normal: 14
+  waittime_like: 5
+  waittime_normal: 8
   like: maguro
   dislike: 
   eatamount: 3
-  leavetime: 10
+  leavetime: 20
   setUnit: 0
   eat_SE: {fileID: 0}
 --- !u!212 &5848101918098229069

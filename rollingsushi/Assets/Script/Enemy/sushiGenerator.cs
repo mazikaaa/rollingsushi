@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class sushiGenerator : Base_sushiGenerate
 {
-    public float cheapspan;
-    public float normalspan;
-    public float expensivespan;
+  
+    public float sushigeneratetime;
 
-    private float[] sushitime = new float[3];
+    private float sushitime=0.0f;
+    private int sushikey;//出てくる寿司の種類を決めるキー
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +19,26 @@ public class sushiGenerator : Base_sushiGenerate
     // Update is called once per frame
     void Update()
     {
-        sushitime[0] += Time.deltaTime;
+        sushitime += Time.deltaTime;
 
-        if(sushitime[0]>cheapspan)
+        if(sushitime>sushigeneratetime)
         {
-            GenerateCheapSushi();
-            sushitime[0] = 0.0f;
+            sushikey = ChooseGenerateSushi();
+
+            switch (sushikey)
+            {
+                case 0:
+                    Debug.Log("cheap");
+                    GenerateCheapSushi();
+                    break;
+                case 1:
+                    Debug.Log("normal");
+                    break;
+                case 2:
+                    Debug.Log("expensive");
+                    break;
+            }
+            sushitime = 0.0f;
         }
     }
 }

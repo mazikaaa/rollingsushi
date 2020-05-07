@@ -9,9 +9,11 @@ public class GameManager : GameSystemBase
     [SerializeField] int gameover_disposal;//ゲームオーバーになる廃棄数
     [SerializeField] int gameclear_profit;//ゲームクリアになる売り上げ
 
+    private float MainTime;
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
+        base.Start();
         rep_text.GetComponent<Text>().text = Rep.ToString();
     }
 
@@ -27,6 +29,9 @@ public class GameManager : GameSystemBase
         {
             GameClear();
         }
+
+        MainTime += Time.deltaTime;
+        time_text.GetComponent<Text>().text = MainTime.ToString();   
     }
 
 

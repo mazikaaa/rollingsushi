@@ -16,14 +16,16 @@ public class ColliderBase : MonoBehaviour
     [SerializeField] GameObject[] dir = new GameObject[4];
     protected void OnTriggerEnter2D(Collider2D collider)
     {
-        touch = true;
-        dir_touch[0] = dir[0].GetComponent<upCollider>().touch;
-        dir_touch[1] = dir[1].GetComponent<rightCollider>().touch;
-        dir_touch[2] = dir[2].GetComponent<downCollider>().touch;
-        dir_touch[3] = dir[3].GetComponent<leftCollider>().touch;
+      
 
         if (collider.gameObject.tag == "wall")
         {
+            touch = true;
+            dir_touch[0] = dir[0].GetComponent<upCollider>().touch;
+            dir_touch[1] = dir[1].GetComponent<rightCollider>().touch;
+            dir_touch[2] = dir[2].GetComponent<downCollider>().touch;
+            dir_touch[3] = dir[3].GetComponent<leftCollider>().touch;
+
             for (i = 0; i < 4; i++)
             {
                 if (dir_touch[i] == false)

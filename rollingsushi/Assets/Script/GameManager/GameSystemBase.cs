@@ -51,11 +51,18 @@ public class GameSystemBase : MonoBehaviour
     private int rep = 5;
 
 
-    public GameObject profit_text, disposal_text,rep_text;
+    public GameObject profit_text, disposal_text,rep_text,time_text;
     public GameObject Gameclear, Gameover;
-  
+
+    public AudioClip discard_SE;
+    private AudioSource audiosource;
 
     //ゲームのシステムはこちらに
+
+    protected void Start()
+    {
+        audiosource = GetComponent<AudioSource>();
+    }
 
     public void GainProfit(int price)
     {
@@ -66,6 +73,7 @@ public class GameSystemBase : MonoBehaviour
     public void Discard()
     {
         Disposal = 1;
+        audiosource.PlayOneShot(discard_SE);
         disposal_text.GetComponent<Text>().text = Disposal.ToString();
     }
 

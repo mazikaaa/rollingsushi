@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - DiscardCollider
     - Drag
     - Drop
     - GameManager
@@ -21,6 +22,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -48,23 +50,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9468}
+      Script: {instanceID: 9470}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9680}
     - Class: 114
-      Script: {instanceID: 9706}
+      Script: {instanceID: 9708}
     - Class: 114
-      Script: {instanceID: 9770}
+      Script: {instanceID: 9772}
     - Class: 114
-      Script: {instanceID: 9788}
+      Script: {instanceID: 9790}
     - Class: 114
-      Script: {instanceID: 9792}
+      Script: {instanceID: 9794}
     - Class: 114
-      Script: {instanceID: 9872}
+      Script: {instanceID: 9874}
     - Class: 114
-      Script: {instanceID: 9906}
+      Script: {instanceID: 9908}
     - Class: 114
-      Script: {instanceID: 10494}
+      Script: {instanceID: 10498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -96,47 +98,57 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9310}
+      Script: {instanceID: 9312}
     - Class: 114
-      Script: {instanceID: 9376}
+      Script: {instanceID: 9378}
     - Class: 114
-      Script: {instanceID: 9382}
+      Script: {instanceID: 9384}
     - Class: 114
-      Script: {instanceID: 9388}
+      Script: {instanceID: 9390}
     - Class: 114
-      Script: {instanceID: 9396}
+      Script: {instanceID: 9398}
     - Class: 114
-      Script: {instanceID: 9432}
+      Script: {instanceID: 9434}
     - Class: 114
-      Script: {instanceID: 9468}
+      Script: {instanceID: 9436}
     - Class: 114
-      Script: {instanceID: 9614}
+      Script: {instanceID: 9470}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9616}
     - Class: 114
-      Script: {instanceID: 9706}
+      Script: {instanceID: 9680}
     - Class: 114
       Script: {instanceID: 9708}
     - Class: 114
-      Script: {instanceID: 9770}
+      Script: {instanceID: 9710}
     - Class: 114
-      Script: {instanceID: 9788}
+      Script: {instanceID: 9772}
     - Class: 114
-      Script: {instanceID: 9792}
+      Script: {instanceID: 9790}
     - Class: 114
-      Script: {instanceID: 9848}
+      Script: {instanceID: 9794}
     - Class: 114
-      Script: {instanceID: 9872}
+      Script: {instanceID: 9850}
     - Class: 114
-      Script: {instanceID: 9906}
+      Script: {instanceID: 9874}
     - Class: 114
-      Script: {instanceID: 10310}
+      Script: {instanceID: 9908}
     - Class: 114
-      Script: {instanceID: 10494}
+      Script: {instanceID: 9962}
+    - Class: 114
+      Script: {instanceID: 10314}
+    - Class: 114
+      Script: {instanceID: 10498}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -159,6 +171,12 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
+      Hash: 48755515a28f420db7b91669ac29dee7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSystemBase
+  - hash:
+      serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -177,7 +195,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f85f54004213e99d199053fc8b5aa42d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -399,7 +417,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: b3aac368f9e84fe89ce10a2edba94934
+      Hash: 152c4a580b3fecaee7b5ec311f4af11c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: unitBase
@@ -723,7 +741,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: b3aac368f9e84fe89ce10a2edba94934
+      Hash: 152c4a580b3fecaee7b5ec311f4af11c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnitManagr
@@ -753,7 +771,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: b3aac368f9e84fe89ce10a2edba94934
+      Hash: 152c4a580b3fecaee7b5ec311f4af11c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Unitdata
@@ -763,6 +781,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DiscardCollider
   - hash:
       serializedVersion: 2
       Hash: 3f8d7b92a6be3c715e55d5cfa7cc8384

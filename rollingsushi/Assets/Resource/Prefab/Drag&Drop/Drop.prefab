@@ -237,6 +237,7 @@ MonoBehaviour:
   - {fileID: 5848101918098229056, guid: 59fe53ecadeefa64c95ec86bf61485de, type: 3}
   - {fileID: 5848101918098229056, guid: 124bb31daccb1bb4fbf2b0697e94732b, type: 3}
   nowSprite: {fileID: 0}
+  sit_SE: {fileID: 8300000, guid: 75ff6adb08df63742a1a9283498bd957, type: 3}
 --- !u!222 &8256891544871657059
 CanvasRenderer:
   m_ObjectHideFlags: 0

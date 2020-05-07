@@ -39,6 +39,8 @@ public class Dragbase : MonoBehaviour
         this.gameObject.GetComponent<Image>().sprite = null;
         this.gameObject.GetComponent<Image>().color = Vector4.zero;
         guageflag = "generate";
+        generateicon = 10.0f - gamemanager.GetComponent<GameManager>().Rep*1.0f;
+        Debug.Log(generateicon);
         deletetime = 0.0f;
         iconflag = false;
     }

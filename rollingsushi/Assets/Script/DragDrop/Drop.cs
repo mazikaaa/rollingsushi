@@ -6,14 +6,18 @@ using UnityEngine.EventSystems;
 public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Sprite nowSprite;
+    public AudioClip sit_SE;
     private GameObject dropobject;
     private string dropname;
+
+    private AudioSource audiosource;
 
     protected new void Start()
     {
         base.Start();
         nowSprite = null;
         iconImage.sprite = nowSprite;
+        audiosource = GetComponent<AudioSource>();
     }
 
     public void OnPointerEnter(PointerEventData pointerEventData)
@@ -60,6 +64,7 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
             //ドロップした画像と適合する名前のオブジェクトがあればオブジェクトを生成
             base.UnitSearch(dropname);
             this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
+            audiosource.PlayOneShot(sit_SE);
 
             //ドロップしたらドラック側の画像を消す,そしてshadowUnitをfalseに
             pointerEventData.pointerDrag.GetComponent<Drag>().DeleteUnit();
