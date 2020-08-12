@@ -7,7 +7,7 @@ public class Dragbase : MonoBehaviour
 {
     int i;
 
-    public GameObject[] unit = new GameObject[10];
+    [SerializeField] GameObject[] unit = new GameObject[8];
     public bool iconflag = false;
     public Sprite test;
 
@@ -15,16 +15,18 @@ public class Dragbase : MonoBehaviour
     protected string iconname;
     protected string guageflag = "generate";
     protected float deletetime, generatetime;
-    protected GameObject gamemanager;
+    protected GameObject gamemanager,unitdatabase;
 
     protected void Start()
     {
         gamemanager = GameObject.Find("GameManager");
+        unitdatabase = GameObject.Find("UnitDataBase");
+        SetUnit();
     }
 
     protected void GenerateUnit()
     {
-        i = Random.Range(0, 3);//寿司の追加時に変更忘れずに
+        i = Random.Range(0, 4);//寿司の追加時に変更忘れずに
         iconname = unit[i].name;
         deleteicon=unit[i].GetComponentInChildren<Generatedata>().deletespan;
         this.gameObject.GetComponent<Image>().sprite = unit[i].GetComponentInChildren<Generatedata>().Generateicon;
@@ -40,7 +42,7 @@ public class Dragbase : MonoBehaviour
         this.gameObject.GetComponent<Image>().color = Vector4.zero;
         guageflag = "generate";
         generateicon = 10.0f - gamemanager.GetComponent<GameManager>().Rep*1.0f;
-        Debug.Log(generateicon);
+       // Debug.Log(generateicon);
         deletetime = 0.0f;
         iconflag = false;
     }
@@ -57,5 +59,35 @@ public class Dragbase : MonoBehaviour
             }
         }
     }
+
+    public void SetUnit()
+    { 
+        string checkname;
+        string[] unitname = new string[24];
+        int i,j;
+
+        //先にデータベースからユニット名前を取ってくる
+        for (j = 0; j < 4; j++)
+        {
+            unitname[j] = unitdatabase.GetComponent<UnitDataBase>().unitname[j];
+        }
+
+        for (i = 0; i < 8; i++)
+        {
+            checkname = PlayerPrefs.GetString("Unit" +(i+1));
+            for (j = 0; j < 24; j++)
+            {
+             //   Debug.Log(checkname);
+                //名前が一致するオブジェクトを生成候補に追加
+                if (checkname == unitname[j])
+                {
+                    unit[i] = unitdatabase.GetComponent<UnitDataBase>().unitobject[j];
+                }
+            }
+        }
+
+        
+    }
    
+
 }

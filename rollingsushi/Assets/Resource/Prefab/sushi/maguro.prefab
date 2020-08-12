@@ -63,6 +63,7 @@ MonoBehaviour:
   sushi_type: akami
   sushi_name: maguro
   price: 120
+  rate: 15
 --- !u!1 &1289773988532334587
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: -572280132256060165, guid: cb665012d4dcbc847aa5f3592a618fd6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -236,7 +237,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 2926363682032461796, guid: b4906ef35221940468d585964456c768,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

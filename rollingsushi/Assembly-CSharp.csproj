@@ -63,9 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\DragDrop\Drag.cs" />
+    <Compile Include="Assets\Script\DragDrop\Drag_UnitSet.cs" />
     <Compile Include="Assets\Script\DragDrop\Dragbase.cs" />
     <Compile Include="Assets\Script\DragDrop\Drop.cs" />
     <Compile Include="Assets\Script\DragDrop\Dropbase.cs" />
+    <Compile Include="Assets\Script\DragDrop\DropUnitSet.cs" />
     <Compile Include="Assets\Script\Enemy\Base_sushiGenerate.cs" />
     <Compile Include="Assets\Script\Enemy\Colider\ColliderBase.cs" />
     <Compile Include="Assets\Script\Enemy\Colider\downCollider.cs" />
@@ -80,13 +82,16 @@
     <Compile Include="Assets\Script\GameManager\DiscardCollider.cs" />
     <Compile Include="Assets\Script\GameManager\GameManager.cs" />
     <Compile Include="Assets\Script\GameManager\GameSystemBase.cs" />
+    <Compile Include="Assets\Script\GameManager\MenuManager.cs" />
     <Compile Include="Assets\Script\SelectManager.cs" />
     <Compile Include="Assets\Script\StartManager.cs" />
     <Compile Include="Assets\Script\unit\Generatedata.cs" />
     <Compile Include="Assets\Script\unit\unitBase.cs" />
     <Compile Include="Assets\Script\unit\UnitCollider.cs" />
     <Compile Include="Assets\Script\unit\Unitdata.cs" />
+    <Compile Include="Assets\Script\unit\UnitDataBase.cs" />
     <Compile Include="Assets\Script\unit\UnitManagr.cs" />
+    <Compile Include="Assets\Script\UnitSetManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/mazik/rollingsushi/rollingsushi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

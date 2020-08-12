@@ -28,14 +28,14 @@ public class sushiGenerator : Base_sushiGenerate
             switch (sushikey)
             {
                 case 0:
-                    Debug.Log("cheap");
+                   // Debug.Log("cheap");
                     GenerateCheapSushi();
                     break;
                 case 1:
-                    Debug.Log("normal");
+                    //Debug.Log("normal");
                     break;
                 case 2:
-                    Debug.Log("expensive");
+                   // Debug.Log("expensive");
                     break;
             }
             sushitime = 0.0f;

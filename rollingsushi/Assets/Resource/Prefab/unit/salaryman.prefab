@@ -102,6 +102,7 @@ MonoBehaviour:
   eatamount: 4
   leavetime: 12
   setUnit: 0
+  unittype: 1
   eat_SE: {fileID: 0}
 --- !u!212 &5848101918098229069
 SpriteRenderer:

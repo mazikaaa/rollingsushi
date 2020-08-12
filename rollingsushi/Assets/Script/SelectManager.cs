@@ -20,5 +20,16 @@ public class SelectManager : MonoBehaviour
     public void GoGameScene(int i)
     {
         SceneManager.LoadScene("GameScene");
-    } 
+    }
+    public void GameEndButton()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+
+    }
+
+    public void GoUnitScene() {
+        SceneManager.LoadScene("UnitSetScene");
+    }
 }

@@ -60,7 +60,7 @@ public class Base_sushiGenerate : MonoBehaviour
         foreach (KeyValuePair<int, float> elem in dic)
         {
             total += elem.Value;
-            Debug.Log(elem.Value);
+            //Debug.Log(elem.Value);
         }
 
         float randomPoint = UnityEngine.Random.value * total;

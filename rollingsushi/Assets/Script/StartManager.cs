@@ -23,4 +23,10 @@ public class StartManager : MonoBehaviour
         SceneManager.LoadScene("SelectScene");
     }
 
+    public void GameEndButton()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
 }

@@ -3,11 +3,18 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - DiscardCollider
     - Drag
+    - Drag_UnitSet
     - Drop
+    - DropUnitSet
     - GameManager
     - Generatedata
+    - MenuManager
+    - SelectManager
+    - StartManager
     - UnitCollider
+    - UnitDataBase
     - UnitManagr
+    - UnitSetManager
     - Unitdata
     - downCollider
     - leftCollider
@@ -16,66 +23,18 @@ ScriptsOnlyBuild:
     - sushiGenerator
     - sushidata
     - upCollider
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
-    - Class: 61
-      Script: {instanceID: 0}
-    - Class: 66
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9470}
-    - Class: 114
-      Script: {instanceID: 9680}
-    - Class: 114
-      Script: {instanceID: 9708}
-    - Class: 114
-      Script: {instanceID: 9772}
-    - Class: 114
-      Script: {instanceID: 9790}
-    - Class: 114
-      Script: {instanceID: 9794}
-    - Class: 114
-      Script: {instanceID: 9874}
-    - Class: 114
-      Script: {instanceID: 9908}
-    - Class: 114
-      Script: {instanceID: 10498}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    Assets/Scenes/TestScene.unity:
+    Assets/Scenes/GameScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -109,43 +68,253 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9378}
     - Class: 114
-      Script: {instanceID: 9384}
+      Script: {instanceID: 9380}
     - Class: 114
-      Script: {instanceID: 9390}
+      Script: {instanceID: 9386}
     - Class: 114
-      Script: {instanceID: 9398}
+      Script: {instanceID: 9392}
     - Class: 114
-      Script: {instanceID: 9434}
+      Script: {instanceID: 9400}
     - Class: 114
       Script: {instanceID: 9436}
     - Class: 114
-      Script: {instanceID: 9470}
+      Script: {instanceID: 9438}
     - Class: 114
-      Script: {instanceID: 9616}
+      Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 9680}
+      Script: {instanceID: 9618}
     - Class: 114
-      Script: {instanceID: 9708}
+      Script: {instanceID: 9684}
     - Class: 114
-      Script: {instanceID: 9710}
+      Script: {instanceID: 9712}
     - Class: 114
-      Script: {instanceID: 9772}
+      Script: {instanceID: 9714}
     - Class: 114
-      Script: {instanceID: 9790}
+      Script: {instanceID: 9778}
     - Class: 114
-      Script: {instanceID: 9794}
+      Script: {instanceID: 9796}
     - Class: 114
-      Script: {instanceID: 9850}
+      Script: {instanceID: 9800}
     - Class: 114
-      Script: {instanceID: 9874}
+      Script: {instanceID: 9804}
     - Class: 114
-      Script: {instanceID: 9908}
+      Script: {instanceID: 9860}
     - Class: 114
-      Script: {instanceID: 9962}
+      Script: {instanceID: 9884}
     - Class: 114
-      Script: {instanceID: 10314}
+      Script: {instanceID: 9918}
     - Class: 114
-      Script: {instanceID: 10498}
+      Script: {instanceID: 9972}
+    - Class: 114
+      Script: {instanceID: 10326}
+    - Class: 114
+      Script: {instanceID: 10388}
+    - Class: 114
+      Script: {instanceID: 10512}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/SampleScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 66
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9472}
+    - Class: 114
+      Script: {instanceID: 9684}
+    - Class: 114
+      Script: {instanceID: 9712}
+    - Class: 114
+      Script: {instanceID: 9778}
+    - Class: 114
+      Script: {instanceID: 9800}
+    - Class: 114
+      Script: {instanceID: 9804}
+    - Class: 114
+      Script: {instanceID: 9884}
+    - Class: 114
+      Script: {instanceID: 9918}
+    - Class: 114
+      Script: {instanceID: 10512}
+    - Class: 114
+      Script: {instanceID: 17226}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/SelectScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9378}
+    - Class: 114
+      Script: {instanceID: 9380}
+    - Class: 114
+      Script: {instanceID: 9386}
+    - Class: 114
+      Script: {instanceID: 9392}
+    - Class: 114
+      Script: {instanceID: 9400}
+    - Class: 114
+      Script: {instanceID: 9436}
+    - Class: 114
+      Script: {instanceID: 9438}
+    - Class: 114
+      Script: {instanceID: 10000}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/StartScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9378}
+    - Class: 114
+      Script: {instanceID: 9380}
+    - Class: 114
+      Script: {instanceID: 9386}
+    - Class: 114
+      Script: {instanceID: 9392}
+    - Class: 114
+      Script: {instanceID: 9400}
+    - Class: 114
+      Script: {instanceID: 9436}
+    - Class: 114
+      Script: {instanceID: 9438}
+    - Class: 114
+      Script: {instanceID: 9620}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/UnitSetScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9358}
+    - Class: 114
+      Script: {instanceID: 9378}
+    - Class: 114
+      Script: {instanceID: 9380}
+    - Class: 114
+      Script: {instanceID: 9386}
+    - Class: 114
+      Script: {instanceID: 9392}
+    - Class: 114
+      Script: {instanceID: 9400}
+    - Class: 114
+      Script: {instanceID: 9436}
+    - Class: 114
+      Script: {instanceID: 9438}
+    - Class: 114
+      Script: {instanceID: 9776}
+    - Class: 114
+      Script: {instanceID: 9786}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -171,7 +340,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 48755515a28f420db7b91669ac29dee7
+      Hash: 74da33bf6518b0c298b0760a4024942b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameSystemBase
@@ -183,7 +352,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 50cca5d45d13a95007951f33994c38a2
+      Hash: da4becce1257e3056d0d9bd9b4e22521
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Base_sushiGenerate
@@ -195,7 +364,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: f85f54004213e99d199053fc8b5aa42d
+      Hash: 1bbfbd32cd68338423f8ae5f93fff5f9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -213,7 +382,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 850e0e3fabbfc8e05fed36dbb26da16f
+      Hash: 9b21295dbe2a9367ffdc13f6dfe13067
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Dropbase
@@ -223,6 +392,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 85e2c2973975368a960397fa074b7e11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UnitSetManager
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -417,7 +592,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 152c4a580b3fecaee7b5ec311f4af11c
+      Hash: f77ad71b0d0f0cedba4813434fa188e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: unitBase
@@ -639,6 +814,12 @@ ScriptsOnlyBuild:
     className: Drag
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartManager
+  - hash:
+      serializedVersion: 2
       Hash: f08a111e17bb701f9c9ec57bb78d9920
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -675,7 +856,7 @@ ScriptsOnlyBuild:
     className: upCollider
   - hash:
       serializedVersion: 2
-      Hash: 2aafef2935ebce0c87520d677972fa58
+      Hash: 217bb95d26d75b6437c47c452c9d867b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Drop
@@ -711,10 +892,28 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: a6e4bb350ddcf3579675356536b3c96c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Drag_UnitSet
+  - hash:
+      serializedVersion: 2
       Hash: ed2158dd8a25a7299722a8046c1bc874
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: sushi
+  - hash:
+      serializedVersion: 2
+      Hash: 2b895ba64d0024f61668143ceb6a84f0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DropUnitSet
+  - hash:
+      serializedVersion: 2
+      Hash: 96e7c67a541af11109ce3eaf5188f9f1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuManager
   - hash:
       serializedVersion: 2
       Hash: d72820633eb717b6a86e3a6eda03bcda
@@ -723,7 +922,7 @@ ScriptsOnlyBuild:
     className: leftCollider
   - hash:
       serializedVersion: 2
-      Hash: b3006e51735878f2c75c0710de099844
+      Hash: e84ad8a06e7df2aa6c4fd84c0f18adaf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: sushiGenerator
@@ -741,7 +940,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: 152c4a580b3fecaee7b5ec311f4af11c
+      Hash: f77ad71b0d0f0cedba4813434fa188e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnitManagr
@@ -771,7 +970,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 152c4a580b3fecaee7b5ec311f4af11c
+      Hash: f77ad71b0d0f0cedba4813434fa188e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Unitdata
@@ -787,6 +986,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DiscardCollider
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelectManager
   - hash:
       serializedVersion: 2
       Hash: 3f8d7b92a6be3c715e55d5cfa7cc8384
@@ -891,6 +1096,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 1b03f9a31175b5edf9a948553ee2123f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UnitDataBase
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -921,7 +1132,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: dd273ca02cc8e731e758c2294d4a7100
+      Hash: a04c4bc57b7578efec4c8cc70f5f13f9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: sushidata
@@ -939,6 +1150,9 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 19
   scenePathNames:
-  - Assets/Scenes/TestScene.unity
+  - Assets/Scenes/StartScene.unity
+  - Assets/Scenes/GameScene.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/mazik/rollingsushi/rollingsushi/rollingsushi.exe
+  - Assets/Scenes/SelectScene.unity
+  - Assets/Scenes/UnitSetScene.unity
+  playerPath: C:/Users/mazik/rollingsushi.exe

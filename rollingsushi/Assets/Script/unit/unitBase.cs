@@ -14,6 +14,7 @@ public class unitBase : MonoBehaviour
     public int eatamount=0;
     public float leavetime=0.0f;
     public bool setUnit=false;
+    public int unittype;//1なら一人,2ならペア,4ならグループ
 
     //効果音
     public AudioClip eat_SE;
@@ -70,7 +71,7 @@ public class unitBase : MonoBehaviour
 
     protected void Start()
     {
-        waittime_base = waittime_normal;
+        waittime_base = 0;
        
         sushi_like=like;
         sushi_dislike=dislike;
@@ -91,7 +92,7 @@ public class unitBase : MonoBehaviour
         string type = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().sushi_type;
         int price = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().price;
 
-        if (name == sushi_like)
+        if (name == sushi_like || type==sushi_like)
         {
             Debug.Log("好きですが何か？");
             if (eat_flag < probability_like)
@@ -104,7 +105,7 @@ public class unitBase : MonoBehaviour
                 gamemanager.GetComponent<GameManager>().RaiseRep();
             }
         }
-        else if (type == sushi_dislike)
+        else if (name==sushi_dislike||type == sushi_dislike)
         {
             Debug.Log("嫌いですが何か？");
         }
