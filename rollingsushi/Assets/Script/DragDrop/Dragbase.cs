@@ -60,6 +60,7 @@ public class Dragbase : MonoBehaviour
         }
     }
 
+    //ユニット編成画面で編成したユニットを生成候補にセットする
     public void SetUnit()
     { 
         string checkname;

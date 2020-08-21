@@ -63,7 +63,7 @@ MonoBehaviour:
   sushi_type: akami
   sushi_name: maguro
   price: 120
-  rate: 15
+  rate: 40
 --- !u!1 &1289773988532334587
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ Transform:
   m_GameObject: {fileID: 3086683871337179711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.72, y: 0.28, z: 0}
-  m_LocalScale: {x: 25.38, y: 25.11, z: 1}
+  m_LocalScale: {x: 16, y: 16, z: 1}
   m_Children:
   - {fileID: 3086683872105318694}
   - {fileID: 3086683873082495989}
@@ -238,7 +238,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 2926363682032461796, guid: b4906ef35221940468d585964456c768,
+  m_Sprite: {fileID: -8252750142676238925, guid: b4906ef35221940468d585964456c768,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3086683872105318693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3086683871337179705}
@@ -296,7 +296,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000029802322, y: 1.5384896}
+  m_Offset: {x: 0.000000029802322, y: 1.4150312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -307,7 +307,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22671229, y: 1.6501842}
+  m_Size: {x: 0.22671229, y: 1.4032674}
   m_EdgeRadius: 0
 --- !u!114 &3086683872105318688
 MonoBehaviour:
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3086683871337179711}
-  touch: 1
+  touch: 0
   dir:
   - {fileID: 3086683872105318693}
   - {fileID: 3086683872121777354}
@@ -376,7 +376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3086683872121777354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.04, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3086683871337179705}
@@ -395,7 +395,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4134861, y: 0.2562733}
+  m_Offset: {x: 1.4337528, y: 0.25627378}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -406,7 +406,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6047938, y: 0.21409422}
+  m_Size: {x: 1.6453271, y: 0.21409327}
   m_EdgeRadius: 0
 --- !u!50 &6821862348226329594
 Rigidbody2D:
@@ -494,7 +494,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.085424185, y: -1.2732258}
+  m_Offset: {x: -0.067356795, y: -1.3449998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -505,7 +505,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21409464, y: 1.7921009}
+  m_Size: {x: 0.25032943, y: 1.9356489}
   m_EdgeRadius: 0
 --- !u!114 &3086683872755070953
 MonoBehaviour:
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3086683871337179711}
-  touch: 1
+  touch: 0
   dir:
   - {fileID: 3086683872105318693}
   - {fileID: 3086683872121777354}

@@ -19,7 +19,7 @@ public class SelectManager : MonoBehaviour
 
     public void GoGameScene(int i)
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameScene1");
     }
     public void GameEndButton()
     {
