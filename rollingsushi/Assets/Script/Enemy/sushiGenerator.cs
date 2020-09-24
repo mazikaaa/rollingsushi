@@ -23,6 +23,7 @@ public class sushiGenerator : Base_sushiGenerate
 
         if(sushitime>sushigeneratetime)
         {
+            /*
             sushikey = ChooseGenerateSushi();
 
             switch (sushikey)
@@ -33,11 +34,17 @@ public class sushiGenerator : Base_sushiGenerate
                     break;
                 case 1:
                     //Debug.Log("normal");
+                    GenerateNormalSushi();
+
                     break;
                 case 2:
                    // Debug.Log("expensive");
                     break;
             }
+            */
+
+            ChooseSushi();
+
             sushitime = 0.0f;
         }
     }

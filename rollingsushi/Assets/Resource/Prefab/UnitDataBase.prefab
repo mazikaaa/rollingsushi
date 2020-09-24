@@ -48,8 +48,16 @@ MonoBehaviour:
   - {fileID: 5848101918098229056, guid: 124bb31daccb1bb4fbf2b0697e94732b, type: 3}
   - {fileID: 5848101918098229056, guid: a0087ac2b3d385745acc55c5769e90a9, type: 3}
   - {fileID: 5848101918098229056, guid: b17beff1b5999f54f88e5ca0f2b4a1de, type: 3}
+  - {fileID: 5848101918098229056, guid: d44c4bec938a8b648855c3b480c07285, type: 3}
+  - {fileID: 5848101918098229056, guid: 1284965a4ca32264e8b20af848999dee, type: 3}
+  - {fileID: 5848101918098229056, guid: 6ad3ee4da05e84c409ff843866ad40e5, type: 3}
+  - {fileID: 5848101918098229056, guid: b17beff1b5999f54f88e5ca0f2b4a1de, type: 3}
   unitname:
-  - girl
+  - JK
   - oldman
   - salaryman
   - DKpair
+  - OL
+  - DK
+  - wife
+  - sararypair

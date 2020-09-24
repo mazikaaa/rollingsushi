@@ -7,11 +7,13 @@ public class UnitSetManager : MonoBehaviour
 {
     [SerializeField] GameObject[] drops=new GameObject[8];
     private string[] dropname=new string[8];
+    public AudioClip drum_dd;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,13 @@ public class UnitSetManager : MonoBehaviour
             PlayerPrefs.SetString("Unit" + (j + 1),dropname[j]);
         }
 
+        audioSource.PlayOneShot(drum_dd);
+
+        Invoke("GoSelect", 0.3f);
+    }
+
+    private void GoSelect()
+    {
         SceneManager.LoadScene("SelectScene");
 
     }

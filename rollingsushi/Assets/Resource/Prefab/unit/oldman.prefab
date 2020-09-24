@@ -46,7 +46,7 @@ MonoBehaviour:
   Generateicon: {fileID: 4785833605309209182, guid: 1f47d2051955e354286be7bf3ae03cb1,
     type: 3}
   unitname: oldman
-  deletespan: 25
+  deletespan: 10
   generatelack: 0
 --- !u!1 &5848101918098229056
 GameObject:
@@ -93,14 +93,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5241a74223619409627eca4e0428e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probability_like: 6
-  probability_normal: 3
-  waittime_like: 5
-  waittime_normal: 8
-  like: maguro
+  probability_like: 8
+  probability_normal: 6
+  waittime_like: 3
+  waittime_normal: 4
+  like: tamago
   dislike: 
-  eatamount: 3
-  leavetime: 20
+  cost: 1
+  eatamount: 6
+  leavetime: 35
   setUnit: 0
   unittype: 1
   eat_SE: {fileID: 0}

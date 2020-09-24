@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dragbase : MonoBehaviour
+public class Dragbase : UnitDataBase
 {
-    int i;
-
-    [SerializeField] GameObject[] unit = new GameObject[8];
     public bool iconflag = false;
     public Sprite test;
 
@@ -26,22 +23,24 @@ public class Dragbase : MonoBehaviour
 
     protected void GenerateUnit()
     {
-        i = Random.Range(0, 4);//寿司の追加時に変更忘れずに
-        iconname = unit[i].name;
-        deleteicon=unit[i].GetComponentInChildren<Generatedata>().deletespan;
-        this.gameObject.GetComponent<Image>().sprite = unit[i].GetComponentInChildren<Generatedata>().Generateicon;
+        int i;
+
+        i = Random.Range(0, 8);//ユニットの追加時に変更忘れずに
+        iconname = unitobject[i].name;
+        deleteicon=unitobject[i].GetComponentInChildren<Generatedata>().deletespan;
+        this.gameObject.GetComponent<Image>().sprite = unitobject[i].GetComponentInChildren<Generatedata>().Generateicon;
         gameObject.GetComponent<Image>().color = Vector4.one;
         guageflag = "delete";
         generatetime = 0.0f;
         iconflag = true;
     }
 
-    public void DeleteUnit()
+    public virtual void DeleteUnit()
     {
         this.gameObject.GetComponent<Image>().sprite = null;
         this.gameObject.GetComponent<Image>().color = Vector4.zero;
         guageflag = "generate";
-        generateicon = 10.0f - gamemanager.GetComponent<GameManager>().Rep*1.0f;
+        generateicon = 10.0f - gamemanager.GetComponent<GameManager>().Rep*0.5f;
        // Debug.Log(generateicon);
         deletetime = 0.0f;
         iconflag = false;
@@ -62,27 +61,30 @@ public class Dragbase : MonoBehaviour
 
     //ユニット編成画面で編成したユニットを生成候補にセットする
     public void SetUnit()
-    { 
+    {
+        int i, j;
+
         string checkname;
-        string[] unitname = new string[24];
-        int i,j;
+        string[] unitnamedata = new string[24];
+        int length = unitdatabase.GetComponent<UnitDataBase>().unitname.Length;
 
         //先にデータベースからユニット名前を取ってくる
-        for (j = 0; j < 4; j++)
+        for (j = 0; j < length; j++)
         {
-            unitname[j] = unitdatabase.GetComponent<UnitDataBase>().unitname[j];
+            unitnamedata[j] = unitdatabase.GetComponent<UnitDataBase>().unitname[j];
         }
 
-        for (i = 0; i < 8; i++)
+        for (i = 0; i < 8; i++)//選択したユニットの数
         {
             checkname = PlayerPrefs.GetString("Unit" +(i+1));
-            for (j = 0; j < 24; j++)
+            for (j = 0; j < 24; j++)//データベースにあるユニットの数
             {
              //   Debug.Log(checkname);
                 //名前が一致するオブジェクトを生成候補に追加
-                if (checkname == unitname[j])
+                if (checkname == unitnamedata[j])
                 {
-                    unit[i] = unitdatabase.GetComponent<UnitDataBase>().unitobject[j];
+                    unitobject[i] = unitdatabase.GetComponent<UnitDataBase>().unitobject[j];
+                    unitname[i]= unitdatabase.GetComponent<UnitDataBase>().unitname[j];
                 }
             }
         }

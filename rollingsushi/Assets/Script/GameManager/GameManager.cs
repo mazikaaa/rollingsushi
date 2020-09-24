@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : GameSystemBase
@@ -10,12 +11,12 @@ public class GameManager : GameSystemBase
     [SerializeField] int gameclear_profit=500;//ゲームクリアになる売り上げ
 
     private float MainTime;
+    private bool timeflag=true;
     GameObject menumanager;
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
-        rep_text.GetComponent<Text>().text = Rep.ToString();
         menumanager = GameObject.Find("MenuManager");
     }
 
@@ -31,21 +32,26 @@ public class GameManager : GameSystemBase
         {
             GameClear();
         }
-        MainTime += Time.deltaTime;
+        if (timeflag)
+        {
+            MainTime += Time.deltaTime;
+        }
         time_text.GetComponent<Text>().text = MainTime.ToString();   
     }
     private void GameClear()
     {
         Gameclear.gameObject.SetActive(true);
-
         menumanager.SetActive(false);
+        MainTime = 0;
+        timeflag = false;
         AllObjectFalse();
     }
 
     private void GameOver()
     {
         Gameover.gameObject.SetActive(true);
-
+        MainTime = 0;
+        timeflag = false;
         menumanager.SetActive(false);
         AllObjectFalse();
     }
@@ -60,6 +66,27 @@ public class GameManager : GameSystemBase
         }
 
         LowerRep();
+    }
+
+    public void ReplayButtton(int i)
+    {
+        SceneManager.LoadScene("GameScene"+i);
+    }
+
+    public void  StageSelectButton()
+    {
+        SceneManager.LoadScene("SelectScene");
+    }
+
+    public void ExitButton()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        PlayerPrefs.SetInt("MUSIC", 0);
+#elif UNITY_STANDALONE
+        UnityEngine.Application.Quit();
+        PlayerPrefs.SetInt("MUSIC", 0);
+#endif
     }
 }
 

@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class unitBase : MonoBehaviour
 {
     //ユニットごとの情報
-    public int probability_like;
-    public int probability_normal;
+    public float probability_like;
+    public float probability_normal;
     public float waittime_like;
     public float waittime_normal;
     public string like;
     public string dislike;
+    public int cost;
+    public int skillNo = 0;
     public int eatamount=0;
     public float leavetime=0.0f;
     public bool setUnit=false;
     public int unittype;//1なら一人,2ならペア,4ならグループ
+
+    public GameObject clock_image; 
+    public Image amount_image;
 
     //効果音
     public AudioClip eat_SE;
@@ -23,8 +29,9 @@ public class unitBase : MonoBehaviour
     protected int amount;//食べた寿司の量を計測
     protected float leave;//ドロップしてから離席までの時間を計測
 
-
-    protected int eat_flag;//寿司を食べるかどうかの乱数を生成
+    protected bool skillflag = true;//スキルによる判定
+    protected float eat_flag;//寿司を食べるかどうかの乱数を生成
+    protected RectTransform clockhand;//時計の針の角度を決める
 
     GameObject gamemanager;
     AudioSource audiosource;
@@ -78,12 +85,13 @@ public class unitBase : MonoBehaviour
 
         gamemanager = GameObject.Find("GameManager");
         audiosource = GetComponent<AudioSource>();
+        clockhand = clock_image.GetComponent<RectTransform>();
     }
 
 
     public void Eat(GameObject sushi)
     {
-        eat_flag = Random.Range(1, 10);
+        eat_flag = Random.Range(0.0f, 10.0f);
         sushi_like = like;
         sushi_dislike = dislike;
 
@@ -92,13 +100,21 @@ public class unitBase : MonoBehaviour
         string type = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().sushi_type;
         int price = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().price;
 
+        skillflag=GetComponent<SkillManager>().SkillCheck(skillNo,price);
+
+        //スキルによって食べない判定をする
+        if (!skillflag)
+            return;
+
         if (name == sushi_like || type==sushi_like)
         {
-            Debug.Log("好きですが何か？");
+            //Debug.Log("好きですが何か？");
             if (eat_flag < probability_like)
             {
                 Destroy(sushi);
                 amount += 1;
+                float per = (float)amount / (float)eatamount;
+                amount_image.fillAmount = per;
                 waittime_base = waittime_like;
                 audiosource.PlayOneShot(eat_SE);
                 gamemanager.GetComponent<GameManager>().GainProfit(price);
@@ -107,15 +123,17 @@ public class unitBase : MonoBehaviour
         }
         else if (name==sushi_dislike||type == sushi_dislike)
         {
-            Debug.Log("嫌いですが何か？");
+           // Debug.Log("嫌いですが何か？");
         }
         else
         {
-            Debug.Log("普通ですが何か？");
+            //Debug.Log("普通ですが何か？");
             if (eat_flag < probability_normal)
             {
-                Destroy(sushi);
                 amount += 1;
+                Destroy(sushi);
+                float per = (float)amount / (float)eatamount;
+                amount_image.fillAmount = per;
                 waittime_base = waittime_normal;
                 audiosource.PlayOneShot(eat_SE);
                 gamemanager.GetComponent<GameManager>().GainProfit(price);
@@ -129,7 +147,10 @@ public class unitBase : MonoBehaviour
         this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
         this.gameObject.GetComponent<Drop>().iconImage.sprite = null;
         this.gameObject.GetComponent<Drop>().iconImage.color= Vector4.zero;
+        this.gameObject.GetComponent<UnitManagr>().setUnit = false;
         this.gameObject.GetComponent<Drop>().setUnit = false;
         this.gameObject.GetComponent<Drop>().nowSprite = null;
+        amount_image.fillAmount = 0.0f;
     }
+
 }

@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Audio\Audio_Menu.cs" />
     <Compile Include="Assets\Script\DragDrop\Drag.cs" />
     <Compile Include="Assets\Script\DragDrop\Drag_UnitSet.cs" />
     <Compile Include="Assets\Script\DragDrop\Dragbase.cs" />
@@ -85,7 +86,21 @@
     <Compile Include="Assets\Script\GameManager\MenuManager.cs" />
     <Compile Include="Assets\Script\SelectManager.cs" />
     <Compile Include="Assets\Script\StartManager.cs" />
+    <Compile Include="Assets\Script\Tutorial\AnimationControler.cs" />
+    <Compile Include="Assets\Script\Tutorial\DragTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\DropTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\FinishTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\FirstTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\ITutorialTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\OperationTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\RepoTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\ShuffleTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\SushiTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\SushiTask2.cs" />
+    <Compile Include="Assets\Script\Tutorial\TaskManager.cs" />
+    <Compile Include="Assets\Script\Tutorial\TutorialManager.cs" />
     <Compile Include="Assets\Script\unit\Generatedata.cs" />
+    <Compile Include="Assets\Script\unit\SkillManager.cs" />
     <Compile Include="Assets\Script\unit\unitBase.cs" />
     <Compile Include="Assets\Script\unit\UnitCollider.cs" />
     <Compile Include="Assets\Script\unit\Unitdata.cs" />

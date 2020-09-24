@@ -8,6 +8,8 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
     private Transform canvasTran;
     private GameObject draggingObject;
     public Image guage;
+    public bool animeflag = false;
+
 
     void Awake()
     {
@@ -38,11 +40,11 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
             guage.fillAmount = deletetime / deleteicon;
             if (deletetime >= deleteicon)
             {
-                gamemanager.GetComponent<GameManager>().LowerRep();
+               // gamemanager.GetComponent<GameManager>().LowerRep(); 評判を下げる
                 DeleteUnit();
                 if (draggingObject)
                 {
-                   DeleteShadowUnit();
+                   DeleteShadowUnit();//ドラッグしている時にユニット消去されたときの対策
                    Destroy(draggingObject);
                 }
             }
@@ -57,6 +59,7 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
         {
             CreateDragObject();
             draggingObject.transform.position = pointerEventData.position;
+            animeflag = true;
         }
      }
 
@@ -73,6 +76,7 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         gameObject.GetComponent<Image>().color = Vector4.one;
        Destroy(draggingObject);
+        animeflag = false;
     }
 
     // ドラッグオブジェクト作成
@@ -98,6 +102,25 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
         draggingImage.material = sourceImage.material;
 
         gameObject.GetComponent<Image>().color = Vector4.one * 0.6f;
+    }
+
+    public override void DeleteUnit()
+    {
+        this.gameObject.GetComponent<Image>().sprite = null;
+        this.gameObject.GetComponent<Image>().color = Vector4.zero;
+        guageflag = "generate";
+        generateicon = 10.0f - gamemanager.GetComponent<GameManager>().Rep * 0.5f;
+        // Debug.Log(generateicon);
+        deletetime = 0.0f;
+        iconflag = false;
+    }
+
+    public bool SetAnimation()
+    {
+        if (animeflag)
+            return true;
+        else
+            return false;
     }
 }
 

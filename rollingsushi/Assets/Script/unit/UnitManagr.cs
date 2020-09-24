@@ -9,6 +9,7 @@ public class UnitManagr : unitBase
     new void Start()
     {
         base.Start();
+
     }
 
     // Update is called once per frame
@@ -17,6 +18,7 @@ public class UnitManagr : unitBase
         if (setUnit == true)
         {
             leave += Time.deltaTime;
+            clockhand.localRotation= Quaternion.Euler(0,0,(leave/leavetime)*-360);
         }
 
         if (amount > eatamount)

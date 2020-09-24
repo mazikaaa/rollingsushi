@@ -7,18 +7,21 @@ using UnityEngine.EventSystems;
 
 public class Dropbase : UnitDataBase
 {
-    int i,j;
     
     public bool setUnit = false;//ユニットがすでに設置されているかを判断
     public bool shadowUnit = false;//色が薄いユニットが表示される状態にあるか。
     public Image iconImage;
     public int unitcapable;//許されるユニットの形態
-    //public string[] unitname = new string[10];
-    //public GameObject[] unitobject = new GameObject[10];
+
+    protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
+
+    private GameObject unitdatabase;
 
     protected void Start()
     {
-        UnitSort();
+        unitdatabase = GameObject.Find("UnitDataBase");
+        SetUnit();
+       // UnitSort();
     }
 
 
@@ -45,10 +48,11 @@ public class Dropbase : UnitDataBase
     }
     */
     
-
     //ユニットのタイプを確認
     public bool CheckUnitType(string name)
     {
+        int i;
+
         for (i = 0; i < unitname.Length; i++)
         {
             if (name == unitname[i])
@@ -65,6 +69,8 @@ public class Dropbase : UnitDataBase
     //ソート済みのユニットから名前による検索
     public void UnitSearch(string name)
     {
+        int i;
+
         //Debug.Log(name);
         for (i = 0; i < unitname.Length; i++)
         {
@@ -76,11 +82,43 @@ public class Dropbase : UnitDataBase
                     GetComponent<UnitManagr>().waittime_normal = unitobject[i].GetComponent<Unitdata>().waittime_normal;
                     GetComponent<UnitManagr>().like = unitobject[i].GetComponent<Unitdata>().like;
                     GetComponent<UnitManagr>().dislike = unitobject[i].GetComponent<Unitdata>().dislike;
+                    GetComponent<UnitManagr>().skillNo = unitobject[i].GetComponent<Unitdata>().skillNo;
                     GetComponent<UnitManagr>().eatamount = unitobject[i].GetComponent<Unitdata>().eatamount;
                     GetComponent<UnitManagr>().leavetime = unitobject[i].GetComponent<Unitdata>().leavetime;
                     GetComponent<UnitManagr>().setUnit = true;
                     setUnit = true;
             }
         }
+    }
+
+    public void SetUnit()
+    {
+        int i, j;
+
+        string checkname;
+        string[] unitnamedata = new string[24];
+        int length = unitdatabase.GetComponent<UnitDataBase>().unitname.Length;
+
+        //先にデータベースからユニット名前を取ってくる
+        for (j = 0; j < length; j++)
+        {
+            unitnamedata[j] = unitdatabase.GetComponent<UnitDataBase>().unitname[j];
+        }
+
+        for (i = 0; i < 8; i++)//選択したユニットの数
+        {
+            checkname = PlayerPrefs.GetString("Unit" + (i + 1),default_unit[i]);
+            for (j = 0; j < 24; j++)//データベースにあるユニットの数
+            {
+                //名前が一致するオブジェクトを生成候補に追加
+                if (checkname == unitnamedata[j])
+                {
+                    unitobject[i] = unitdatabase.GetComponent<UnitDataBase>().unitobject[j];
+                    unitname[i] = unitdatabase.GetComponent<UnitDataBase>().unitname[j];
+                }
+            }
+        }
+
+
     }
 }

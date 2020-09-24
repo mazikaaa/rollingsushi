@@ -46,7 +46,7 @@ MonoBehaviour:
   Generateicon: {fileID: -3316873653801185896, guid: 1f47d2051955e354286be7bf3ae03cb1,
     type: 3}
   unitname: salaryman
-  deletespan: 20
+  deletespan: 8
   generatelack: 0
 --- !u!1 &5848101918098229056
 GameObject:
@@ -93,14 +93,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5241a74223619409627eca4e0428e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probability_like: 7
-  probability_normal: 5
-  waittime_like: 4
-  waittime_normal: 5
+  probability_like: 9
+  probability_normal: 7
+  waittime_like: 1
+  waittime_normal: 2.5
   like: maguro
   dislike: 
-  eatamount: 4
-  leavetime: 12
+  cost: 2
+  eatamount: 7
+  leavetime: 25
   setUnit: 0
   unittype: 1
   eat_SE: {fileID: 0}

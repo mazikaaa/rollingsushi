@@ -12,6 +12,7 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
     public int DropNo;
     public string dropname;
     public Sprite[] unit_images = new Sprite[24];
+    protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
 
 
     // Start is called before the first frame update
@@ -52,7 +53,7 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
 
     public void OnDrop(PointerEventData pointerEventData)
     {
-            dropname = pointerEventData.pointerDrag.transform.GetChild(1).name;
+            dropname = pointerEventData.pointerDrag.transform.GetChild(2).name;
             
             Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
             iconImage.sprite = droppedImage.sprite;
@@ -62,20 +63,37 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
 
     public override void UnitSort()
     {
+        int i,j;
+
         string[] guestname_copy = new string[unitname.Length];
+        Sprite[] guestsprite_copy = new Sprite[unit_images.Length];
         Array.Copy(unitname, guestname_copy, unitname.Length);
+        Array.Copy(unit_images, guestsprite_copy, unitname.Length);
         Array.Sort(unitname);
-    }
+
+        for (i = 0; i < unitname.Length; i++)
+        {
+            for (j = 0; j < guestname_copy.Length; j++)
+            {
+                if (unitname[i] == guestname_copy[j])
+                    unit_images[i] = guestsprite_copy[j];
+
+            }
+        }
+
+}
 
     public void Init_SetUnit()
     {
         int i;
-        dropname = PlayerPrefs.GetString("Unit" + DropNo);
+        int length = unitname.Length;
+        dropname = PlayerPrefs.GetString("Unit" + DropNo, default_unit[DropNo-1]);
 
-        for (i = 0; i < 4; i++)
+        for (i = 0; i < length; i++)
         {
             if (dropname == unitname[i])
-            { 
+            {
+                
                 iconImage.sprite = unit_images[i];
                 nowSprite = unit_images[i];
                 iconImage.color = Vector4.one;

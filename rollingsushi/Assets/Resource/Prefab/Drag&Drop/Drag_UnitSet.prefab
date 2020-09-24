@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06ad4556d65853459655b8cc68d494e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconname: salaryman
+  iconname: DKpair
 --- !u!114 &5056059833462529136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,8 +81,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: -3316873653801185896, guid: 1f47d2051955e354286be7bf3ae03cb1,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13c37a0ec94b0f841828c611761470e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -125,7 +124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1140, y: -287.1}
+  m_AnchoredPosition: {x: 403, y: -278}
   m_SizeDelta: {x: 364.8, y: 856.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6217554303025835433
@@ -169,7 +168,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\n\u5F85\u6A5F\u6642\u9593:10\u79D2\n\n\u98DF\u3079\u308B\u91CF:\uFF17\u679A\n\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:3\u79D2\n\n\u7740\u5E2D\u6642\u9593:35\u79D2\n\n\u30B3\u30B9\u30C8:2\n\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
+  m_Text: "\u540D\u524D:\u7537\u5B50\u9AD8\u6821\u751F\u30DA\u30A2\n\n\u597D\u304D\u306A\u5BFF\u53F8:\u8D64\u8EAB\u7CFB\u5168\u822C\n\n\u5F85\u6A5F\u6642\u9593:8\u79D2\n\n\u98DF\u3079\u308B\u91CF:15\u679A\n\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2\u79D2\n\n\u7740\u5E2D\u6642\u9593:40\u79D2\n\n\u30B3\u30B9\u30C8:3\n\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!1 &6644215488255489901
 GameObject:
   m_ObjectHideFlags: 0

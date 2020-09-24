@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class GameSystemBase : MonoBehaviour
 {
+
+    public GameObject profit_text, disposal_text, time_text;
+    public GameObject Gameclear, Gameover;
+    public GameObject[] star = new GameObject[7];
+
+    public AudioClip discard_SE;
+    private AudioSource audiosource;
+
     public int Disposal
     {
         set
@@ -39,7 +47,6 @@ public class GameSystemBase : MonoBehaviour
         set
         {
             rep = value;
-            Debug.Log(rep);
         }
 
         get
@@ -48,14 +55,9 @@ public class GameSystemBase : MonoBehaviour
         }
 
     }
-    private int rep = 5;
+    private int rep = 4;
 
 
-    public GameObject profit_text, disposal_text,rep_text,time_text;
-    public GameObject Gameclear, Gameover;
-
-    public AudioClip discard_SE;
-    private AudioSource audiosource;
 
     //ゲームのシステムはこちらに
 
@@ -80,22 +82,24 @@ public class GameSystemBase : MonoBehaviour
     public void RaiseRep()
     {
         Rep += 1;
+        Rep = Mathf.Clamp(Rep, 1, 7);
         Debug.Log("評判が上がりました");
-        rep_text.GetComponent<Text>().text = Rep.ToString();
+        star[Rep - 1].SetActive(true);
     }
 
     public void LowerRep()
     {
         Rep -= 1;
+        Rep = Mathf.Clamp(Rep, 1, 7);
         Debug.Log("評判が下がりました");
-        rep_text.GetComponent<Text>().text = Rep.ToString();
+        star[Rep].SetActive(false);
     }
 
     //ゲーム内のオブジェクトを一括で止める
     public void AllObjectFalse()
     {
         GameObject sushigenerator = GameObject.Find("SushiGenerator");
-        sushigenerator.GetComponent<sushiGenerator>().enabled=false;
+        sushigenerator.GetComponent<sushiGenerator>().enabled = false;
 
         GameObject dragingobject = GameObject.FindGameObjectWithTag("dragingobject");
         if (dragingobject)
@@ -146,4 +150,5 @@ public class GameSystemBase : MonoBehaviour
             drop.GetComponent<UnitManagr>().enabled = true;
         }
     }
+
 }

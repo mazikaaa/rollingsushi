@@ -10,14 +10,14 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
     private GameObject dropobject;
     private string dropname;
 
-    private AudioSource audiosource;
+    AudioSource audiosource;
 
-    protected new void Start()
+    new void Start()
     {
-        base.Start();
         nowSprite = null;
         iconImage.sprite = nowSprite;
         audiosource = GetComponent<AudioSource>();
+        base.Start();
     }
 
     public void OnPointerEnter(PointerEventData pointerEventData)
@@ -29,7 +29,6 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
         if (pointerEventData.pointerDrag.GetComponent<Drag>().iconflag==true && setUnit==false)
         {
             dropname = pointerEventData.pointerDrag.transform.GetChild(2).name;
-            //Debug.Log(dropname);
             //そのユニットがこの場所におけるかどうかをチェックする
             if (CheckUnitType(dropname))
             {
