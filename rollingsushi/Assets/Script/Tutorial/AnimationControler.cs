@@ -5,9 +5,9 @@ using UnityEngine;
 public class AnimationControler : MonoBehaviour
 {
     Animator frame_animator;
-    GameObject frame,Drag;
+    GameObject frame, Drag;
 
-    public bool dd1_flag=false,dd2_flag=false;
+    public bool dd1_flag , dd2_flag;
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +17,15 @@ public class AnimationControler : MonoBehaviour
         frame_animator.SetBool("DD1", true);
 
         Drag = GameObject.Find("Drag1");
+        dd1_flag = false;
+        dd2_flag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         dd2_flag = !(Drag.GetComponentInChildren<Drag>().SetAnimation());
-        
+
         dd1_flag = Drag.GetComponentInChildren<Drag>().SetAnimation();
 
         if (dd2_flag)

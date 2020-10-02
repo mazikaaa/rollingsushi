@@ -33,7 +33,11 @@ public class unitBase : MonoBehaviour
     protected float eat_flag;//寿司を食べるかどうかの乱数を生成
     protected RectTransform clockhand;//時計の針の角度を決める
 
-    GameObject gamemanager;
+    //ユニットのスキル
+    protected Skill nowskill;
+    protected List<Skill> skillList;
+
+    protected GameObject gamemanager;
     AudioSource audiosource;
 
     public string sushi_like
@@ -87,8 +91,6 @@ public class unitBase : MonoBehaviour
         audiosource = GetComponent<AudioSource>();
         clockhand = clock_image.GetComponent<RectTransform>();
     }
-
-
     public void Eat(GameObject sushi)
     {
         eat_flag = Random.Range(0.0f, 10.0f);
@@ -100,15 +102,13 @@ public class unitBase : MonoBehaviour
         string type = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().sushi_type;
         int price = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().price;
 
-        skillflag=GetComponent<SkillManager>().SkillCheck(skillNo,price);
-
         //スキルによって食べない判定をする
+        skillflag = nowskill.BeforeEat(price);
         if (!skillflag)
             return;
 
-        if (name == sushi_like || type==sushi_like)
+        if (name == sushi_like || type == sushi_like)
         {
-            //Debug.Log("好きですが何か？");
             if (eat_flag < probability_like)
             {
                 Destroy(sushi);
@@ -118,16 +118,14 @@ public class unitBase : MonoBehaviour
                 waittime_base = waittime_like;
                 audiosource.PlayOneShot(eat_SE);
                 gamemanager.GetComponent<GameManager>().GainProfit(price);
-                gamemanager.GetComponent<GameManager>().RaiseRep();
             }
         }
-        else if (name==sushi_dislike||type == sushi_dislike)
+        else if (name == sushi_dislike || type == sushi_dislike)
         {
-           // Debug.Log("嫌いですが何か？");
+
         }
         else
         {
-            //Debug.Log("普通ですが何か？");
             if (eat_flag < probability_normal)
             {
                 amount += 1;
@@ -141,16 +139,26 @@ public class unitBase : MonoBehaviour
         }
     }
 
-    protected void Leave(){
+    protected void Leave()
+    {
         amount = 0;
         leave = 0.0f;
         this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
-        this.gameObject.GetComponent<Drop>().iconImage.sprite = null;
-        this.gameObject.GetComponent<Drop>().iconImage.color= Vector4.zero;
+        this.gameObject.GetComponent<Drop>().ExitImage();
         this.gameObject.GetComponent<UnitManagr>().setUnit = false;
-        this.gameObject.GetComponent<Drop>().setUnit = false;
-        this.gameObject.GetComponent<Drop>().nowSprite = null;
+
         amount_image.fillAmount = 0.0f;
     }
 
+    public void SetSkill(int No)
+    {
+        skillList = new List<Skill>()
+        {
+            new NoneSkill(),
+            new NotEatExpensive(),
+        };
+
+        nowskill = skillList[No];
+        //Debug.Log(nowskill);
+    }
 }

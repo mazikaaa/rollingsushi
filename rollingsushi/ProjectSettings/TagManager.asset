@@ -13,6 +13,8 @@ TagManager:
   - drag
   - unit
   - dragingobject
+  - dragingobject_pair
+  - dragingobject_party
   layers:
   - Default
   - TransparentFX

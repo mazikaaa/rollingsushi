@@ -10,10 +10,12 @@ public class Dropbase : UnitDataBase
     
     public bool setUnit = false;//ユニットがすでに設置されているかを判断
     public bool shadowUnit = false;//色が薄いユニットが表示される状態にあるか。
-    public Image iconImage;
     public int unitcapable;//許されるユニットの形態
 
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
+    protected string setdropname;//席に配置されるユニットの名前を入れる
+    protected int unittype;
+    protected Sprite[] unitsprite = new Sprite[4];
 
     private GameObject unitdatabase;
 
@@ -57,8 +59,11 @@ public class Dropbase : UnitDataBase
         {
             if (name == unitname[i])
             {
-                if (unitobject[i].GetComponent<Unitdata>().unittype <= unitcapable)
+                if (unitobject[i].GetComponent<Unitdata>().unittype <= unitcapable) {
+                    setdropname = name;
+                    unittype = unitobject[i].GetComponent<Unitdata>().unittype;
                     return true;
+                }
                 else
                     return false;
             }
@@ -66,23 +71,37 @@ public class Dropbase : UnitDataBase
         return false;
     }
 
+    public void FetchUnitImage()
+    {
+        int i,j;
+        for (i= 0; i < unitname.Length; i++)
+        {
+            if (setdropname == unitname[i])
+            {
+                for (j = 0; j < unittype; j++)
+                {
+                    unitsprite[j] = unitobject[i].GetComponent<Unitdata>().Separate_image[j];
+                }
+            }
+        }
+    }
+
     //ソート済みのユニットから名前による検索
     public void UnitSearch(string name)
     {
         int i;
-
-        //Debug.Log(name);
         for (i = 0; i < unitname.Length; i++)
         {
             if (name == unitname[i])
             {
+                //ユニットの情報を書き込む
                     GetComponent<UnitManagr>().probability_like = unitobject[i].GetComponent<Unitdata>().probability_like;
                     GetComponent<UnitManagr>().probability_normal = unitobject[i].GetComponent<Unitdata>().probability_normal;
                     GetComponent<UnitManagr>().waittime_like = unitobject[i].GetComponent<Unitdata>().waittime_like;
                     GetComponent<UnitManagr>().waittime_normal = unitobject[i].GetComponent<Unitdata>().waittime_normal;
                     GetComponent<UnitManagr>().like = unitobject[i].GetComponent<Unitdata>().like;
                     GetComponent<UnitManagr>().dislike = unitobject[i].GetComponent<Unitdata>().dislike;
-                    GetComponent<UnitManagr>().skillNo = unitobject[i].GetComponent<Unitdata>().skillNo;
+                    GetComponent<UnitManagr>().SetSkill(unitobject[i].GetComponent<Unitdata>().skillNo);
                     GetComponent<UnitManagr>().eatamount = unitobject[i].GetComponent<Unitdata>().eatamount;
                     GetComponent<UnitManagr>().leavetime = unitobject[i].GetComponent<Unitdata>().leavetime;
                     GetComponent<UnitManagr>().setUnit = true;
@@ -94,7 +113,6 @@ public class Dropbase : UnitDataBase
     public void SetUnit()
     {
         int i, j;
-
         string checkname;
         string[] unitnamedata = new string[24];
         int length = unitdatabase.GetComponent<UnitDataBase>().unitname.Length;
@@ -118,7 +136,7 @@ public class Dropbase : UnitDataBase
                 }
             }
         }
-
-
     }
+
+
 }

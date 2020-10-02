@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class UnitSetManager : MonoBehaviour
 {
     [SerializeField] GameObject[] drops = new GameObject[8];
-    public GameObject cautionpanel;
-    private string[] dropname = new string[8];
+
+    public GameObject cautionpanel,backbutton,nextbutton;
+    public GameObject[] page = new GameObject[5];
     public AudioClip drum_d, drum_dd;
+
+    private string[] dropname = new string[8];
+    private int pageNo=0;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -63,6 +67,28 @@ public class UnitSetManager : MonoBehaviour
     {
         audioSource.PlayOneShot(drum_d);
         cautionpanel.SetActive(false);
+    }
+
+    public void AdvancePage()
+    {
+        page[pageNo].SetActive(false);
+        pageNo++;
+        page[pageNo].SetActive(true);
+    }
+    public void RetrunPage()
+    {
+        page[pageNo].SetActive(false);
+        pageNo--;
+        page[pageNo].SetActive(true);
+
+        nextbutton.SetActive(true);
+        if (pageNo == 0)
+            backbutton.SetActive(false);
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("MUSIC", 0);
     }
 
 }

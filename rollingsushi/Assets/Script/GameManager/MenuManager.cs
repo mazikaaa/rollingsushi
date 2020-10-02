@@ -62,6 +62,9 @@ public class MenuManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         PlayerPrefs.SetInt("MUSIC", 0);
+#elif UNITY_STANDALONE
+        PlayerPrefs.SetInt("MUSIC", 0);
+        UnityEngine.Application.Quit();
 #endif
     }
 

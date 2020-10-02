@@ -110,6 +110,7 @@ MonoBehaviour:
   iconflag: 0
   test: {fileID: 0}
   guage: {fileID: 1882018014821985864}
+  animeflag: 0
 --- !u!1 &1882018014821985866
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +210,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882018015351020167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -279.81418}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 1882018014784464173}

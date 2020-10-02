@@ -10,14 +10,29 @@ public class GameManager : GameSystemBase
     [SerializeField] int gameover_disposal=2;//ゲームオーバーになる廃棄数
     [SerializeField] int gameclear_profit=500;//ゲームクリアになる売り上げ
 
+    [SerializeField] int evnetNo=0;
+
     private float MainTime;
-    private bool timeflag=true;
-    GameObject menumanager;
+    private bool timeflag=true,eventflag=false;
+    private GameObject menumanager;
+
+    //イベント用
+    private Event nowEvent;
+    private List<Event> eventList;
+
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
         menumanager = GameObject.Find("MenuManager");
+
+        eventList = new List<Event>()
+        {
+            new NoneEvent(),
+            new SushiSpeedUp(),
+        };
+
+        nowEvent = eventList[evnetNo];
     }
 
     // Update is called once per frame
@@ -36,7 +51,13 @@ public class GameManager : GameSystemBase
         {
             MainTime += Time.deltaTime;
         }
-        time_text.GetComponent<Text>().text = MainTime.ToString();   
+        time_text.GetComponent<Text>().text = MainTime.ToString();
+
+        if (MainTime > 120.0f && !eventflag)
+        {
+            nowEvent.Event();
+            eventflag = true;
+        }
     }
     private void GameClear()
     {
@@ -78,16 +99,7 @@ public class GameManager : GameSystemBase
         SceneManager.LoadScene("SelectScene");
     }
 
-    public void ExitButton()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        PlayerPrefs.SetInt("MUSIC", 0);
-#elif UNITY_STANDALONE
-        UnityEngine.Application.Quit();
-        PlayerPrefs.SetInt("MUSIC", 0);
-#endif
-    }
+
 }
 
 

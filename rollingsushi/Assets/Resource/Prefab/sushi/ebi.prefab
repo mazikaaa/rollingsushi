@@ -61,9 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sushi_type: ebi
-  sushi_name: ebi
+  sushi_name: koukaku
   price: 120
-  rate: 40
 --- !u!1 &1289773988532334587
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 1516f1a56fc517140b878a94e2852d78
+  - enabled: 1
+    path: Assets/Scenes/SushiLibrryScene.unity
+    guid: 99e004c2ea7a9894998a23298b93e25c
   m_configObjects: {}

@@ -104,9 +104,12 @@ MonoBehaviour:
   leavetime: 40
   setUnit: 0
   unittype: 2
-  leave_text: {fileID: 0}
-  amount_text: {fileID: 0}
+  clock_image: {fileID: 0}
+  amount_image: {fileID: 0}
   eat_SE: {fileID: 0}
+  Separate_image:
+  - {fileID: 1814383998193500042, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
+  - {fileID: -8138794843586094020, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

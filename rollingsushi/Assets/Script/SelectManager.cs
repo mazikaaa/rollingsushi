@@ -55,8 +55,8 @@ public class SelectManager : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         PlayerPrefs.SetInt("MUSIC", 0);
 #elif UNITY_STANDALONE
-        UnityEngine.Application.Quit();
         PlayerPrefs.SetInt("MUSIC", 0);
+        UnityEngine.Application.Quit();
 #endif
 
     }

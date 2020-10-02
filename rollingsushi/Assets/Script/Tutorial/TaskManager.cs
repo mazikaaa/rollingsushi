@@ -21,7 +21,7 @@ public class TaskManager : MonoBehaviour
     protected ITutorialTask currentTask;
     protected List<ITutorialTask> tutorialTask;
 
-    protected int Tasknum=0;//現在のリストの番号を保持する
+    protected int Tasknum = 0;//現在のリストの番号を保持する
 
     // チュートリアル表示フラグ
     private bool isEnabled;
@@ -70,7 +70,7 @@ public class TaskManager : MonoBehaviour
     }
 
     /// 新しいチュートリアルタスクを設定する
- 
+
     protected IEnumerator SetCurrentTask(ITutorialTask task, float time = 0)
     {
 
@@ -119,5 +119,9 @@ public class TaskManager : MonoBehaviour
         float alpha = isEnabled ? 1f : 0;
         tutorialTextArea.GetComponent<CanvasGroup>().alpha = alpha;
     }
-   
+
+    private void OnApplicationQuit()
+    {
+      
+    }
 }
