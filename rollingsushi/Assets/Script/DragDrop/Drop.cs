@@ -93,10 +93,24 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
 
     public void SetImage_Enter(PointerEventData pointer, string type)
     {
-        Debug.Log(type);
-        Image droppedImage = pointer.pointerDrag.GetComponent<Image>();
-        iconImage[0].sprite = droppedImage.sprite;
-        iconImage[0].color = Vector4.one * 0.6f;
+        int i = 0;
+
+        switch (type) {
+            case "dragingobject":
+                Image droppedImage = pointer.pointerDrag.GetComponent<Image>();
+                iconImage[0].sprite = droppedImage.sprite;
+                iconImage[0].color = Vector4.one * 0.6f;
+                break;
+            case "dragingobject_pair":
+                FetchUnitImage();
+                foreach (Image icon in iconImage)
+                {
+                    icon.sprite = unitsprite[i];
+                    icon.color = Vector4.one*0.6f;
+                }
+                break;
+        }
+
         shadowUnit = true;
     }
 
@@ -119,6 +133,8 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
                     icon.sprite = unitsprite[i];
                     nowSprite[i] = unitsprite[i];
                     icon.color = Vector4.one;
+                    Debug.Log(icon.sprite);
+                    i++;
                 }
                 break;
 
@@ -128,12 +144,14 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
 
     public void ExitImage()
     {
+        int i = 0;
         foreach(Image icon in iconImage)
         {
             icon.sprite = null;
             icon.color =Vector4.zero;
+            nowSprite[i]=null;
+            i++;
         }
-        nowSprite = null;
         setUnit = false;
     }
  
@@ -143,6 +161,7 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
         {
             icon.color = Vector4.zero;
         }
+        shadowUnit=false;
     }
 }
 

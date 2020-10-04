@@ -31,6 +31,8 @@ public class Base_sushiGenerate : MonoBehaviour
     public GameObject[] sushis = new GameObject[8];
     public float[] sushirate = new float[8];
 
+    public float speed_x,speed_y;
+
     /*
     protected void GenerateCheapSushi()
     {
@@ -119,10 +121,12 @@ public class Base_sushiGenerate : MonoBehaviour
         int sushikey = Choose(choosesushirate);
 
         GameObject sushi = Instantiate(sushis[sushikey], new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
-        sushi.GetComponent<sushi>().init_other_direction = 3;
+        sushi.GetComponent<sushi>().other_direction = 3;
+        sushi.GetComponent<sushi>().direction = 1;
         sushi.GetComponent<sushi>().init_x = 2.0f;
         sushi.GetComponent<sushi>().init_y = 0.0f;
-
+        sushi.GetComponent<sushi>().speed_x = speed_x;
+        sushi.GetComponent<sushi>().speed_y = speed_y;
     }
 
     private int Choose(Dictionary<int, float> dic)

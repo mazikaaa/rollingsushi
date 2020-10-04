@@ -28,24 +28,24 @@ public class ColliderBase : MonoBehaviour
 
             for (i = 0; i < 4; i++)
             {
-                if (dir_touch[i] == false)
+                if (!dir_touch[i])//レーンに触れてないなら
                 {
-                    if (i != enemy.GetComponent<sushi>().other_direction)
+                    if (i != enemy.GetComponent<sushi>().other_direction)//現在進んでる方向と逆方向ではないなら
                     {
                         //Debug.Log(i);otherdirectionの方向を検出
                         switch (i)
                         {
                             case 0:
-                                enemy.GetComponent<sushi>().MoveUpdate(0.0f, 2.0f, 2);
+                                enemy.GetComponent<sushi>().MoveUpdate(0,2);
                                 break;
                             case 1:
-                                enemy.GetComponent<sushi>().MoveUpdate(2.0f, 0.0f, 3);
+                                enemy.GetComponent<sushi>().MoveUpdate(1, 3);
                                 break;
                             case 2:
-                                enemy.GetComponent<sushi>().MoveUpdate(0.0f,-2.0f, 0);
+                                enemy.GetComponent<sushi>().MoveUpdate(2,0);
                                 break;
                             case 3:
-                                enemy.GetComponent<sushi>().MoveUpdate(-2.0f, 0.0f, 1);
+                                enemy.GetComponent<sushi>().MoveUpdate(3, 1);
                                 break;
                         }
                         return;

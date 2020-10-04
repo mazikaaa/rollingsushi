@@ -74,7 +74,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9312}
+      Script: {instanceID: 9314}
     - Class: 114
       Script: {instanceID: 9384}
     - Class: 114
@@ -92,35 +92,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9478}
     - Class: 114
-      Script: {instanceID: 9626}
+      Script: {instanceID: 9624}
     - Class: 114
-      Script: {instanceID: 9696}
+      Script: {instanceID: 9698}
     - Class: 114
-      Script: {instanceID: 9728}
+      Script: {instanceID: 9732}
     - Class: 114
-      Script: {instanceID: 9730}
+      Script: {instanceID: 9734}
     - Class: 114
       Script: {instanceID: 9798}
     - Class: 114
       Script: {instanceID: 9816}
     - Class: 114
-      Script: {instanceID: 9820}
+      Script: {instanceID: 9822}
     - Class: 114
-      Script: {instanceID: 9824}
+      Script: {instanceID: 9826}
     - Class: 114
-      Script: {instanceID: 9880}
+      Script: {instanceID: 9882}
     - Class: 114
-      Script: {instanceID: 9904}
+      Script: {instanceID: 9906}
     - Class: 114
-      Script: {instanceID: 9938}
+      Script: {instanceID: 9940}
     - Class: 114
-      Script: {instanceID: 9992}
+      Script: {instanceID: 9994}
     - Class: 114
-      Script: {instanceID: 10362}
+      Script: {instanceID: 10354}
     - Class: 114
-      Script: {instanceID: 10424}
+      Script: {instanceID: 10416}
     - Class: 114
-      Script: {instanceID: 10552}
+      Script: {instanceID: 10550}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -281,7 +281,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9444}
     - Class: 114
-      Script: {instanceID: 9716}
+      Script: {instanceID: 9720}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -334,7 +334,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9312}
+      Script: {instanceID: 9314}
     - Class: 114
       Script: {instanceID: 9384}
     - Class: 114
@@ -352,15 +352,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9478}
     - Class: 114
-      Script: {instanceID: 9626}
+      Script: {instanceID: 9624}
     - Class: 114
-      Script: {instanceID: 9696}
-    - Class: 114
-      Script: {instanceID: 9728}
-    - Class: 114
-      Script: {instanceID: 9730}
+      Script: {instanceID: 9698}
     - Class: 114
       Script: {instanceID: 9732}
+    - Class: 114
+      Script: {instanceID: 9734}
     - Class: 114
       Script: {instanceID: 9798}
     - Class: 114
@@ -368,23 +366,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 9824}
+      Script: {instanceID: 9822}
     - Class: 114
-      Script: {instanceID: 9880}
+      Script: {instanceID: 9826}
     - Class: 114
-      Script: {instanceID: 9904}
+      Script: {instanceID: 9882}
     - Class: 114
-      Script: {instanceID: 9938}
+      Script: {instanceID: 9906}
     - Class: 114
-      Script: {instanceID: 9992}
+      Script: {instanceID: 9940}
     - Class: 114
-      Script: {instanceID: 10000}
+      Script: {instanceID: 9994}
     - Class: 114
-      Script: {instanceID: 10362}
+      Script: {instanceID: 10354}
     - Class: 114
-      Script: {instanceID: 10424}
+      Script: {instanceID: 10416}
     - Class: 114
-      Script: {instanceID: 10552}
+      Script: {instanceID: 10550}
+    - Class: 114
+      Script: {instanceID: 10570}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -509,7 +509,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 9b21295dbe2a9367ffdc13f6dfe13067
+      Hash: fd5f484fed7b13a065fb64869adfec0b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Dropbase
@@ -989,16 +989,10 @@ ScriptsOnlyBuild:
     className: upCollider
   - hash:
       serializedVersion: 2
-      Hash: 217bb95d26d75b6437c47c452c9d867b
+      Hash: ad337d77a92bdc334a623ed112794209
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Drop
-  - hash:
-      serializedVersion: 2
-      Hash: 5dba16b6f8599123c4580ba95f5e21d4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AnimationControler
   - hash:
       serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
@@ -1055,6 +1049,12 @@ ScriptsOnlyBuild:
     className: MenuManager
   - hash:
       serializedVersion: 2
+      Hash: 5dba16b6f8599123c4580ba95f5e21d4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationControler
+  - hash:
+      serializedVersion: 2
       Hash: d72820633eb717b6a86e3a6eda03bcda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1109,7 +1109,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 9a4161eeb2a772c2c9bc992c750b34ff
+      Hash: 66c372ce749dc844b5018cf340c7eb3e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Unitdata
@@ -1125,12 +1125,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DiscardCollider
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TaskManager
   - hash:
       serializedVersion: 2
       Hash: 58275b7956df247cb0b66c0c479d768d
@@ -1217,12 +1211,6 @@ ScriptsOnlyBuild:
     className: sushiBase
   - hash:
       serializedVersion: 2
-      Hash: 5d4140814445a0263e2be5352c9e9409
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TutorialManager
-  - hash:
-      serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1299,6 +1287,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TaskManager
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb

@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class NoneEvent : Event
 {
-    public void Event()
+    public void InitEvent()
     {
 
+    }
+
+    public void ExitEvent()
+    {
+
+    }
+
+    public string GetText()
+    {
+        return "なし";
     }
 }

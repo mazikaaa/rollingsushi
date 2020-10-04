@@ -10,8 +10,9 @@ public class sushiBase : MonoBehaviour
 
     public float x, y;
     public float init_x, init_y;
+    public float speed_x, speed_y;
     public int init_other_direction;
-    public int direction, other_direction;
+    public int direction=0, other_direction=0;
     //otherdirection(進行方向との逆方向)は壁に衝突した際にその方向に進まないために必要
     void Start()
     {
@@ -31,11 +32,53 @@ public class sushiBase : MonoBehaviour
         other_direction = init_other_direction;
     }
 
-   public void MoveUpdate(float new_x,float new_y,int new_direction)
+    public void MoveUpdate(int new_direction , int new_otherdirction)
     {
-        x = new_x;
-        y = new_y;
-        other_direction = new_direction;
+        switch (new_direction)
+        {
+            case 0:
+                x = 0.0f;
+                y = speed_y;
+                break;
+            case 1:
+                x = speed_x;
+                y = 0.0f;
+                break;
+            case 2:
+                x = 0.0f;
+                y = -speed_y;
+                break;
+            case 3:
+                x = -speed_x;
+                y = 0.0f;
+                break;
+        }
+        other_direction = new_otherdirction;
+        direction = new_direction;
+    }
+
+    //スピードだけ変えたい時の関数
+    public void SpeedUpdate(float vx,float vy)
+    {
+        switch (direction)
+        {
+            case 0:
+                x = 0.0f;
+                y = speed_y+vy;
+                break;
+            case 1:
+                x = speed_x+vx;
+                y = 0.0f;
+                break;
+            case 2:
+                x = 0.0f;
+                y = -speed_y-vy;
+                break;
+            case 3:
+                x = -speed_x-vx;
+                y = 0.0f;
+                break;
+        }
     }
 
  

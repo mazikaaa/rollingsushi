@@ -45,7 +45,6 @@ public class Dragbase : UnitDataBase
             if (drop.GetComponent<Drop>().shadowUnit)
             {
                 drop.GetComponent<Drop>().ExitShadowImage();
-                drop.GetComponent<Drop>().shadowUnit = false;
             }
         }
     }
