@@ -84,6 +84,11 @@ public class SelectManager : MonoBehaviour
         SceneManager.LoadScene("UnitSetScene");
     }
 
+    public void GoSushiLibraly()
+    {
+        SceneManager.LoadScene("SushiLibralyScene");
+    }
+
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("MUSIC", 0);

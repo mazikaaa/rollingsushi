@@ -123,7 +123,7 @@ public class Base_sushiGenerate : MonoBehaviour
         GameObject sushi = Instantiate(sushis[sushikey], new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
         sushi.GetComponent<sushi>().other_direction = 3;
         sushi.GetComponent<sushi>().direction = 1;
-        sushi.GetComponent<sushi>().init_x = 2.0f;
+        sushi.GetComponent<sushi>().init_x = speed_x;
         sushi.GetComponent<sushi>().init_y = 0.0f;
         sushi.GetComponent<sushi>().speed_x = speed_x;
         sushi.GetComponent<sushi>().speed_y = speed_y;

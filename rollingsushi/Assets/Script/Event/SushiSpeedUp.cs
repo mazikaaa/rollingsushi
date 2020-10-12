@@ -7,7 +7,7 @@ public class SushiSpeedUp : Event
     GameObject sushigenerator;
     float vx,vy;
 
-   public void InitEvent()
+   public override void InitEvent()
     {
         sushigenerator = GameObject.Find("SushiGenerator");
         vx = sushigenerator.GetComponent<sushiGenerator>().speed_x;
@@ -23,14 +23,26 @@ public class SushiSpeedUp : Event
         }
     }
 
-    public void ExitEvent()
+    public override void ExitEvent()
     {
         sushigenerator.GetComponent<sushiGenerator>().speed_x = vx;
         sushigenerator.GetComponent<sushiGenerator>().speed_y = vy;
+
+        GameObject[] sushis = GameObject.FindGameObjectsWithTag("sushi");
+        foreach (GameObject sushi in sushis)
+        {
+            sushi.GetComponent<sushi>().SpeedUpdate(-1.0f, -1.0f);
+        }
     }
 
-    public string GetText()
+    public override string GetTitle()
     {
-        return "レーン速度アップ";
+        return "高速レーン";
+    }
+
+    public override string GetText()
+    {
+        return "回転レーンの速度が上がり,\n" +
+               "寿司が流れてくるスピードが速くなります\n";
     }
 }

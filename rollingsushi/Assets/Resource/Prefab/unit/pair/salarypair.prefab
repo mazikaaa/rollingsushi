@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Generateicon: {fileID: 21300000, guid: 46fe866cbc5433b49aadba07e4818d5a, type: 3}
   unitname: sararypair
-  deletespan: 7
+  deletespan: 7.5
   generatelack: 0
 --- !u!1 &5848101918098229056
 GameObject:
@@ -94,13 +94,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   probability_like: 8
   probability_normal: 8
-  waittime_like: 2.5
-  waittime_normal: 2.5
+  waittime_like: 2
+  waittime_normal: 2
   like: 
   dislike: 
   cost: 3
   skillNo: 0
-  eatamount: 12
+  eatamount: 11
   leavetime: 30
   setUnit: 0
   unittype: 2

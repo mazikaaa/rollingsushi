@@ -46,6 +46,7 @@ public class TaskManager : MonoBehaviour
             new SushiTask(),
             new SushiTask2(),
             new RepoTask(),
+            new EventTask(),
             new ShuffleTask(),
             new FinishTask(),
         };

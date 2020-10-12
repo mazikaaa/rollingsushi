@@ -2,12 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Event
+public class Event:MonoBehaviour
 {
     //ゲーム中に起きるイベント
-    void InitEvent();
+    public virtual void InitEvent()
+    {
 
-    void ExitEvent();
+    }
 
-    string GetText();
+    public virtual void ExitEvent()
+    {
+
+    }
+
+    public virtual string GetTitle()
+    {
+        return null;
+    }
+
+    public virtual string GetText()
+    {
+        return null;
+    }
 }

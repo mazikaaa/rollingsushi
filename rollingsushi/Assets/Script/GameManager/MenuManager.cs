@@ -6,22 +6,20 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] bool menuflag = false;
-    public GameObject menu;
-    GameObject gamemanager;
+    public GameObject menu,refresh;
+    GameObject gamemanager,sushigenerator,eventmanager;
 
     // Start is called before the first frame update
     new void Start()
     {
         gamemanager = GameObject.Find("GameManager");
+        sushigenerator = GameObject.Find("SushiGenerator");
+        eventmanager = GameObject.Find("EventManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Pause))
-        {
-            setMenu();
-        }
     }
     public void setMenu()
     {
@@ -71,8 +69,8 @@ public class MenuManager : MonoBehaviour
     //ゲーム内のオブジェクトを一括で止める
     public void AllObjectFalse()
     {
-        GameObject sushigenerator = GameObject.Find("SushiGenerator");
         sushigenerator.GetComponent<sushiGenerator>().enabled = false;
+        eventmanager.GetComponent<EventManager>().enabled = false;
 
         GameObject dragingobject = GameObject.FindGameObjectWithTag("dragingobject");
         if (dragingobject)
@@ -94,13 +92,15 @@ public class MenuManager : MonoBehaviour
         {
             drop.GetComponent<UnitManagr>().enabled = false;
         }
+
+        refresh.SetActive(false);
     }
 
     //停止させたオブジェクトを一括で動かす
     public void AllObjectTrue()
     {
-        GameObject sushigenerator = GameObject.Find("SushiGenerator");
         sushigenerator.GetComponent<sushiGenerator>().enabled = true;
+        eventmanager.GetComponent<EventManager>().enabled = true;
 
         GameObject dragingobject = GameObject.FindGameObjectWithTag("dragingobject");
         if (dragingobject)
@@ -122,5 +122,7 @@ public class MenuManager : MonoBehaviour
         {
             drop.GetComponent<UnitManagr>().enabled = true;
         }
+
+        refresh.SetActive(false);
     }
 }

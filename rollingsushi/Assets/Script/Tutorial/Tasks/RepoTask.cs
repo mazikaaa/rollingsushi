@@ -33,6 +33,7 @@ public class RepoTask : ITutorialTask
         GameObject parent = GameObject.Find("Frame");
         parent.transform.GetChild(7).gameObject.SetActive(false);
         parent.transform.GetChild(8).gameObject.SetActive(true);
+        parent.transform.GetChild(9).gameObject.SetActive(false);
     }
 
     public bool CheckTask()

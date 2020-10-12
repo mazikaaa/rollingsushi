@@ -46,7 +46,7 @@ MonoBehaviour:
   Generateicon: {fileID: 1814383998193500042, guid: 1f47d2051955e354286be7bf3ae03cb1,
     type: 3}
   unitname: DK
-  deletespan: 8
+  deletespan: 7
   generatelack: 0
 --- !u!1 &5848101918098229056
 GameObject:
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability_like: 9
-  probability_normal: 6
+  probability_normal: 7
   waittime_like: 1
   waittime_normal: 2
   like: maguro
@@ -105,7 +105,12 @@ MonoBehaviour:
   leavetime: 30
   setUnit: 0
   unittype: 1
+  clock_image: {fileID: 0}
+  amount_image: {fileID: 0}
   eat_SE: {fileID: 0}
+  Separate_image:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

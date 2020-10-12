@@ -27,6 +27,10 @@ public class SushiLibraryManager : MonoBehaviour
         page[pageNo].SetActive(false);
         pageNo++;
         page[pageNo].SetActive(true);
+
+        backbutton.SetActive(true);
+        if (pageNo == 4)
+           nextbutton.SetActive(false);
     }
     public void RetrunPage()
     {

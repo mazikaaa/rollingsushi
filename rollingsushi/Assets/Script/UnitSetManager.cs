@@ -74,6 +74,8 @@ public class UnitSetManager : MonoBehaviour
         page[pageNo].SetActive(false);
         pageNo++;
         page[pageNo].SetActive(true);
+
+        backbutton.SetActive(true);
     }
     public void RetrunPage()
     {

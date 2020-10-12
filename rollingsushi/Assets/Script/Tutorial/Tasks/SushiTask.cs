@@ -25,7 +25,7 @@ public class SushiTask : ITutorialTask
     }
     public bool GetBackButton()
     {
-        return　true;
+        return　false;
     }
 
 
@@ -39,6 +39,7 @@ public class SushiTask : ITutorialTask
 
         GameObject parent = GameObject.Find("Frame");
         parent.transform.GetChild(6).gameObject.SetActive(true);
+        parent.transform.GetChild(5).gameObject.SetActive(false);
     }
 
     public bool CheckTask()

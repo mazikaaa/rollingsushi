@@ -80,9 +80,12 @@
     <Compile Include="Assets\Script\Enemy\sushi\sushi.cs" />
     <Compile Include="Assets\Script\Enemy\sushi\sushiBase.cs" />
     <Compile Include="Assets\Script\Enemy\sushiGenerator.cs" />
+    <Compile Include="Assets\Script\Event\Claim.cs" />
     <Compile Include="Assets\Script\Event\Event.cs" />
     <Compile Include="Assets\Script\Event\EventManager.cs" />
+    <Compile Include="Assets\Script\Event\GenerateSpeedUp.cs" />
     <Compile Include="Assets\Script\Event\NoneEvent.cs" />
+    <Compile Include="Assets\Script\Event\ProfitDown.cs" />
     <Compile Include="Assets\Script\Event\SushiSpeedUp.cs" />
     <Compile Include="Assets\Script\GameManager\DiscardCollider.cs" />
     <Compile Include="Assets\Script\GameManager\GameManager.cs" />
@@ -98,6 +101,7 @@
     <Compile Include="Assets\Script\Tutorial\TaskManager.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\DragTask.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\DropTask.cs" />
+    <Compile Include="Assets\Script\Tutorial\Tasks\EventTask.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\FinishTask.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\FirstTask.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\ITutorialTask.cs" />

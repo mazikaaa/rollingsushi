@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class NoneEvent : Event
 {
-    public void InitEvent()
+    public override void InitEvent()
     {
 
     }
 
-    public void ExitEvent()
+    public override void ExitEvent()
     {
 
     }
 
-    public string GetText()
+    public override string GetTitle()
     {
         return "なし";
+    }
+
+    public override string GetText()
+    {
+        return "";
     }
 }

@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 3086683871337179705}
   - component: {fileID: 3086683871337179704}
   - component: {fileID: 3086683871337179706}
+  - component: {fileID: 553504465855275121}
   m_Layer: 0
   m_Name: buri
   m_TagString: sushi
@@ -197,6 +198,8 @@ MonoBehaviour:
   y: 0
   init_x: 2
   init_y: 0
+  speed_x: 0
+  speed_y: 0
   init_other_direction: 3
   direction: 0
   other_direction: 0
@@ -248,6 +251,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &553504465855275121
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086683871337179711}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3086683872105318693
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class UnitManagr : unitBase
         if (setUnit == true)
         {
             leave += Time.deltaTime;
+            eattime += Time.deltaTime;
             clockhand.localRotation= Quaternion.Euler(0,0,(leave/leavetime)*-360);
         }
 

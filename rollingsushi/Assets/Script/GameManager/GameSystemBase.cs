@@ -83,7 +83,7 @@ public class GameSystemBase : MonoBehaviour
     {
         Rep += 1;
         Rep = Mathf.Clamp(Rep, 1, 7);
-        Debug.Log("評判が上がりました");
+      //  Debug.Log("評判が上がりました");
         star[Rep - 1].SetActive(true);
     }
 
@@ -91,7 +91,7 @@ public class GameSystemBase : MonoBehaviour
     {
         Rep -= 1;
         Rep = Mathf.Clamp(Rep, 1, 7);
-        Debug.Log("評判が下がりました");
+        //Debug.Log("評判が下がりました");
         star[Rep].SetActive(false);
     }
 
@@ -100,6 +100,9 @@ public class GameSystemBase : MonoBehaviour
     {
         GameObject sushigenerator = GameObject.Find("SushiGenerator");
         sushigenerator.GetComponent<sushiGenerator>().enabled = false;
+
+        GameObject eventmanager = GameObject.Find("EventManager");
+        eventmanager.GetComponent<EventManager>().enabled = false;
 
         GameObject dragingobject = GameObject.FindGameObjectWithTag("dragingobject");
         if (dragingobject)
@@ -128,6 +131,9 @@ public class GameSystemBase : MonoBehaviour
     {
         GameObject sushigenerator = GameObject.Find("SushiGenerator");
         sushigenerator.GetComponent<sushiGenerator>().enabled = true;
+
+        GameObject eventmanager = GameObject.Find("EventManager");
+        eventmanager.GetComponent<EventManager>().enabled = false;
 
         GameObject dragingobject = GameObject.FindGameObjectWithTag("dragingobject");
         if (dragingobject)

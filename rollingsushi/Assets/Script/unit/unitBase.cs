@@ -28,6 +28,7 @@ public class unitBase : MonoBehaviour
     //ユニットが変わるたびに初期化
     protected int amount;//食べた寿司の量を計測
     protected float leave;//ドロップしてから離席までの時間を計測
+    protected float eattime;//寿司を食べてからの時間を計測
 
     protected bool skillflag = true;//スキルによる判定
     protected float eat_flag;//寿司を食べるかどうかの乱数を生成
@@ -109,13 +110,14 @@ public class unitBase : MonoBehaviour
 
         if (name == sushi_like || type == sushi_like)
         {
-            if (eat_flag < probability_like)
+            if (eat_flag < probability_like && eattime>waittime_base)
             {
                 Destroy(sushi);
                 amount += 1;
                 float per = (float)amount / (float)eatamount;
                 amount_image.fillAmount = per;
                 waittime_base = waittime_like;
+                eattime = 0;
                 audiosource.PlayOneShot(eat_SE);
                 gamemanager.GetComponent<GameManager>().GainProfit(price);
             }
@@ -126,13 +128,14 @@ public class unitBase : MonoBehaviour
         }
         else
         {
-            if (eat_flag < probability_normal)
+            if (eat_flag < probability_normal&& eattime > waittime_base)
             {
                 amount += 1;
                 Destroy(sushi);
                 float per = (float)amount / (float)eatamount;
                 amount_image.fillAmount = per;
                 waittime_base = waittime_normal;
+                eattime = 0;
                 audiosource.PlayOneShot(eat_SE);
                 gamemanager.GetComponent<GameManager>().GainProfit(price);
             }
@@ -159,6 +162,6 @@ public class unitBase : MonoBehaviour
         };
 
         nowskill = skillList[No];
-        //Debug.Log(nowskill);
+        Debug.Log(nowskill);
     }
 }
