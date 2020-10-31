@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour
     GameObject gamemanager,sushigenerator,eventmanager;
 
     // Start is called before the first frame update
-    new void Start()
+    void Start()
     {
         gamemanager = GameObject.Find("GameManager");
         sushigenerator = GameObject.Find("SushiGenerator");

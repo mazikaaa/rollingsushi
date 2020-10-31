@@ -90,21 +90,26 @@ public class Dropbase : UnitDataBase
     public void UnitSearch(string name)
     {
         int i;
+        UnitManagr unitmanager = GetComponent<UnitManagr>();
+
         for (i = 0; i < unitname.Length; i++)
         {
             if (name == unitname[i])
             {
+                Unitdata unitdata = unitobject[i].GetComponent<Unitdata>();
                 //ユニットの情報を書き込む
-                    GetComponent<UnitManagr>().probability_like = unitobject[i].GetComponent<Unitdata>().probability_like;
-                    GetComponent<UnitManagr>().probability_normal = unitobject[i].GetComponent<Unitdata>().probability_normal;
-                    GetComponent<UnitManagr>().waittime_like = unitobject[i].GetComponent<Unitdata>().waittime_like;
-                    GetComponent<UnitManagr>().waittime_normal = unitobject[i].GetComponent<Unitdata>().waittime_normal;
-                    GetComponent<UnitManagr>().like = unitobject[i].GetComponent<Unitdata>().like;
-                    GetComponent<UnitManagr>().dislike = unitobject[i].GetComponent<Unitdata>().dislike;
-                    GetComponent<UnitManagr>().SetSkill(unitobject[i].GetComponent<Unitdata>().skillNo);
-                    GetComponent<UnitManagr>().eatamount = unitobject[i].GetComponent<Unitdata>().eatamount;
-                    GetComponent<UnitManagr>().leavetime = unitobject[i].GetComponent<Unitdata>().leavetime;
-                    GetComponent<UnitManagr>().setUnit = true;
+                    unitmanager.probability_like = unitdata.probability_like;
+                    unitmanager.probability_normal =unitdata.probability_normal;
+                    unitmanager.waittime_like = unitdata.waittime_like;
+                    unitmanager.waittime_normal = unitdata.waittime_normal;
+                    unitmanager.like = unitdata.like;
+                    unitmanager.dislike = unitdata.dislike;
+                    unitmanager.SetSkill(unitdata.skillNo);
+                    unitmanager.eatamount = unitdata.eatamount;
+                    unitmanager.setUnit = true;
+                    unitmanager.SetTime(unitdata.leavetime);
+
+                this.gameObject.GetComponentInChildren<UnitCollider>().unitmanager = unitmanager;
                     setUnit = true;
             }
         }

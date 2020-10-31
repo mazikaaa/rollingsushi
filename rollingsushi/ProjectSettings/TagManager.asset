@@ -15,6 +15,7 @@ TagManager:
   - dragingobject
   - dragingobject_pair
   - dragingobject_party
+  - sushigenerator
   layers:
   - Default
   - TransparentFX

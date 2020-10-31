@@ -81,10 +81,13 @@
     <Compile Include="Assets\Script\Enemy\sushi\sushiBase.cs" />
     <Compile Include="Assets\Script\Enemy\sushiGenerator.cs" />
     <Compile Include="Assets\Script\Event\Claim.cs" />
+    <Compile Include="Assets\Script\Event\DragPauseDown.cs" />
     <Compile Include="Assets\Script\Event\Event.cs" />
     <Compile Include="Assets\Script\Event\EventManager.cs" />
+    <Compile Include="Assets\Script\Event\FastLeave.cs" />
     <Compile Include="Assets\Script\Event\GenerateSpeedUp.cs" />
     <Compile Include="Assets\Script\Event\NoneEvent.cs" />
+    <Compile Include="Assets\Script\Event\OnlyCheapSushi.cs" />
     <Compile Include="Assets\Script\Event\ProfitDown.cs" />
     <Compile Include="Assets\Script\Event\SushiSpeedUp.cs" />
     <Compile Include="Assets\Script\GameManager\DiscardCollider.cs" />

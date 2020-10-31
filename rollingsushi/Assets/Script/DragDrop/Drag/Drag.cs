@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Transform canvasTran;
+    private RectTransform dragTransform,rectTransform;
     private GameObject draggingObject;
     public Image guage;
     public bool animeflag = false;
@@ -14,6 +15,7 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
     void Awake()
     {
         canvasTran = this.gameObject.transform;
+        rectTransform = GetComponent<RectTransform>();
     }
 
     new void Start()
@@ -58,7 +60,10 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
         if (guageflag == "delete")
         {
             CreateDragObject();
-            draggingObject.transform.position = pointerEventData.position;
+            dragTransform = draggingObject.GetComponent<RectTransform>();
+            Vector2 localPosition = GetLocalPosition(pointerEventData.position);
+            dragTransform.localPosition = localPosition;
+            //draggingObject.transform.position = pointerEventData.position;
             animeflag = true;
         }
      }
@@ -68,13 +73,16 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
         //ユニットの画像が表示されているときだけオブジェクトを生成
         if (guageflag == "delete")
         {
-            draggingObject.transform.position = pointerEventData.position;
+            Vector2 localPosition = GetLocalPosition(pointerEventData.position);
+            dragTransform.localPosition = localPosition;
+            //draggingObject.transform.position = pointerEventData.position;
         }
     }
 
     public void OnEndDrag(PointerEventData pointerEventData)
     {
         gameObject.GetComponent<Image>().color = Vector4.one;
+        dragTransform = null;
         Destroy(draggingObject);
         animeflag = false;
     }
@@ -123,6 +131,14 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
             return true;
         else
             return false;
+    }
+
+    private Vector2 GetLocalPosition(Vector2 screenPosition)
+    {
+        Vector2 result;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, screenPosition, Camera.main, out result);
+
+        return result;
     }
 }
 

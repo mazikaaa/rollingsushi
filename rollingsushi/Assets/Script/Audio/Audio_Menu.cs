@@ -16,6 +16,7 @@ public class Audio_Menu : MonoBehaviour
             "StartScene",
             "SelectScene",
             "UnitSetScene",
+            "SushiLibraryScene"
         };
     }
 

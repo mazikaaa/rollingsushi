@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class GenerateSpeedUp : Event
 {
-    GameObject sushigenerator;
-    float vx, vy;
+    GameObject[] sushigenerators;
 
     public override void InitEvent()
     {
-        sushigenerator = GameObject.Find("SushiGenerator");
-        sushigenerator.GetComponent<sushiGenerator>().sushigeneratetime-=0.8f;
+        sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
+
+        foreach (GameObject sushigenerator in sushigenerators)
+        {
+            sushigenerator.GetComponent<sushiGenerator>().sushigeneratetime -= 0.8f;
+        }
 
     }
 
     public override void ExitEvent()
     {
-        sushigenerator.GetComponent<sushiGenerator>().sushigeneratetime += 0.8f;
+        foreach (GameObject sushigenerator in sushigenerators)
+        {
+            sushigenerator.GetComponent<sushiGenerator>().sushigeneratetime += 0.8f;
+        }
     }
 
     public override string GetTitle()
     {
-        return "寿司大量生成";
+        return "寿司ざんまい";
     }
 
     public override string GetText()

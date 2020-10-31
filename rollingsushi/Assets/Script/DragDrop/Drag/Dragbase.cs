@@ -15,6 +15,8 @@ public class Dragbase : UnitDataBase
     protected int unittype;
     protected GameObject gamemanager,unitdatabase;
 
+    public  float eventplustime=0.0f;
+
     protected void Start()
     {
         gamemanager = GameObject.Find("GameManager");
@@ -48,17 +50,18 @@ public class Dragbase : UnitDataBase
             }
         }
     }
-    public void DeleteUnit()
+    public void DeleteUnit(float time=0.0f)
     {
         this.gameObject.GetComponent<Image>().sprite = null;
         this.gameObject.GetComponent<Image>().color = Vector4.zero;
         guageflag = "generate";
-        generateicon_time = 10.0f - gamemanager.GetComponent<GameManager>().Rep * 0.5f;
+        generateicon_time = 11.0f - gamemanager.GetComponent<GameManager>().Rep * 0.6f+eventplustime+time;
         // Debug.Log(generateicon);
         unittype = 0;
         deletetime = 0.0f;
         iconflag = false;
     }
+
 
 
     //ユニット編成画面で編成したユニットを生成候補にセットする

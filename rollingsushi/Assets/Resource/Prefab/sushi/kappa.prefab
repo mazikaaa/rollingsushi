@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8c825fe32d7284fa8fa6ac9b2d4232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sushi_type: kapppa
+  sushi_type: kappa
   sushi_name: makimono
   price: 100
 --- !u!1 &1289773988532334587

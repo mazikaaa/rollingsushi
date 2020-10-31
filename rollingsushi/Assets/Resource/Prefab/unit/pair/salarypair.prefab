@@ -100,7 +100,7 @@ MonoBehaviour:
   dislike: 
   cost: 3
   skillNo: 0
-  eatamount: 11
+  eatamount: 9
   leavetime: 30
   setUnit: 0
   unittype: 2

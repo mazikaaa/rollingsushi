@@ -101,8 +101,8 @@ MonoBehaviour:
   dislike: 
   cost: 1
   skillNo: 0
-  eatamount: 6
-  leavetime: 35
+  eatamount: 4
+  leavetime: 30
   setUnit: 0
   unittype: 1
   clock_image: {fileID: 0}

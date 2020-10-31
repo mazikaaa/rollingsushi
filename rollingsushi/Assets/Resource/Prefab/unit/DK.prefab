@@ -99,10 +99,10 @@ MonoBehaviour:
   waittime_normal: 2
   like: maguro
   dislike: 
-  cost: 2
+  cost: 1
   skillNo: 1
-  eatamount: 10
-  leavetime: 30
+  eatamount: 7
+  leavetime: 27
   setUnit: 0
   unittype: 1
   clock_image: {fileID: 0}

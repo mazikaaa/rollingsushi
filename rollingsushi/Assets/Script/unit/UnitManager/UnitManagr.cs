@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class UnitManagr : unitBase
 {
- 
+    GameManager gameManager;
+
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
-
+        gameManager = gamemanager.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class UnitManagr : unitBase
         if (amount > eatamount)
         {
             //評判が上がる
-            gamemanager.GetComponent<GameManager>().RaiseRep();
+            gameManager.RaiseRep();
             Leave();
         }
 
@@ -36,7 +37,7 @@ public class UnitManagr : unitBase
             if ((float)amount / (float)eatamount <= 0.50f)
             {
                 //評判下がる
-                gamemanager.GetComponent<GameManager>().LowerRep();
+                gameManager.LowerRep();
             }
             Leave();
         }

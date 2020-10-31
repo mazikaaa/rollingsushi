@@ -133,7 +133,6 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
                     icon.sprite = unitsprite[i];
                     nowSprite[i] = unitsprite[i];
                     icon.color = Vector4.one;
-                    Debug.Log(icon.sprite);
                     i++;
                 }
                 break;

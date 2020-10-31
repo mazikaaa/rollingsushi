@@ -121,12 +121,13 @@ public class Base_sushiGenerate : MonoBehaviour
         int sushikey = Choose(choosesushirate);
 
         GameObject sushi = Instantiate(sushis[sushikey], new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
-        sushi.GetComponent<sushi>().other_direction = 3;
-        sushi.GetComponent<sushi>().direction = 1;
-        sushi.GetComponent<sushi>().init_x = speed_x;
-        sushi.GetComponent<sushi>().init_y = 0.0f;
-        sushi.GetComponent<sushi>().speed_x = speed_x;
-        sushi.GetComponent<sushi>().speed_y = speed_y;
+        sushi sushi_data = sushi.GetComponent<sushi>();
+        sushi_data.other_direction = 3;
+        sushi_data.direction = 1;
+        sushi_data.init_x = speed_x;
+        sushi_data.init_y = 0.0f;
+        sushi_data.speed_x = speed_x;
+        sushi_data.speed_y = speed_y;
     }
 
     private int Choose(Dictionary<int, float> dic)

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Transform canvasTran;
+    private RectTransform dragTransform, rectTransform;
     private GameObject draggingObject;
     public string iconname;
     GameObject text;
@@ -15,6 +16,7 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
     void Start()
     {
         canvasTran = this.gameObject.transform;
+        rectTransform = GetComponent<RectTransform>();
         text = transform.GetChild(1).gameObject;
     }
 
@@ -26,13 +28,15 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
 
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
-            CreateDragObject();
-            draggingObject.transform.position = pointerEventData.position;   
+         CreateDragObject();
+         Vector2 localPosition = GetLocalPosition(pointerEventData.position);
+         dragTransform.localPosition = localPosition;
     }
 
     public void OnDrag(PointerEventData pointerEventData)
     {
-            draggingObject.transform.position = pointerEventData.position;   
+        Vector2 localPosition = GetLocalPosition(pointerEventData.position);
+        dragTransform.localPosition = localPosition;
     }
 
     public void OnEndDrag(PointerEventData pointerEventData)
@@ -73,5 +77,13 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
     public void OnPointerExit(PointerEventData eventData)
     {
         text.SetActive(false);
+    }
+
+    private Vector2 GetLocalPosition(Vector2 screenPosition)
+    {
+        Vector2 result;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, screenPosition, Camera.main, out result);
+
+        return result;
     }
 }

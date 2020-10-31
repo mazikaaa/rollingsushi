@@ -8,15 +8,18 @@ public class EventManager : MonoBehaviour
    [SerializeField] int eventNo=0;
    // public Event[] events=new Event[5];//発生するイベント格納する
     
-    private Event nowEvent=null;
-    private List<Event> eventList;
+    private Event nowEvent;
+    [SerializeField] private List<Event> eventList=new List<Event>();
 
     private float eventTime;
     private bool  eventflag = false;
     private int eventnum=0;//イベントの数
 
     Animator kakeziku_anime;
-    AudioSource audio;
+    new AudioSource audio;
+
+    public GameObject eventBox;
+    public float eventspan;
 
     //イベント用のUI
     public Text event_text,event_title,event_title2;
@@ -31,17 +34,13 @@ public class EventManager : MonoBehaviour
 
         audio = GetComponent<AudioSource>();
 
-        eventList = new List<Event>
-        {
-            new NoneEvent(),
-            new GenerateSpeedUp(),
-            new SushiSpeedUp(),
-            new ProfitDown(),
-            new Claim(),
-        };
-       
+        Event[] events = eventBox.GetComponents<Event>();
 
-        nowEvent = null;
+        foreach(Event eve in events)
+        {
+            eventList.Add(eve);
+        }
+        nowEvent = eventList[0];
     }
 
     // Update is called once per frame
@@ -49,19 +48,30 @@ public class EventManager : MonoBehaviour
     {
         eventTime += Time.deltaTime;
 
-        if (eventTime > 20.0f)
+        if (eventNo == 0)
         {
-            if(nowEvent!=null)
-            nowEvent.ExitEvent();//前のイベントの効果を消す
+            if (eventTime > eventspan/2.0f)
+            {
+                nowEvent.ExitEvent();//前のイベントの効果を消す
 
-            if ( eventNo== 0)
-                eventNo = Random.Range(0,3);
-            else
+                eventNo = Random.Range(1, eventList.Count);
+                nowEvent = eventList[eventNo];//新しいイベントをセット
+                SetCurrentEvent(nowEvent);//新しいイベントを発生させる
+                eventTime = 0.0f;
+            }
+
+        }
+        else
+        {
+            if (eventTime > eventspan / 2.0f)
+            {
+                nowEvent.ExitEvent();//前のイベントの効果を消す
+
                 eventNo = 0;
-
-            nowEvent = eventList[eventNo];//新しいイベントをセット
-            SetCurrentEvent(nowEvent);//新しいイベントを発生させる
-            eventTime = 0.0f;
+                nowEvent = eventList[eventNo];//新しいイベントをセット
+                SetCurrentEvent(nowEvent);//新しいイベントを発生させる
+                eventTime = 0.0f;
+            }
         }
     }
 

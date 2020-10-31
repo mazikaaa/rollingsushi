@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sushi_type: uni
-  sushi_name: uni
+  sushi_name: gunkan
   price: 200
 --- !u!1 &1289773988532334587
 GameObject:

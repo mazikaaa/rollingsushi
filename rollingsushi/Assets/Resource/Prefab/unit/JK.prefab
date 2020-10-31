@@ -94,15 +94,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability_like: 8.5
-  probability_normal: 5
+  probability_normal: 5.5
   waittime_like: 2
   waittime_normal: 3.5
   like: ebi
   dislike: 
   cost: 1
   skillNo: 1
-  eatamount: 6
-  leavetime: 30
+  eatamount: 5
+  leavetime: 27
   setUnit: 0
   unittype: 1
   clock_image: {fileID: 0}

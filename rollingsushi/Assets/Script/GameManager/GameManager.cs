@@ -26,7 +26,7 @@ public class GameManager : GameSystemBase
     // Update is called once per frame
     void Update()
     {
-        if (Disposal > gameover_disposal)
+        if (Disposal >= gameover_disposal)
         {
             GameOver();
         }
@@ -65,7 +65,7 @@ public class GameManager : GameSystemBase
 
         foreach(GameObject drag in drags)
         {
-            drag.GetComponentInChildren<Drag>().DeleteUnit();
+            drag.GetComponentInChildren<Drag>().DeleteUnit(-5.0f);
         }
 
         LowerRep();

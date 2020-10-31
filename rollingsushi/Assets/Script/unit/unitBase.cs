@@ -15,7 +15,7 @@ public class unitBase : MonoBehaviour
     public int cost;
     public int skillNo = 0;
     public int eatamount=0;
-    public float leavetime=0.0f;
+    public float leavetime=0.0f,eventtime=0.0f;//eventによる時間の上下
     public bool setUnit=false;
     public int unittype;//1なら一人,2ならペア,4ならグループ
 
@@ -94,14 +94,16 @@ public class unitBase : MonoBehaviour
     }
     public void Eat(GameObject sushi)
     {
+        sushidata sushi_data = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>();
+
         eat_flag = Random.Range(0.0f, 10.0f);
         sushi_like = like;
         sushi_dislike = dislike;
 
         //寿司のデータを所得
-        string name = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().sushi_name;
-        string type = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().sushi_type;
-        int price = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>().price;
+        string name = sushi_data.sushi_name;
+        string type = sushi_data.sushi_type;
+        int price = sushi_data.price;
 
         //スキルによって食べない判定をする
         skillflag = nowskill.BeforeEat(price);
@@ -162,6 +164,11 @@ public class unitBase : MonoBehaviour
         };
 
         nowskill = skillList[No];
-        Debug.Log(nowskill);
+        //Debug.Log(nowskill);
+    }
+
+    public void SetTime(float time)
+    {
+        leavetime = time - eventtime;
     }
 }

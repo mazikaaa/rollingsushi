@@ -86,7 +86,7 @@ public class SelectManager : MonoBehaviour
 
     public void GoSushiLibraly()
     {
-        SceneManager.LoadScene("SushiLibralyScene");
+        SceneManager.LoadScene("SushiLibraryScene");
     }
 
     private void OnApplicationQuit()

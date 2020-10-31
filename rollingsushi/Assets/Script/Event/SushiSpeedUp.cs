@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class SushiSpeedUp : Event
 {
-    GameObject sushigenerator;
+    GameObject[] sushigenerators;
     float vx,vy;
 
    public override void InitEvent()
     {
-        sushigenerator = GameObject.Find("SushiGenerator");
-        vx = sushigenerator.GetComponent<sushiGenerator>().speed_x;
-        vy = sushigenerator.GetComponent<sushiGenerator>().speed_y;
+        sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
 
-        sushigenerator.GetComponent<sushiGenerator>().speed_x=  vx + 1.0f;
-        sushigenerator.GetComponent<sushiGenerator>().speed_y = vy + 1.0f ;
+        foreach (GameObject sushigenerator in sushigenerators)
+        {
+            vx = sushigenerator.GetComponent<sushiGenerator>().speed_x;
+            vy = sushigenerator.GetComponent<sushiGenerator>().speed_y;
+
+            sushigenerator.GetComponent<sushiGenerator>().speed_x = vx + 1.0f;
+            sushigenerator.GetComponent<sushiGenerator>().speed_y = vy + 1.0f;
+        }
 
         GameObject[] sushis = GameObject.FindGameObjectsWithTag("sushi");
         foreach(GameObject sushi in sushis)
@@ -25,8 +29,11 @@ public class SushiSpeedUp : Event
 
     public override void ExitEvent()
     {
-        sushigenerator.GetComponent<sushiGenerator>().speed_x = vx;
-        sushigenerator.GetComponent<sushiGenerator>().speed_y = vy;
+        foreach (GameObject sushigenerator in sushigenerators)
+        {
+            sushigenerator.GetComponent<sushiGenerator>().speed_x = vx;
+            sushigenerator.GetComponent<sushiGenerator>().speed_y = vy;
+        }
 
         GameObject[] sushis = GameObject.FindGameObjectsWithTag("sushi");
         foreach (GameObject sushi in sushis)

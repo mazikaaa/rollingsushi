@@ -101,13 +101,16 @@ MonoBehaviour:
   dislike: 
   cost: 2
   skillNo: 0
-  eatamount: 7
-  leavetime: 35
+  eatamount: 4
+  leavetime: 30
   setUnit: 0
   unittype: 1
-  leave_text: {fileID: 0}
-  amount_text: {fileID: 0}
+  clock_image: {fileID: 0}
+  amount_image: {fileID: 0}
   eat_SE: {fileID: 0}
+  Separate_image:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0
