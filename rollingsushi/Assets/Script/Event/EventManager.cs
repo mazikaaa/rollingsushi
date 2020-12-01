@@ -11,9 +11,8 @@ public class EventManager : MonoBehaviour
     private Event nowEvent;
     [SerializeField] private List<Event> eventList=new List<Event>();
 
-    private float eventTime;
-    private bool  eventflag = false;
-    private int eventnum=0;//イベントの数
+    private float eventTime,volume;
+  //  private bool  eventflag = false;
 
     Animator kakeziku_anime;
     new AudioSource audio;
@@ -33,6 +32,8 @@ public class EventManager : MonoBehaviour
         kakeziku_anime = kakeziku.GetComponent<Animator>();
 
         audio = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat("SE", 1.0f);
+        audio.volume *= volume;
 
         Event[] events = eventBox.GetComponents<Event>();
 
@@ -63,7 +64,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            if (eventTime > eventspan / 2.0f)
+            if (eventTime > eventspan)
             {
                 nowEvent.ExitEvent();//前のイベントの効果を消す
 

@@ -53,7 +53,7 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
 
     public void OnDrop(PointerEventData pointerEventData)
     {
-            dropname = pointerEventData.pointerDrag.transform.GetChild(2).name;
+            dropname = pointerEventData.pointerDrag.name;
             
             Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
             iconImage.sprite = droppedImage.sprite;

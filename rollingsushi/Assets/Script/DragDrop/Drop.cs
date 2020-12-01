@@ -11,6 +11,7 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
 
     private GameObject dropobject;
     private string dropname,tagname;
+    private float volume;
 
     AudioSource audiosource;
 
@@ -25,6 +26,8 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
             i++;
         }
         audiosource = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat("SE", 1.0f);
+        audiosource.volume *= volume;
         base.Start();
     }
 
@@ -103,12 +106,21 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
                 break;
             case "dragingobject_pair":
                 FetchUnitImage();
-                foreach (Image icon in iconImage)
+                for (i = 0; i < unittype; i++)
                 {
-                    icon.sprite = unitsprite[i];
-                    icon.color = Vector4.one*0.6f;
+                    iconImage[i].sprite = unitsprite[i];
+                    iconImage[i].color = Vector4.one*0.6f;
                 }
                 break;
+            case "dragingobject_party":
+                FetchUnitImage();
+                for (i = 0; i < unittype; i++)
+                {
+                    iconImage[i].sprite = unitsprite[i];
+                    iconImage[i].color = Vector4.one * 0.6f;
+                }
+                break;
+
         }
 
         shadowUnit = true;
@@ -128,13 +140,22 @@ public class Drop : Dropbase, IDropHandler, IPointerEnterHandler, IPointerExitHa
                 break;
             case "dragingobject_pair":
                 FetchUnitImage();
-                foreach(Image icon in iconImage)
+                for (i = 0; i < unittype; i++)
                 {
-                    icon.sprite = unitsprite[i];
+                    iconImage[i].sprite = unitsprite[i];
                     nowSprite[i] = unitsprite[i];
-                    icon.color = Vector4.one;
-                    i++;
+                    iconImage[i].color = Vector4.one;
                 }
+                break;
+            case "dragingobject_party":
+                FetchUnitImage();
+                for (i = 0; i <unittype ; i++)
+                {
+                    iconImage[i].sprite = unitsprite[i];
+                    nowSprite[i] = unitsprite[i];
+                    iconImage[i].color = Vector4.one;
+                }
+
                 break;
 
         }

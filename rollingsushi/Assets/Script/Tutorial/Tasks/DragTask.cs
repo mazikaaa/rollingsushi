@@ -31,7 +31,11 @@ public class DragTask : ITutorialTask
     public void OnTaskSetting()
     {
         GameObject parent = GameObject.Find("Frame");
+        GameObject menu = GameObject.Find("MenuManager");
+
         parent.transform.GetChild(0).gameObject.SetActive(true);
+
+        menu.GetComponent<Menu_Tutorial>().dragflag = true;
 
         GameObject[] drags = GameObject.FindGameObjectsWithTag("drag");
         foreach(GameObject drag in drags)

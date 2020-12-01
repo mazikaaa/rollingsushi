@@ -109,7 +109,7 @@ public class Dropbase : UnitDataBase
                     unitmanager.setUnit = true;
                     unitmanager.SetTime(unitdata.leavetime);
 
-                this.gameObject.GetComponentInChildren<UnitCollider>().unitmanager = unitmanager;
+                this.gameObject.GetComponentInChildren<UnitCollider>().setUnitManager(unitmanager);
                     setUnit = true;
             }
         }

@@ -5,13 +5,11 @@ using UnityEngine;
 public class Claim : Event
 {
     GameObject gamemanager;
-    int profit = 0;
 
     public override void InitEvent()
     {
         gamemanager = GameObject.Find("GameManager");
 
-        gamemanager.GetComponent<GameManager>().LowerRep();
         gamemanager.GetComponent<GameManager>().LowerRep();
     }
 
@@ -28,7 +26,7 @@ public class Claim : Event
     public override string GetText()
     {
         return "当店を使ったお客様からクレームが発生してしまった\n"+
-            "ネット上で拡散され評判が2下がる";
+            "ネット上で拡散され評判が1下がる";
     }
 
 }

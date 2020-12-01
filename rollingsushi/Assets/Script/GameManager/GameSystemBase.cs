@@ -11,7 +11,9 @@ public class GameSystemBase : MonoBehaviour
     public GameObject[] star = new GameObject[7];
 
     public AudioClip discard_SE;
-    private AudioSource audiosource;
+    protected AudioSource Audio;
+
+    private float volume;
 
     public int Disposal
     {
@@ -63,20 +65,21 @@ public class GameSystemBase : MonoBehaviour
 
     protected void Start()
     {
-        audiosource = GetComponent<AudioSource>();
+        Audio = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat("BGM", 1.0f);
+        Audio.volume *= volume;
+    }
+    public void Discard()
+    {
+        Disposal = 1;
+        Audio.PlayOneShot(discard_SE);
+        disposal_text.GetComponent<Text>().text = Disposal.ToString();
     }
 
     public void GainProfit(int price)
     {
         Profit = price;
         profit_text.GetComponent<Text>().text = Profit.ToString();
-    }
-
-    public void Discard()
-    {
-        Disposal = 1;
-        audiosource.PlayOneShot(discard_SE);
-        disposal_text.GetComponent<Text>().text = Disposal.ToString();
     }
 
     public void RaiseRep()
@@ -156,5 +159,4 @@ public class GameSystemBase : MonoBehaviour
             drop.GetComponent<UnitManagr>().enabled = true;
         }
     }
-
 }

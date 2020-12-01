@@ -102,11 +102,13 @@ MonoBehaviour:
   skillNo: 0
   eatamount: 11
   leavetime: 35
+  eventtime: 0
   setUnit: 0
   unittype: 2
   clock_image: {fileID: 0}
   amount_image: {fileID: 0}
   eat_SE: {fileID: 0}
+  poisonflag: 0
   Separate_image:
   - {fileID: 1814383998193500042, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
   - {fileID: -8138794843586094020, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}

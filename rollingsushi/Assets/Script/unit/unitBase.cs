@@ -29,9 +29,12 @@ public class unitBase : MonoBehaviour
     protected int amount;//食べた寿司の量を計測
     protected float leave;//ドロップしてから離席までの時間を計測
     protected float eattime;//寿司を食べてからの時間を計測
+    protected float volume;
 
     protected bool skillflag = true;//スキルによる判定
     protected float eat_flag;//寿司を食べるかどうかの乱数を生成
+    public bool poisonflag = false;
+    
     protected RectTransform clockhand;//時計の針の角度を決める
 
     //ユニットのスキル
@@ -39,7 +42,7 @@ public class unitBase : MonoBehaviour
     protected List<Skill> skillList;
 
     protected GameObject gamemanager;
-    AudioSource audiosource;
+    protected AudioSource audiosource;
 
     public string sushi_like
     {
@@ -90,11 +93,16 @@ public class unitBase : MonoBehaviour
 
         gamemanager = GameObject.Find("GameManager");
         audiosource = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat("SE", 1.0f);
+        audiosource.volume *= volume;
         clockhand = clock_image.GetComponent<RectTransform>();
     }
+
+    [System.Obsolete]
     public void Eat(GameObject sushi)
     {
-        sushidata sushi_data = sushi.transform.GetChild(4).gameObject.GetComponent<sushidata>();
+        GameObject sushiobj = sushi.transform.Find("shshi_info").gameObject;
+        sushidata sushi_data = sushiobj.GetComponent<sushidata>();
 
         eat_flag = Random.Range(0.0f, 10.0f);
         sushi_like = like;
@@ -115,6 +123,15 @@ public class unitBase : MonoBehaviour
             if (eat_flag < probability_like && eattime>waittime_base)
             {
                 Destroy(sushi);
+                if (poisonflag)
+                {
+                    int poison = Random.Range(0, 20);
+                    if (poison == 0)
+                    {
+                        GetPoison();
+                    }
+                }
+
                 amount += 1;
                 float per = (float)amount / (float)eatamount;
                 amount_image.fillAmount = per;
@@ -132,6 +149,14 @@ public class unitBase : MonoBehaviour
         {
             if (eat_flag < probability_normal&& eattime > waittime_base)
             {
+                if (poisonflag)
+                {
+                    int poison = Random.Range(0, 20);
+                    if (poison == 0)
+                    {
+                        GetPoison();
+                    }
+                }
                 amount += 1;
                 Destroy(sushi);
                 float per = (float)amount / (float)eatamount;
@@ -143,7 +168,6 @@ public class unitBase : MonoBehaviour
             }
         }
     }
-
     protected void Leave()
     {
         amount = 0;
@@ -154,6 +178,15 @@ public class unitBase : MonoBehaviour
 
         amount_image.fillAmount = 0.0f;
     }
+
+    //食あたりを発生させる。
+    protected void GetPoison()
+    {
+        gamemanager.GetComponent<GameManager>().LowerRep();
+        Leave();
+    }
+
+
 
     public void SetSkill(int No)
     {

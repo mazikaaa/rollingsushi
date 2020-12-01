@@ -31,6 +31,10 @@ public class DropTask :ITutorialTask
 
     public void OnTaskSetting()
     {
+
+        GameObject menu = GameObject.Find("MenuManager");
+        menu.GetComponent<Menu_Tutorial>().dropflag = true;
+
         GameObject parent = GameObject.Find("Frame");
         parent.transform.GetChild(1).gameObject.SetActive(true);
         parent.transform.GetChild(2).gameObject.SetActive(true);

@@ -8,12 +8,16 @@ public class SushiLibraryManager : MonoBehaviour
     public GameObject backbutton, nextbutton;
     public AudioClip drum_d, drum_dd;
     public GameObject[] page = new GameObject[5];
+    public AudioSource audio;
 
     private int pageNo = 0;
+    private float volume;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat("SE", 1.0f);
+        audio.volume *= volume;
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class SushiLibraryManager : MonoBehaviour
 
     public void AdvancePage()
     {
+        audio.PlayOneShot(drum_d);
         page[pageNo].SetActive(false);
         pageNo++;
         page[pageNo].SetActive(true);
@@ -34,6 +39,7 @@ public class SushiLibraryManager : MonoBehaviour
     }
     public void RetrunPage()
     {
+        audio.PlayOneShot(drum_d);
         page[pageNo].SetActive(false);
         pageNo--;
         page[pageNo].SetActive(true);
@@ -45,11 +51,17 @@ public class SushiLibraryManager : MonoBehaviour
 
     public void BackSelectScene()
     {
-        SceneManager.LoadScene("SelectScene");
+        audio.PlayOneShot(drum_dd);
+        Invoke("GoSelectScene",0.5f);
     }
 
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("MUSIC", 0);
+    }
+
+    private void GoSelectScene()
+    {
+        SceneManager.LoadScene("SelectScene");
     }
 }

@@ -9,12 +9,22 @@ public class MenuManager : MonoBehaviour
     public GameObject menu,refresh;
     GameObject gamemanager,sushigenerator,eventmanager;
 
+    public AudioClip drum_d,drum_dd;
+    private AudioSource SE;
+
+    private float volume;
+
     // Start is called before the first frame update
     void Start()
     {
         gamemanager = GameObject.Find("GameManager");
         sushigenerator = GameObject.Find("SushiGenerator");
         eventmanager = GameObject.Find("EventManager");
+        SE = GetComponent<AudioSource>(); volume = PlayerPrefs.GetFloat("BGM", 1.0f);
+        volume = PlayerPrefs.GetFloat("BGM", 1.0f);
+        SE.volume *= volume;
+
+
     }
 
     // Update is called once per frame
@@ -23,6 +33,7 @@ public class MenuManager : MonoBehaviour
     }
     public void setMenu()
     {
+        SE.PlayOneShot(drum_d);
         if (menuflag)
         {
             menu.SetActive(false);
@@ -43,6 +54,7 @@ public class MenuManager : MonoBehaviour
 
     public void ContinueButton()
     {
+        SE.PlayOneShot(drum_d);
         menu.SetActive(false);
         menuflag = false;
 
@@ -50,9 +62,22 @@ public class MenuManager : MonoBehaviour
         AllObjectTrue();
     }
 
+    public void ReplayTutorial()
+    {
+        SE.PlayOneShot(drum_d);
+        SceneManager.LoadScene("TutorialScene");
+    }
+
     public void GoSelectButton()
     {
+        SE.PlayOneShot(drum_dd);
         SceneManager.LoadScene("SelectScene");
+    }
+
+    public void ReplayGame(int i)
+    {
+        SE.PlayOneShot(drum_d);
+        SceneManager.LoadScene("GameScene" + i);
     }
 
     public void GameEndButton()
@@ -69,8 +94,12 @@ public class MenuManager : MonoBehaviour
     //ゲーム内のオブジェクトを一括で止める
     public void AllObjectFalse()
     {
-        sushigenerator.GetComponent<sushiGenerator>().enabled = false;
         eventmanager.GetComponent<EventManager>().enabled = false;
+
+        foreach (GameObject sushigene in GameObject.FindGameObjectsWithTag("sushigenerator"))
+        {
+            sushigene.GetComponent<sushiGenerator>().enabled = false;
+        }
 
         GameObject dragingobject = GameObject.FindGameObjectWithTag("dragingobject");
         if (dragingobject)
@@ -99,8 +128,12 @@ public class MenuManager : MonoBehaviour
     //停止させたオブジェクトを一括で動かす
     public void AllObjectTrue()
     {
-        sushigenerator.GetComponent<sushiGenerator>().enabled = true;
         eventmanager.GetComponent<EventManager>().enabled = true;
+
+        foreach(GameObject sushigene in GameObject.FindGameObjectsWithTag("sushigenerator"))
+        {
+            sushigene.GetComponent<sushiGenerator>().enabled = true;
+        }
 
         GameObject dragingobject = GameObject.FindGameObjectWithTag("dragingobject");
         if (dragingobject)
@@ -123,6 +156,6 @@ public class MenuManager : MonoBehaviour
             drop.GetComponent<UnitManagr>().enabled = true;
         }
 
-        refresh.SetActive(false);
+        refresh.SetActive(true);
     }
 }

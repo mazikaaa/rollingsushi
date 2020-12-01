@@ -27,7 +27,7 @@ public class GenerateSpeedUp : Event
 
     public override string GetTitle()
     {
-        return "寿司ざんまい";
+        return "たくさんご提供";
     }
 
     public override string GetText()

@@ -13,12 +13,15 @@ public class UnitSetManager : MonoBehaviour
 
     private string[] dropname = new string[8];
     private int pageNo=0;
+    private float volume;
     AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        volume= volume = PlayerPrefs.GetFloat("SE", 1.0f);
+        audioSource.volume *= volume;
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class UnitSetManager : MonoBehaviour
 
         audioSource.PlayOneShot(drum_dd);
 
-        Invoke("GoSelect", 0.3f);
+        Invoke("GoSelect", 0.5f);
     }
 
     private void GoSelect()
@@ -71,6 +74,7 @@ public class UnitSetManager : MonoBehaviour
 
     public void AdvancePage()
     {
+        audioSource.PlayOneShot(drum_d);
         page[pageNo].SetActive(false);
         pageNo++;
         page[pageNo].SetActive(true);
@@ -79,6 +83,7 @@ public class UnitSetManager : MonoBehaviour
     }
     public void RetrunPage()
     {
+        audioSource.PlayOneShot(drum_d);
         page[pageNo].SetActive(false);
         pageNo--;
         page[pageNo].SetActive(true);

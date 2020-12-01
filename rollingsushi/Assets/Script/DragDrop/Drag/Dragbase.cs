@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class Dragbase : UnitDataBase
 {
     public bool iconflag = false;
-    public Sprite test;
+
+    Dictionary<int, float> chooserate;
+
+    protected int[] unitrate = { 10, 10, 10, 10, 10, 10, 10, 10 };
 
     protected float deleteicon_time,generateicon_time=5.0f;//消去、生成までの時間
     protected string iconname;
@@ -27,13 +30,19 @@ public class Dragbase : UnitDataBase
     protected void GenerateUnit()
     {
         int i;
+        chooserate = new Dictionary<int, float>();
 
-        i = Random.Range(0, 8);//ユニットの追加時に変更忘れずに
-        iconname = unitobject[i].name;
-        deleteicon_time=unitobject[i].GetComponentInChildren<Generatedata>().deletespan;
-        this.gameObject.GetComponent<Image>().sprite = unitobject[i].GetComponentInChildren<Generatedata>().Generateicon;
+        for (i = 0; i <unitrate.Length; i++)
+        {
+            chooserate.Add(i, unitrate[i]);
+        }
+        int unitkey = Choose(chooserate);
+
+        iconname = unitobject[unitkey].name;
+        deleteicon_time=unitobject[unitkey].GetComponentInChildren<Generatedata>().deletespan;
+        this.gameObject.GetComponent<Image>().sprite = unitobject[unitkey].GetComponentInChildren<Generatedata>().Generateicon;
         gameObject.GetComponent<Image>().color = Vector4.one;
-        unittype = unitobject[i].GetComponent<Unitdata>().unittype;
+        unittype = unitobject[unitkey].GetComponent<Unitdata>().unittype;
         guageflag = "delete";
         generatetime = 0.0f;
         iconflag = true;
@@ -93,6 +102,50 @@ public class Dragbase : UnitDataBase
                 }
             }
         }
+    }
+
+    private int Choose(Dictionary<int, float> dic)
+    {
+        int i = 0;
+        float total = 0;
+
+        foreach (KeyValuePair<int, float> elem in dic)
+        {
+            total += elem.Value;
+            //Debug.Log(elem.Value);
+        }
+
+        float randomPoint = UnityEngine.Random.value * total;
+
+        foreach (KeyValuePair<int, float> elem in dic)
+        {
+            if (randomPoint < elem.Value)
+            {
+                for (i = 0; i < unitrate.Length; i++)
+                {
+                    //今回選ばれたユニットは選ばれにくくする
+                    if (i == elem.Key)
+                    {
+                        unitrate[i] -= 7;
+                        if (unitrate[i] < 0)
+                        {
+                            unitrate[i] = 0;
+                        }
+                    }
+                    else
+                    {
+                        unitrate[i] += 1;
+                    }
+
+                }
+                return elem.Key;
+            }
+            else
+            {
+                randomPoint -= elem.Value;
+            }
+        }
+        return 0;
     }
 
 }

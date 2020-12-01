@@ -10,30 +10,38 @@ public class GameManager : GameSystemBase
     [SerializeField] int gameover_disposal=2;//ゲームオーバーになる廃棄数
     [SerializeField] int gameclear_profit=500;//ゲームクリアになる売り上げ
 
-    private float MainTime;
-    private bool timeflag=true,eventflag=false;
-    private GameObject menumanager;
+    private float MainTime,BGM_volume;
+    private bool timeflag=true,gameoverflag=false,gameclearflag=false;
+    private GameObject menumanager,audio_BGM;
+    private AudioSource audiosource,BGM;
 
-  
+    public AudioClip GameOver_SE, GameClear_SE,drum_d,drum_dd;
 
     // Start is called before the first frame update
-    new void Start()
+     new void Start()
     {
         base.Start();
-        menumanager = GameObject.Find("MenuManager");
+       menumanager = GameObject.Find("MenuManager");
+
+        audio_BGM = GameObject.Find("GameMusic");
+        BGM = audio_BGM.GetComponent<AudioSource>();
+        BGM_volume = PlayerPrefs.GetFloat("BGM", 1.0f);
+        BGM.volume *= BGM_volume;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Disposal >= gameover_disposal)
+        if (Disposal >= gameover_disposal&&!gameoverflag)
         {
             GameOver();
+            gameoverflag = true;
         }
 
-        if (Profit > gameclear_profit)
+        if (Profit > gameclear_profit && !gameclearflag)
         {
             GameClear();
+            gameclearflag = true;
         }
         if (timeflag)
         {
@@ -41,23 +49,7 @@ public class GameManager : GameSystemBase
         }
        // time_text.GetComponent<Text>().text = MainTime.ToString();
     }
-    private void GameClear()
-    {
-        Gameclear.gameObject.SetActive(true);
-        menumanager.SetActive(false);
-        MainTime = 0;
-        timeflag = false;
-        AllObjectFalse();
-    }
 
-    private void GameOver()
-    {
-        Gameover.gameObject.SetActive(true);
-        MainTime = 0;
-        timeflag = false;
-        menumanager.SetActive(false);
-        AllObjectFalse();
-    }
 
     public void RefreshUnitButton() { 
      
@@ -67,20 +59,42 @@ public class GameManager : GameSystemBase
         {
             drag.GetComponentInChildren<Drag>().DeleteUnit(-5.0f);
         }
-
         LowerRep();
     }
 
     public void ReplayButtton(int i)
     {
+        BGM.PlayOneShot(drum_d);
         SceneManager.LoadScene("GameScene"+i);
     }
 
     public void  StageSelectButton()
     {
+        BGM.PlayOneShot(drum_dd);
         SceneManager.LoadScene("SelectScene");
     }
 
+    private void GameClear()
+    {
+        Gameclear.gameObject.SetActive(true);
+        menumanager.SetActive(false);
+        MainTime = 0;
+        timeflag = false;
+        BGM.Stop();
+        Audio.PlayOneShot(GameClear_SE);
+        AllObjectFalse();
+    }
+
+    private void GameOver()
+    {
+        Gameover.gameObject.SetActive(true);
+        MainTime = 0;
+        timeflag = false;
+        menumanager.SetActive(false);
+        BGM.Stop();
+        Audio.PlayOneShot(GameOver_SE);
+        AllObjectFalse();
+    }
 
 }
 

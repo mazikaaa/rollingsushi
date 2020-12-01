@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitCollider :MonoBehaviour
 {
-    public UnitManagr unitmanager;
+    private UnitManagr unitmanager;
     void Start()
     {
     }
@@ -16,5 +16,10 @@ public class UnitCollider :MonoBehaviour
         {
             unitmanager.Eat(collision.gameObject.transform.parent.gameObject);
         }
+    }
+
+    public void setUnitManager(UnitManagr unitmanager)
+    {
+        this.unitmanager = unitmanager;
     }
 }

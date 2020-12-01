@@ -62,6 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\Assets\Scripts\SetDirty.cs" />
+    <Compile Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\Assets\Scripts\UICornersGradient.cs" />
+    <Compile Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\Assets\Scripts\UIGradient.cs" />
+    <Compile Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\Assets\Scripts\UIGradientUtils.cs" />
+    <Compile Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\Assets\Scripts\UITextCornersGradient.cs" />
+    <Compile Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\Assets\Scripts\UITextGradient.cs" />
     <Compile Include="Assets\Script\Audio\Audio_Menu.cs" />
     <Compile Include="Assets\Script\DragDrop\Drag\Drag.cs" />
     <Compile Include="Assets\Script\DragDrop\Drag\Drag_UnitSet.cs" />
@@ -80,15 +86,21 @@
     <Compile Include="Assets\Script\Enemy\sushi\sushi.cs" />
     <Compile Include="Assets\Script\Enemy\sushi\sushiBase.cs" />
     <Compile Include="Assets\Script\Enemy\sushiGenerator.cs" />
+    <Compile Include="Assets\Script\Event\AoHaste.cs" />
     <Compile Include="Assets\Script\Event\Claim.cs" />
     <Compile Include="Assets\Script\Event\DragPauseDown.cs" />
     <Compile Include="Assets\Script\Event\Event.cs" />
     <Compile Include="Assets\Script\Event\EventManager.cs" />
     <Compile Include="Assets\Script\Event\FastLeave.cs" />
+    <Compile Include="Assets\Script\Event\FoodPoison.cs" />
     <Compile Include="Assets\Script\Event\GenerateSpeedUp.cs" />
+    <Compile Include="Assets\Script\Event\GunkanHaste.cs" />
+    <Compile Include="Assets\Script\Event\KaiHaste.cs" />
     <Compile Include="Assets\Script\Event\NoneEvent.cs" />
     <Compile Include="Assets\Script\Event\OnlyCheapSushi.cs" />
     <Compile Include="Assets\Script\Event\ProfitDown.cs" />
+    <Compile Include="Assets\Script\Event\SlowLeave.cs" />
+    <Compile Include="Assets\Script\Event\SushiParty.cs" />
     <Compile Include="Assets\Script\Event\SushiSpeedUp.cs" />
     <Compile Include="Assets\Script\GameManager\DiscardCollider.cs" />
     <Compile Include="Assets\Script\GameManager\GameManager.cs" />
@@ -101,6 +113,7 @@
     <Compile Include="Assets\Script\StartManager.cs" />
     <Compile Include="Assets\Script\SushiLibraryManager.cs" />
     <Compile Include="Assets\Script\Tutorial\AnimationControler.cs" />
+    <Compile Include="Assets\Script\Tutorial\Menu_Tutorial.cs" />
     <Compile Include="Assets\Script\Tutorial\TaskManager.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\DragTask.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\DropTask.cs" />
@@ -120,6 +133,8 @@
     <Compile Include="Assets\Script\unit\UnitDataBase.cs" />
     <Compile Include="Assets\Script\unit\UnitManager\UnitManagr.cs" />
     <Compile Include="Assets\Script\UnitSetManager.cs" />
+    <None Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\ProjectSettings\ProjectVersion.txt" />
+    <None Include="Assets\素材元.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/mazik/rollingsushi/rollingsushi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

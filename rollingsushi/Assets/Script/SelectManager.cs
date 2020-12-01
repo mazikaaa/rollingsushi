@@ -11,12 +11,14 @@ public class SelectManager : MonoBehaviour
     public AudioClip drum_d, drum_dd;
     AudioSource audioSource;
     private int music;
-
+    private float volume;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat("SE", 1.0f);
+        audioSource.volume *= volume;
 
         music = PlayerPrefs.GetInt("MUSIC", 0);
         if (music == 0)
@@ -38,9 +40,10 @@ public class SelectManager : MonoBehaviour
       Gameframe[i-1].SetActive(true);
     }
 
-    public void SetFalseGame(int i)
+    public void SetFalseGame(GameObject frame)
     {
-      Gameframe[i - 1].SetActive(false);
+        audioSource.PlayOneShot(drum_d);
+        frame.SetActive(false);
     }
 
     public void GoGameScene(int i)
@@ -52,8 +55,8 @@ public class SelectManager : MonoBehaviour
     public void GameEndButton()
     {
         #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
         PlayerPrefs.SetInt("MUSIC", 0);
+        UnityEditor.EditorApplication.isPlaying = false;
 #elif UNITY_STANDALONE
         PlayerPrefs.SetInt("MUSIC", 0);
         UnityEngine.Application.Quit();
@@ -73,18 +76,25 @@ public class SelectManager : MonoBehaviour
         SceneManager.LoadScene("TutorialScene");
     }
 
-    public void GoUnitSetScene()
+    public void UnitSetSceneButton()
     {
         audioSource.PlayOneShot(drum_dd);
-        Invoke("GoUnitSet", 0.3f);
+        Invoke("GoUnitSetScene", 0.3f);
     }
 
-    private void GoUnitSet()
+    private void GoUnitSetScene()
     {
         SceneManager.LoadScene("UnitSetScene");
     }
 
-    public void GoSushiLibraly()
+    public void SushiLibralySceneButton()
+    {
+        audioSource.PlayOneShot(drum_dd);
+        Invoke("GoSushiLibraly", 0.3f);
+    }
+
+
+    private void GoSushiLibraly()
     {
         SceneManager.LoadScene("SushiLibraryScene");
     }

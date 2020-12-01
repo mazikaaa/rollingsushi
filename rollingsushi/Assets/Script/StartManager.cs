@@ -6,22 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
-    public GameObject AudioPrefab;
+    public GameObject AudioPrefab,setting_frame;
+    public Slider Sli_BGM, Sli_SE;
     private int music;
-    public AudioClip drum_dd;
-    AudioSource audioSource;
+    private float SE_default,BGM_default;
+    public AudioClip drum_d,drum_dd;
+    AudioSource audioSource,BGM_audio;
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        SE_default = audioSource.volume;
 
         music = PlayerPrefs.GetInt("MUSIC", 0);
         if (music == 0)
         {
             GameObject Audio = Instantiate(AudioPrefab);
             PlayerPrefs.SetInt("MUSIC", 1);
+            BGM_audio = Audio.GetComponent<AudioSource>();
+            BGM_default = BGM_audio.volume;
+            Debug.Log(BGM_default);
         }
 
         for(int i = 0; i < 8; i++)
@@ -63,5 +69,41 @@ public class StartManager : MonoBehaviour
         PlayerPrefs.SetInt("MUSIC", 0);
         UnityEngine.Application.Quit();
 #endif
+    }
+
+    public void Setting(bool flag)
+    {
+        if (flag)
+        {
+            audioSource.PlayOneShot(drum_d);
+            setting_frame.SetActive(false);
+        }
+        else
+        {
+            audioSource.PlayOneShot(drum_d);
+            setting_frame.SetActive(true);
+        }
+    }
+
+    public void BGM_Setting()
+    {
+        float volume;
+
+        volume = Sli_BGM.value;
+        BGM_audio.volume = BGM_default*volume;
+        Debug.Log(volume);
+
+        PlayerPrefs.SetFloat("BGM", volume);
+    }
+
+    public void SE_Setting()
+    {
+        float volume;
+
+        volume = Sli_SE.value;
+        audioSource.volume =SE_default* volume;
+        Debug.Log(volume);
+
+        PlayerPrefs.SetFloat("SE", volume);
     }
 }

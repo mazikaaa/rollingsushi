@@ -103,11 +103,13 @@ MonoBehaviour:
   skillNo: 1
   eatamount: 7
   leavetime: 27
+  eventtime: 0
   setUnit: 0
   unittype: 1
   clock_image: {fileID: 0}
   amount_image: {fileID: 0}
   eat_SE: {fileID: 0}
+  poisonflag: 0
   Separate_image:
   - {fileID: 0}
   - {fileID: 0}

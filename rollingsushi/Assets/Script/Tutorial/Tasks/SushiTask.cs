@@ -40,6 +40,9 @@ public class SushiTask : ITutorialTask
         GameObject parent = GameObject.Find("Frame");
         parent.transform.GetChild(6).gameObject.SetActive(true);
         parent.transform.GetChild(5).gameObject.SetActive(false);
+
+        GameObject menu = GameObject.Find("MenuManager");
+        menu.GetComponent<Menu_Tutorial>().sushiflag = true;
     }
 
     public bool CheckTask()

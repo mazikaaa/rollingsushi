@@ -11,13 +11,15 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
     private RectTransform dragTransform, rectTransform;
     private GameObject draggingObject;
     public string iconname;
-    GameObject text;
+    Transform text;
+    GameObject textobj;
     // Start is called before the first frame update
     void Start()
     {
         canvasTran = this.gameObject.transform;
         rectTransform = GetComponent<RectTransform>();
-        text = transform.GetChild(1).gameObject;
+        text = transform.Find("Text");
+        textobj = text.gameObject;
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
          CreateDragObject();
+        dragTransform = draggingObject.GetComponent<RectTransform>();
          Vector2 localPosition = GetLocalPosition(pointerEventData.position);
          dragTransform.localPosition = localPosition;
     }
@@ -71,12 +74,12 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        text.SetActive(true);
+        textobj.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        text.SetActive(false);
+        textobj.SetActive(false);
     }
 
     private Vector2 GetLocalPosition(Vector2 screenPosition)

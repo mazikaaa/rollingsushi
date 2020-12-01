@@ -105,6 +105,9 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
             case 2:
                 draggingObject.tag = "dragingobject_pair";
                 break;
+            case 3:
+                draggingObject.tag = "dragingobject_party";
+                break;
             case 4:
                 draggingObject.tag = "dragingobject_party";
                 break;
