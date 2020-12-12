@@ -12,9 +12,9 @@ public class FinishTask : ITutorialTask
 
     public string GetText()
     {
-        return "これで準備は終了です\n"
-               + "ステージを進めると出てくる寿司の種類や,客の種類も増えていきます\n"
-               + "戦略を生かして,上手く回転寿司屋を成功させましょう！";
+        return "これで準備は終了です。\n"
+               + "ステージを進めると出てくる寿司の種類やイベントが増えていきます。\n"
+               + "戦略を生かして、上手く回転寿司屋を成功させましょう！";
     }
 
 
@@ -33,8 +33,9 @@ public class FinishTask : ITutorialTask
         GameObject parent = GameObject.Find("Frame");
         parent.transform.GetChild(9).gameObject.SetActive(false);
 
-        GameObject Go = GameObject.Find("TextBoard");
-        Go.transform.GetChild(4).gameObject.SetActive(true);
+        GameObject textwindow = GameObject.Find("TextBoard");
+        GameObject go = textwindow.transform.Find("Go").gameObject;
+        go.gameObject.SetActive(true);
     }
 
     public bool CheckTask()

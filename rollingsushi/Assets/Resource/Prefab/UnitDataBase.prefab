@@ -52,6 +52,8 @@ MonoBehaviour:
   - {fileID: 5848101918098229056, guid: 1284965a4ca32264e8b20af848999dee, type: 3}
   - {fileID: 5848101918098229056, guid: 6ad3ee4da05e84c409ff843866ad40e5, type: 3}
   - {fileID: 5848101918098229056, guid: ef5be4986e2e7484283ccfd3c9a62e66, type: 3}
+  - {fileID: 5848101918098229056, guid: 9b5f4fda3bc4c5f43b4d67be24e21fe6, type: 3}
+  - {fileID: 5848101918098229056, guid: ae4b0ca7ec8dbea4cabc3d7f7d8eff85, type: 3}
   unitname:
   - JK
   - oldman
@@ -61,3 +63,5 @@ MonoBehaviour:
   - DK
   - wife
   - salarypair
+  - oldwoman
+  - wifeparty

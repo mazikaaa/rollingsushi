@@ -5,12 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Dropbase : UnitDataBase
+public class Dropbase : MonoBehaviour
 {
     
     public bool setUnit = false;//ユニットがすでに設置されているかを判断
     public bool shadowUnit = false;//色が薄いユニットが表示される状態にあるか。
     public int unitcapable;//許されるユニットの形態
+
+    public GameObject[] unitobject = new GameObject[8];
+    public string[] unitname = new string[8];
 
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
     protected string setdropname;//席に配置されるユニットの名前を入れる
@@ -138,6 +141,7 @@ public class Dropbase : UnitDataBase
                 {
                     unitobject[i] = unitdatabase.GetComponent<UnitDataBase>().unitobject[j];
                     unitname[i] = unitdatabase.GetComponent<UnitDataBase>().unitname[j];
+                    break;
                 }
             }
         }

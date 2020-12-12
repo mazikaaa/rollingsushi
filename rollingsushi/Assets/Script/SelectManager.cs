@@ -82,7 +82,7 @@ public class SelectManager : MonoBehaviour
         Invoke("GoUnitSetScene", 0.3f);
     }
 
-    private void GoUnitSetScene()
+    public void GoUnitSetScene()
     {
         SceneManager.LoadScene("UnitSetScene");
     }
@@ -93,6 +93,10 @@ public class SelectManager : MonoBehaviour
         Invoke("GoSushiLibraly", 0.3f);
     }
 
+    public void BackStartScene()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
 
     private void GoSushiLibraly()
     {

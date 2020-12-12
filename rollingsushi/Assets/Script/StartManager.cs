@@ -9,7 +9,8 @@ public class StartManager : MonoBehaviour
     public GameObject AudioPrefab,setting_frame;
     public Slider Sli_BGM, Sli_SE;
     private int music;
-    private float SE_default,BGM_default;
+    static private float SE_default,BGM_default;
+    private float BGM_volume, SE_volume;
     public AudioClip drum_d,drum_dd;
     AudioSource audioSource,BGM_audio;
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
@@ -18,24 +19,45 @@ public class StartManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        SE_default = audioSource.volume;
-
         music = PlayerPrefs.GetInt("MUSIC", 0);
+        
         if (music == 0)
         {
             GameObject Audio = Instantiate(AudioPrefab);
             PlayerPrefs.SetInt("MUSIC", 1);
             BGM_audio = Audio.GetComponent<AudioSource>();
+
             BGM_default = BGM_audio.volume;
+            SE_default = audioSource.volume;
+            PlayerPrefs.SetFloat("BGM_DE",BGM_default);
+            PlayerPrefs.SetFloat("SE_DE", SE_default);
+
             Debug.Log(BGM_default);
         }
+        else
+        {
+            GameObject Audio = GameObject.Find("Audio_Menu(Clone)");
+            BGM_audio = Audio.GetComponent<AudioSource>();
+            BGM_default = PlayerPrefs.GetFloat("BGM_DE", 1.0f);
+            SE_default= PlayerPrefs.GetFloat("SE_DE", 1.0f);
 
+            Debug.Log(BGM_default);
+
+        }
+
+        /*
         for(int i = 0; i < 8; i++)
         {
             PlayerPrefs.SetString("Unit" + (i + 1), default_unit[i]);
         }
+        */
 
-        
+        BGM_volume = PlayerPrefs.GetFloat("BGM", 1.0f);
+        SE_volume= PlayerPrefs.GetFloat("SE", 1.0f);
+        Sli_BGM.value = BGM_volume;
+        Sli_SE.value = SE_volume;
+        BGM_audio.volume = BGM_default * BGM_volume;
+        audioSource.volume = SE_default * SE_volume;
     }
 
     // Update is called once per frame
@@ -91,7 +113,6 @@ public class StartManager : MonoBehaviour
 
         volume = Sli_BGM.value;
         BGM_audio.volume = BGM_default*volume;
-        Debug.Log(volume);
 
         PlayerPrefs.SetFloat("BGM", volume);
     }
@@ -102,7 +123,6 @@ public class StartManager : MonoBehaviour
 
         volume = Sli_SE.value;
         audioSource.volume =SE_default* volume;
-        Debug.Log(volume);
 
         PlayerPrefs.SetFloat("SE", volume);
     }

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ProfitDown : Event
 {
-    GameObject gamemanager;
+    GameObject gamemanager,eventmanager;
     int profit=0;
 
    public override void InitEvent()
     {
         gamemanager = GameObject.Find("GameManager");
+        eventmanager = GameObject.Find("EventManager");
 
         profit = gamemanager.GetComponent<GameManager>().Profit;
         gamemanager.GetComponent<GameManager>().Profit = Ceiling_Hun(profit*0.8);
+        eventmanager.GetComponent<EventManager>().eventTime += 30.0f;
     
     }
 
@@ -23,12 +25,12 @@ public class ProfitDown : Event
 
     public override string GetTitle()
     {
-        return "利益減少";
+        return "ネタの高騰";
     }
 
     public override string GetText()
     {
-        return "ミスにより,利益が20％減少する";
+        return "寿司のネタの高騰により,利益が20％減少する";
     }
 
     public int Ceiling_Hun(double num)

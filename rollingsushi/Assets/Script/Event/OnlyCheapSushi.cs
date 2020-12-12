@@ -30,6 +30,8 @@ public class OnlyCheapSushi : Event
                 }
                 i++;
             }
+            i = 0;
+            j = 0;
         }
     }
 
@@ -48,6 +50,8 @@ public class OnlyCheapSushi : Event
                 }
                 i++;
             }
+            i = 0;
+            j = 0;
         }
     }
 
@@ -58,6 +62,6 @@ public class OnlyCheapSushi : Event
 
     public override string GetText()
     {
-        return "150円未満の寿司しか登場しなくなります";
+        return "150円未満の寿司しか登場しなくなる";
     }
 }

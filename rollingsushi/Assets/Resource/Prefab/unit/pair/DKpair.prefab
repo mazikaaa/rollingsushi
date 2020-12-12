@@ -56,6 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848101918098229070}
+  - component: {fileID: 7395093288713791694}
   - component: {fileID: 5848101918098229071}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
@@ -80,6 +81,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7395093288713791694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a15cfdf6517040b489284a1cde81d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: "\u7537\u5B50\u9AD8\u6821\u751F\u30DA\u30A2"
+  like: "\u8D64\u8EAB"
+  leavetime: "8\u79D2"
+  amount: "10\u679A"
+  rate: 75%
+  recast: "2\u79D2"
+  eattime: "35\u79D2"
+  skill: "\u306A\u3057"
+  skill_detail: 
 --- !u!114 &5848101918098229071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5241a74223619409627eca4e0428e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probability_like: 9.5
+  probability_like: 9
   probability_normal: 7.5
   waittime_like: 1
   waittime_normal: 2
@@ -100,7 +122,7 @@ MonoBehaviour:
   dislike: 
   cost: 3
   skillNo: 0
-  eatamount: 11
+  eatamount: 10
   leavetime: 35
   eventtime: 0
   setUnit: 0

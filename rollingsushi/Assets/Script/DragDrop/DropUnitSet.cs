@@ -5,13 +5,26 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Image iconImage;
     public Sprite nowSprite;
+
+    /*
+    private GameObject[] unit_sub = new GameObject[10];
+    private string[] name_sub = new string[10];
+    private Sprite[] img_sub = new Sprite[10];
+    */
+
+    public GameObject[] unitobject = new GameObject[10];
+    public string[] unitname = new string[10];
+    public Sprite[] unitimage = new Sprite[10];
+
+    private int i;
+    private GameObject unitdatabase;
+
     public int DropNo;
     public string dropname;
-    public Sprite[] unit_images = new Sprite[24];
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
 
 
@@ -20,6 +33,16 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
     {
         nowSprite = null;
         iconImage.sprite = nowSprite;
+
+        unitdatabase = GameObject.Find("UnitDataBase");
+        this.unitobject = unitdatabase.GetComponent<UnitDataBase>().unitobject;
+        this.unitname = unitdatabase.GetComponent<UnitDataBase>().unitname;
+
+        for (i = 0; i < unitobject.Length; i++)
+        {
+            unitimage[i] = unitobject[i].GetComponent<SpriteRenderer>().sprite;
+        }
+
         UnitSort();
         Init_SetUnit();
     }
@@ -61,14 +84,14 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
             iconImage.color = Vector4.one;
      }
 
-    public override void UnitSort()
+    private void UnitSort()
     {
         int i,j;
 
         string[] guestname_copy = new string[unitname.Length];
-        Sprite[] guestsprite_copy = new Sprite[unit_images.Length];
+        Sprite[] guestsprite_copy = new Sprite[unitimage.Length];
         Array.Copy(unitname, guestname_copy, unitname.Length);
-        Array.Copy(unit_images, guestsprite_copy, unitname.Length);
+        Array.Copy(unitimage, guestsprite_copy, unitname.Length);
         Array.Sort(unitname);
 
         for (i = 0; i < unitname.Length; i++)
@@ -76,14 +99,13 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
             for (j = 0; j < guestname_copy.Length; j++)
             {
                 if (unitname[i] == guestname_copy[j])
-                    unit_images[i] = guestsprite_copy[j];
-
+                    unitimage[i] = guestsprite_copy[j];
             }
         }
 
 }
 
-    public void Init_SetUnit()
+    private void Init_SetUnit()
     {
         int i;
         int length = unitname.Length;
@@ -93,9 +115,8 @@ public class DropUnitSet : UnitDataBase, IDropHandler, IPointerEnterHandler, IPo
         {
             if (dropname == unitname[i])
             {
-                
-                iconImage.sprite = unit_images[i];
-                nowSprite = unit_images[i];
+                iconImage.sprite = unitimage[i];
+                nowSprite = unitimage[i];
                 iconImage.color = Vector4.one;
             }
         }

@@ -70,6 +70,7 @@
     <Compile Include="Assets\Resource\Unity-UIGradient-master\Unity-UIGradient-master\Assets\Scripts\UITextGradient.cs" />
     <Compile Include="Assets\Script\Audio\Audio_Menu.cs" />
     <Compile Include="Assets\Script\DragDrop\Drag\Drag.cs" />
+    <Compile Include="Assets\Script\DragDrop\Drag\Drag_Menu.cs" />
     <Compile Include="Assets\Script\DragDrop\Drag\Drag_UnitSet.cs" />
     <Compile Include="Assets\Script\DragDrop\Drag\Dragbase.cs" />
     <Compile Include="Assets\Script\DragDrop\Drop.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Script\Enemy\sushi\sushi.cs" />
     <Compile Include="Assets\Script\Enemy\sushi\sushiBase.cs" />
     <Compile Include="Assets\Script\Enemy\sushiGenerator.cs" />
+    <Compile Include="Assets\Script\Event\AkamiHaste.cs" />
     <Compile Include="Assets\Script\Event\AoHaste.cs" />
     <Compile Include="Assets\Script\Event\Claim.cs" />
     <Compile Include="Assets\Script\Event\DragPauseDown.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\Script\Event\KaiHaste.cs" />
     <Compile Include="Assets\Script\Event\NoneEvent.cs" />
     <Compile Include="Assets\Script\Event\OnlyCheapSushi.cs" />
+    <Compile Include="Assets\Script\Event\OnlyExpenSushi.cs" />
     <Compile Include="Assets\Script\Event\ProfitDown.cs" />
     <Compile Include="Assets\Script\Event\SlowLeave.cs" />
     <Compile Include="Assets\Script\Event\SushiParty.cs" />
@@ -127,6 +130,7 @@
     <Compile Include="Assets\Script\Tutorial\Tasks\SushiTask.cs" />
     <Compile Include="Assets\Script\Tutorial\Tasks\SushiTask2.cs" />
     <Compile Include="Assets\Script\unit\Generatedata.cs" />
+    <Compile Include="Assets\Script\unit\textdata.cs" />
     <Compile Include="Assets\Script\unit\unitBase.cs" />
     <Compile Include="Assets\Script\unit\UnitCollider.cs" />
     <Compile Include="Assets\Script\unit\Unitdata.cs" />

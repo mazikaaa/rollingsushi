@@ -11,14 +11,14 @@ public class EventManager : MonoBehaviour
     private Event nowEvent;
     [SerializeField] private List<Event> eventList=new List<Event>();
 
-    private float eventTime,volume;
+    private float volume;
   //  private bool  eventflag = false;
 
     Animator kakeziku_anime;
     new AudioSource audio;
 
     public GameObject eventBox;
-    public float eventspan;
+    public float eventspan,eventTime;
 
     //イベント用のUI
     public Text event_text,event_title,event_title2;
@@ -51,7 +51,7 @@ public class EventManager : MonoBehaviour
 
         if (eventNo == 0)
         {
-            if (eventTime > eventspan/2.0f)
+            if (eventTime > eventspan/3.0f)
             {
                 nowEvent.ExitEvent();//前のイベントの効果を消す
 

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Generateicon: {fileID: 21300000, guid: 46fe866cbc5433b49aadba07e4818d5a, type: 3}
   unitname: sararypair
-  deletespan: 7.5
+  deletespan: 7
   generatelack: 0
 --- !u!1 &5848101918098229056
 GameObject:
@@ -56,6 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848101918098229070}
+  - component: {fileID: 235346805541450508}
   - component: {fileID: 5848101918098229071}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
@@ -80,6 +81,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &235346805541450508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a15cfdf6517040b489284a1cde81d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: "\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\u30DA\u30A2"
+  like: "\u306A\u3057"
+  leavetime: "7\u79D2"
+  amount: "9\u679A"
+  rate: 80%
+  recast: "2\u79D2"
+  eattime: "30\u79D2"
+  skill: "\u597D\u304D\u5ACC\u3044\u306A\u3057"
+  skill_detail: 
 --- !u!114 &5848101918098229071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,11 +124,13 @@ MonoBehaviour:
   skillNo: 0
   eatamount: 9
   leavetime: 30
+  eventtime: 0
   setUnit: 0
   unittype: 2
   clock_image: {fileID: 0}
   amount_image: {fileID: 0}
   eat_SE: {fileID: 0}
+  poisonflag: 0
   Separate_image:
   - {fileID: 7425211186445207693, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
   - {fileID: -780144253442858131, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}

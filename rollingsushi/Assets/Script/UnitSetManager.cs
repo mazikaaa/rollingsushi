@@ -80,6 +80,8 @@ public class UnitSetManager : MonoBehaviour
         page[pageNo].SetActive(true);
 
         backbutton.SetActive(true);
+        if (pageNo == 5)
+            nextbutton.SetActive(false);
     }
     public void RetrunPage()
     {

@@ -19,6 +19,7 @@ public class Dragbase : UnitDataBase
     protected GameObject gamemanager,unitdatabase;
 
     public  float eventplustime=0.0f;
+    public Image guage;
 
     protected void Start()
     {
@@ -40,6 +41,7 @@ public class Dragbase : UnitDataBase
 
         iconname = unitobject[unitkey].name;
         deleteicon_time=unitobject[unitkey].GetComponentInChildren<Generatedata>().deletespan;
+        guage.fillOrigin = 0;
         this.gameObject.GetComponent<Image>().sprite = unitobject[unitkey].GetComponentInChildren<Generatedata>().Generateicon;
         gameObject.GetComponent<Image>().color = Vector4.one;
         unittype = unitobject[unitkey].GetComponent<Unitdata>().unittype;
@@ -65,7 +67,7 @@ public class Dragbase : UnitDataBase
         this.gameObject.GetComponent<Image>().color = Vector4.zero;
         guageflag = "generate";
         generateicon_time = 11.0f - gamemanager.GetComponent<GameManager>().Rep * 0.6f+eventplustime+time;
-        // Debug.Log(generateicon);
+        guage.fillOrigin = 1;
         unittype = 0;
         deletetime = 0.0f;
         iconflag = false;

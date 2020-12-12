@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Claim : Event
 {
-    GameObject gamemanager;
+    GameObject gamemanager,eventmanager;
 
     public override void InitEvent()
     {
         gamemanager = GameObject.Find("GameManager");
+        eventmanager = GameObject.Find("EventManager");
 
         gamemanager.GetComponent<GameManager>().LowerRep();
+        eventmanager.GetComponent<EventManager>().eventTime += 30.0f;
     }
 
     public override void ExitEvent()

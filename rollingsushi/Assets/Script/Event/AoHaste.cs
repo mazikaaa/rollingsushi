@@ -30,6 +30,8 @@ public class AoHaste : Event
                 }
                 i++;
             }
+            i = 0;
+            j = 0;
         }
     }
 
@@ -48,6 +50,8 @@ public class AoHaste : Event
                 }
                 i++;
             }
+            i = 0;
+            j = 0;
         }
     }
 

@@ -31,6 +31,8 @@ public class GunkanHaste : Event
                 }
                 i++;
             }
+            i = 0;
+            j = 0;
         }
     }
 
@@ -49,6 +51,8 @@ public class GunkanHaste : Event
                 }
                 i++;
             }
+            i = 0;
+            j = 0;
         }
     }
 

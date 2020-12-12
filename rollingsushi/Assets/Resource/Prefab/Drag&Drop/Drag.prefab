@@ -108,7 +108,7 @@ MonoBehaviour:
   - 
   - 
   iconflag: 0
-  test: {fileID: 0}
+  eventplustime: 0
   guage: {fileID: 1882018014821985864}
   animeflag: 0
 --- !u!1 &1882018014821985866
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
 --- !u!1 &1882018015351020167
 GameObject:

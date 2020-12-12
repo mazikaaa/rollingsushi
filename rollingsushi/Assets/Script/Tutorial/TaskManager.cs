@@ -5,9 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// ゲーム上のチュートリアルを管理するマネージャクラス
-/// </summary>
+
 public class TaskManager : MonoBehaviour
 {
     // チュートリアル用UI
@@ -26,6 +24,9 @@ public class TaskManager : MonoBehaviour
     // チュートリアル表示フラグ
     private bool isEnabled;
 
+    //音楽系
+    AudioSource audio;
+    public AudioClip drum_d;
 
     void Start()
     {
@@ -35,6 +36,8 @@ public class TaskManager : MonoBehaviour
         TutorialText = tutorialTextArea.Find("Text").GetComponentInChildren<Text>();
         NextButton = GameObject.Find("Next");
         BackButton = GameObject.Find("Back");
+        audio = GetComponent<AudioSource>();
+
 
         // チュートリアルの一覧
         tutorialTask = new List<ITutorialTask>()
@@ -96,6 +99,7 @@ public class TaskManager : MonoBehaviour
     public void MoveNextTask()
     {
         Tasknum++;
+        audio.PlayOneShot(drum_d);
         currentTask.NextTask();
         StartCoroutine(SetCurrentTask(tutorialTask.ElementAt(Tasknum)));
     }
@@ -103,6 +107,7 @@ public class TaskManager : MonoBehaviour
     public void MoveBackTask()
     {
         Tasknum--;
+        audio.PlayOneShot(drum_d);
         StartCoroutine(SetCurrentTask(tutorialTask.ElementAt(Tasknum)));
     }
 

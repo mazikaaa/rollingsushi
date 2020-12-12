@@ -8,7 +8,6 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
     private Transform canvasTran;
     private RectTransform dragTransform,rectTransform;
     private GameObject draggingObject;
-    public Image guage;
     public bool animeflag = false;
 
 

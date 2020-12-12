@@ -66,7 +66,7 @@ public class GameSystemBase : MonoBehaviour
     protected void Start()
     {
         Audio = GetComponent<AudioSource>();
-        volume = PlayerPrefs.GetFloat("BGM", 1.0f);
+        volume = PlayerPrefs.GetFloat("SE", 1.0f);
         Audio.volume *= volume;
     }
     public void Discard()

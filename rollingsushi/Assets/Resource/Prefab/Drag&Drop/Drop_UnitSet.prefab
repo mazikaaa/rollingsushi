@@ -89,11 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99e8575cc2d42a4785ff67b252bdfb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitobject:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  unitobject: []
   unitname:
   - DKpair
   - JK

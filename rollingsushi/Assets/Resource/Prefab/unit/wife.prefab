@@ -57,6 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848101918098229070}
+  - component: {fileID: 3727514349024142825}
   - component: {fileID: 5848101918098229071}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
@@ -81,6 +82,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3727514349024142825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a15cfdf6517040b489284a1cde81d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: "\u4E3B\u5A66"
+  like: "\u30B5\u30FC\u30E2\u30F3"
+  leavetime: "9\u79D2"
+  amount: "4\u679A"
+  rate: 70%
+  recast: "3\u79D2"
+  eattime: "30\u79D2"
+  skill: "\u306A\u3057"
+  skill_detail: 
 --- !u!114 &5848101918098229071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,11 +125,13 @@ MonoBehaviour:
   skillNo: 0
   eatamount: 4
   leavetime: 30
+  eventtime: 0
   setUnit: 0
   unittype: 1
   clock_image: {fileID: 0}
   amount_image: {fileID: 0}
   eat_SE: {fileID: 0}
+  poisonflag: 0
   Separate_image:
   - {fileID: 0}
   - {fileID: 0}
