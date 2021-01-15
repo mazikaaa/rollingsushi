@@ -187,7 +187,7 @@ public class MenuManager : MonoBehaviour
 
         foreach (GameObject drag in GameObject.FindGameObjectsWithTag("drag"))
         {
-            drag.transform.GetChild(0).GetComponent<Drag>().enabled = false;
+            drag.transform.GetChild(1).GetComponent<Drag>().enabled = false;
         }
 
         foreach (GameObject drop in GameObject.FindGameObjectsWithTag("drop"))
@@ -221,7 +221,7 @@ public class MenuManager : MonoBehaviour
 
         foreach (GameObject drag in GameObject.FindGameObjectsWithTag("drag"))
         {
-            drag.transform.GetChild(0).GetComponent<Drag>().enabled = true;
+            drag.transform.GetChild(1).GetComponent<Drag>().enabled = true;
         }
 
         foreach (GameObject drop in GameObject.FindGameObjectsWithTag("drop"))

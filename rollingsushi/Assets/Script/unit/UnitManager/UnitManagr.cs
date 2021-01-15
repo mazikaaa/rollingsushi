@@ -31,6 +31,7 @@ public class UnitManagr : unitBase
             leave += Time.deltaTime;
             eattime += Time.deltaTime;
             clockhand.localRotation= Quaternion.Euler(0,0,(leave/leavetime)*-360);
+            clock_guage.fillAmount = 1.0f * leave / leavetime;
         }
 
         //満腹なら

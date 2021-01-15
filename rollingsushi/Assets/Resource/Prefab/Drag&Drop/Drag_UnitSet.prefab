@@ -26,10 +26,10 @@ Transform:
   m_GameObject: {fileID: 3744784782879833165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.2, z: 0}
-  m_LocalScale: {x: 29.266724, y: 42.96858, z: 51.305767}
+  m_LocalScale: {x: 50.119263, y: 48.87676, z: 51.305767}
   m_Children: []
   m_Father: {fileID: 5056059833462529140}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5054762604228867603
 SpriteRenderer:
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 95b8456189f129448a01232b9949ebcc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9d527c43441f404599a93e025afef46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,7 +110,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6644215488255489902}
-  - {fileID: 513753423332829474}
   - {fileID: 6700474839653917656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -141,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconname: DKpair
+  findunit: {fileID: 0}
 --- !u!114 &5056059833462529136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,85 +170,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!1 &5888332208928238919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 513753423332829474}
-  - component: {fileID: 6217554303025835433}
-  - component: {fileID: 6764862683181273507}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &513753423332829474
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888332208928238919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5056059833462529140}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 403, y: -278}
-  m_SizeDelta: {x: 364.8, y: 856.1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6217554303025835433
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888332208928238919}
-  m_CullTransparentMesh: 0
---- !u!114 &6764862683181273507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888332208928238919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\u540D\u524D:\u7537\u5B50\u9AD8\u6821\u751F\u30DA\u30A2\n\n\u597D\u304D\u306A\u5BFF\u53F8:\u8D64\u8EAB\u7CFB\u5168\u822C\n\n\u5F85\u6A5F\u6642\u9593:8\u79D2\n\n\u98DF\u3079\u308B\u91CF:15\u679A\n\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2\u79D2\n\n\u7740\u5E2D\u6642\u9593:40\u79D2\n\n\u30B3\u30B9\u30C8:3\n\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!1 &6644215488255489901
 GameObject:
   m_ObjectHideFlags: 0

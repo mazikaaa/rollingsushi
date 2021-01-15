@@ -20,7 +20,7 @@ public class unitBase : MonoBehaviour
     public int unittype;//1なら一人,2ならペア,4ならグループ
 
     public GameObject clock_image; 
-    public Image amount_image;
+    public Image amount_guage,clock_guage;
 
     //効果音
     public AudioClip eat_SE;
@@ -113,6 +113,20 @@ public class unitBase : MonoBehaviour
         string type = sushi_data.sushi_type;
         int price = sushi_data.price;
 
+        //寿司の値段が高いなら食べる確率を少し減らす
+        if (price >= 200)
+        {
+            eat_flag += 1.5f;
+        }
+        else if (price >= 180)
+        {
+            eat_flag += 1.0f;
+        }
+        else if (price >= 150)
+        {
+            eat_flag += 0.5f;
+        }
+
         //スキルによって食べない判定をする
         skillflag = nowskill.BeforeEat(price);
         if (!skillflag)
@@ -134,7 +148,8 @@ public class unitBase : MonoBehaviour
 
                 amount += 1;
                 float per = (float)amount / (float)eatamount;
-                amount_image.fillAmount = per;
+                amount_guage.fillAmount = per;
+                amount_guage.fillAmount = per;
                 waittime_base = waittime_like;
                 eattime = 0;
                 audiosource.PlayOneShot(eat_SE);
@@ -160,7 +175,7 @@ public class unitBase : MonoBehaviour
                 amount += 1;
                 Destroy(sushi);
                 float per = (float)amount / (float)eatamount;
-                amount_image.fillAmount = per;
+                amount_guage.fillAmount = per;
                 waittime_base = waittime_normal;
                 eattime = 0;
                 audiosource.PlayOneShot(eat_SE);
@@ -176,7 +191,9 @@ public class unitBase : MonoBehaviour
         this.gameObject.GetComponent<Drop>().ExitImage();
         this.gameObject.GetComponent<UnitManagr>().setUnit = false;
 
-        amount_image.fillAmount = 0.0f;
+        amount_guage.fillAmount = 0.0f;
+        clock_guage.fillAmount = 0.0f;
+        clockhand.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
     //食あたりを発生させる。

@@ -97,9 +97,10 @@ MonoBehaviour:
   name: "\u304A\u3058\u3044\u3061\u3083\u3093"
   like: "\u7389\u5B50"
   leavetime: "10\u79D2"
-  amount: "5\u679A"
+  amount: "4\u679A"
   rate: 65%
   recast: "4\u79D2"
+  cost: 1
   eattime: "30\u79D2"
   skill: "\u306A\u3057"
   skill_detail: 
@@ -129,7 +130,8 @@ MonoBehaviour:
   setUnit: 0
   unittype: 1
   clock_image: {fileID: 0}
-  amount_image: {fileID: 0}
+  amount_guage: {fileID: 0}
+  clock_guage: {fileID: 0}
   eat_SE: {fileID: 0}
   poisonflag: 0
   Separate_image:

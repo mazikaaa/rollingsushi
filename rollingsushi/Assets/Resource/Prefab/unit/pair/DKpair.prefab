@@ -99,6 +99,7 @@ MonoBehaviour:
   amount: "10\u679A"
   rate: 75%
   recast: "2\u79D2"
+  cost: 3
   eattime: "35\u79D2"
   skill: "\u306A\u3057"
   skill_detail: 
@@ -128,7 +129,8 @@ MonoBehaviour:
   setUnit: 0
   unittype: 2
   clock_image: {fileID: 0}
-  amount_image: {fileID: 0}
+  amount_guage: {fileID: 0}
+  clock_guage: {fileID: 0}
   eat_SE: {fileID: 0}
   poisonflag: 0
   Separate_image:

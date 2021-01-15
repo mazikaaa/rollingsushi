@@ -12,7 +12,9 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
     private GameObject draggingObject;
     public string iconname;
     Transform text;
-    GameObject textobj;
+    Text textdetail;
+    GameObject textobj, unitdatabase;
+    [SerializeField] GameObject findunit;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,10 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
         rectTransform = GetComponent<RectTransform>();
         text = transform.Find("Text");
         textobj = text.gameObject;
+        textdetail = textobj.GetComponent<Text>();
+        unitdatabase = GameObject.Find("UnitDataBase");
+        FindUnitObj();
+        TextSet();
     }
 
     // Update is called once per frame
@@ -89,4 +95,45 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
 
         return result;
     }
+
+    private void FindUnitObj()
+    {
+        int i;
+        GameObject[] unitobject_copy = unitdatabase.GetComponent<UnitDataBase>().unitobject;
+        string[] unitname_copy = unitdatabase.GetComponent<UnitDataBase>().unitname;
+
+        for (i = 0; i < unitname_copy.Length; i++)
+        {
+            if (iconname == unitname_copy[i])
+            {
+                findunit= unitobject_copy[i];
+            }
+        }
+    }
+
+    private void TextSet()
+    {
+        textdata data = findunit.GetComponent<textdata>();
+
+        string name = data.name;
+        string like = data.like;
+        string leavetime = data.leavetime;
+        string amount = data.amount;
+        string rate = data.rate;
+        string recast = data.recast;
+        string eattime = data.eattime;
+        string cost = data.cost;
+        string skill = data.skill;
+
+        textdetail.text = "名前:" + name + "\n" +
+                      "好きな寿司:" + like + "\n" +
+                      "食べる確率:" + rate + "\n" +
+                      "食べる量:" + amount + "\n" +
+                      "待機時間:" + leavetime + "\n" +
+                      "リキャスト:" + recast + "\n" +
+                       "着席時間:" + eattime + "\n" +
+                       "コスト:" + cost + "\n" +
+                       "特殊能力" +skill +"\n";
+    }
+
 }

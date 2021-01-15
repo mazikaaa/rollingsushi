@@ -7,14 +7,15 @@ using UnityEngine.UI;
 
 public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    Transform text;
-    GameObject textobj,unitdatabase;
+    Transform[] text=new Transform[3];
+    GameObject[] textobj = new GameObject[3];
+    GameObject unitdatabase;
    
     int i;
    
-    private GameObject[] unitobject = new GameObject[10];
-    private string[] unitname = new string[10];
-    private Sprite[] unitimage = new Sprite[10];
+    private GameObject[] unitobject = new GameObject[8];
+    private string[] unitname = new string[8];
+    private Sprite[] unitimage = new Sprite[8];
 
     public Image iconImage;
     public Sprite nowSprite;
@@ -26,22 +27,17 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     // Start is called before the first frame update
     void Start()
     {
-        text = transform.Find("Text");
-        textobj = text.gameObject;
+
+        for (i = 0; i < 3; i++)
+        {
+            text[i] = transform.Find("Text" + i);
+            textobj[i] = text[i].gameObject;
+        }
 
         nowSprite = null;
         iconImage.sprite = nowSprite;
 
-        unitdatabase = GameObject.Find("UnitDataBase");
-        this.unitobject = unitdatabase.GetComponent<UnitDataBase>().unitobject;
-        this.unitname = unitdatabase.GetComponent<UnitDataBase>().unitname;
-
-        for(i= 0;i < unitobject.Length; i++)
-        {
-            unitimage[i] = unitobject[i].GetComponent<SpriteRenderer>().sprite;
-        }
-
-        UnitSort();
+        //UnitSort();
         Init_SetUnit();
 
         TextSet();
@@ -55,14 +51,21 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        textobj.SetActive(true);
+        for (i = 0; i < 3; i++)
+        {
+            textobj[i].SetActive(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        textobj.SetActive(false);
+        for (i = 0; i < 3; i++)
+        {
+            textobj[i].SetActive(false);
+        }
     }
 
+    /*
     private void UnitSort()
     {
         int i, j;
@@ -84,29 +87,47 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
 
     }
+    */
     public void Init_SetUnit()
     {
         int i;
-        int length = unitname.Length;
         dropname = PlayerPrefs.GetString("Unit" + DropNo, default_unit[DropNo - 1]);
 
-        for (i = 0; i < length; i++)
+        unitdatabase = GameObject.Find("UnitDataBase");
+        GameObject[] unitobject_copy= unitdatabase.GetComponent<UnitDataBase>().unitobject;
+        string[] unitname_copy = unitdatabase.GetComponent<UnitDataBase>().unitname;
+        Sprite[] unitimages = new Sprite[unitobject_copy.Length];
+
+        for (i = 0; i < unitobject_copy.Length; i++)
         {
-            if (dropname == unitname[i])
+            unitimages[i] = unitobject_copy[i].GetComponent<SpriteRenderer>().sprite;
+        }
+
+
+        for (i = 0; i < unitname_copy.Length; i++)
+        {
+            if (dropname == unitname_copy[i])
             {
 
-                iconImage.sprite = unitimage[i];
-                nowSprite = unitimage[i];
+                iconImage.sprite = unitimages[i];
+                nowSprite = unitimages[i];
                 iconImage.color = Vector4.one;
+                unitobject[DropNo - 1] = unitobject_copy[i];
             }
         }
     }
 
     private void TextSet()
     {
-        Text detail = textobj.GetComponent<Text>();
+        Text detail = textobj[0].GetComponent<Text>();
+        Text detail2 = textobj[1].GetComponent<Text>();
+        Text detail3 = textobj[2].GetComponent<Text>();
+
         textdata data = unitobject[DropNo - 1].GetComponent<textdata>();
-        int num = 0;
+        /*
+        int[] num = { 0,0,0,0,0,0,0};
+        int indent = 0; ;
+        */
 
         string name = data.name;
         string like = data.like;
@@ -117,73 +138,84 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         string eattime = data.eattime;
         string skill = data.skill;
 
-        num = like.Length;
-        while (num <= 5)
+        /*
+        num[0] = like.Length;
+        Debug.Log(num);
+        while (num[0] <= 5)
         {
-            if (num <= 5)
+            if (num[0] <= 5)
             {
-                like += " ";
-                num++;
+                like += "　";
+                num[0]++;
             }
         }
 
-        num = leavetime.Length;
-        while (num <= 17)
+        num[1] = leavetime.Length;
+        while (num[1] <= 7)
         {
-            if (num <= 17)
+            if (num[1] <= 7)
             {
                 leavetime += " ";
-                num++;
+                num[1]++;
             }
         }
 
-        num = amount.Length;
-        while (num <= 5)
+        num[2] = amount.Length;
+        indent = num[2];
+        while (num[2] <= 16-indent)
         {
-            if (num <= 5)
+            //字数合わせ
+            if (num[2] <= 16-indent)
             {
                 amount += " ";
-                num++;
+                num[2]++;
             }
         }
 
-        num = rate.Length;
-        while (num <= 8)
+        num[3] = rate.Length;
+        while (num[3] <= 16)
         {
-            if (num <= 8)
+            if (num[3] <= 16)
             {
                 rate += " ";
-                num++;
+                num[3]++;
             }
         }
 
-        num = recast.Length;
-        while (num <= 7)
+        num[4] = recast.Length;
+        indent = num[4];
+        while (num[4] <= 7-indent)
         {
-            if (num <= 7)
+            if (num[4] <= 7-indent)
             {
                 recast += " ";
-                num++;
+                num[4]++;
             }
 
         }
 
-        num = eattime.Length;
-        while (num<= 5)
+        num[5] = eattime.Length;
+        while (num[5]<= 5)
         {
-            num = leavetime.Length;
-            if (num <= 5)
+            num[5] = leavetime.Length;
+            if (num[5] <= 5)
             {
                 eattime += " ";
-                num++;
+                num[5]++;
             }
         }
+        */
 
-        detail.text = "名前:" + name + "\n"+
-                      "好きな寿司:"+like+"待機時間:"+leavetime+"食べる量:"+amount+"\n"+
-                      "食べる確率:"+rate+"リキャスト時間:"+recast+"着席時間:"+eattime+"\n"+
-                      "特殊能力:"+skill;
+        detail.text = "名前:" + name + "\n" +
+                      "好きな寿司:" + like + "\n" +
+                      "食べる確率:" + rate + "\n" +
+                      "食べる量:     " + amount;
 
+        detail2.text= "\n待機時間:" + leavetime +"\n"+ 
+                      "リキャスト:" + recast +"\n"+
+                       "着席時間:" + eattime;
+        detail3.text = "\n特殊能力" + "\n" +
+                        skill + "\n";
     }
 
 }
