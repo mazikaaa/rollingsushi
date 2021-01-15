@@ -1,7 +1,7 @@
 # rollingsushi
 
 <h2>ゲームの開き方<br>  
-① code(黄緑色のボタン)→Download ZIPよりフォルダをダウンロード<br>
+① Code(黄緑色のボタン)→Download ZIPよりフォルダをダウンロード<br>
 ②「game_sushidou」のフォルダをクリック<br>
 ③「rollingsushi.exe」をクリック<br>
 </h2>
