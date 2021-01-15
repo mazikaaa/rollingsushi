@@ -1,8 +1,8 @@
 # rollingsushi
 
-<h2>ゲームの開き方  
-①「game_sushidou」のフォルダをクリック
-②「rollingsushi.exe」をクリック  
+<h2>ゲームの開き方<br>  
+①「game_sushidou」のフォルダをクリック<br>
+②「rollingsushi.exe」をクリック<br>
 </h2>
 
 「回転寿司屋」をモチーフにしたタワーディフェンスゲームになっています．  
