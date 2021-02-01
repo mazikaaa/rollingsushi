@@ -32,5 +32,5 @@
  
 ## ソースコードについて
 以下のURLより見ることが出来ます。  
-https://github.com/mazikaaa/spander/tree/master/spander/Assets/Script
+https://github.com/mazikaaa/rollingsushi/tree/master/rollingsushi/Assets/Script
 
