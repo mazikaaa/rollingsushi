@@ -2,6 +2,7 @@
 ① Code(黄緑色のボタン)→Download ZIPよりフォルダをダウンロード。  
 ②「gamefile_sushidou」のフォルダをクリック。  
 ③「rollingsushi.exe」をクリック。  
+※windowsでのゲームプレイを推奨します。
 
 ## ゲームタイトル:寿司道
 ### ジャンル:2Dシューティングゲーム
