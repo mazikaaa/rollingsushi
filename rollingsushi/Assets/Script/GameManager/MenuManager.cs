@@ -45,8 +45,6 @@ public class MenuManager : MonoBehaviour
         SE = GetComponent<AudioSource>();
         volume_SE = PlayerPrefs.GetFloat("SE", 1.0f);
         SE.volume *= volume_SE;
-
-
     }
 
     // Update is called once per frame

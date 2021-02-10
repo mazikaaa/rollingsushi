@@ -38,6 +38,8 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         this.unitobject = unitdatabase.GetComponent<UnitDataBase>().unitobject;
         this.unitname = unitdatabase.GetComponent<UnitDataBase>().unitname;
 
+        this.unitimage = new Sprite[unitobject.Length];
+
         for (i = 0; i < unitobject.Length; i++)
         {
             unitimage[i] = unitobject[i].GetComponent<SpriteRenderer>().sprite;

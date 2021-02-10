@@ -133,7 +133,7 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
                       "リキャスト:" + recast + "\n" +
                        "着席時間:" + eattime + "\n" +
                        "コスト:" + cost + "\n" +
-                       "特殊能力" +skill +"\n";
+                       "特殊能力:" +skill +"\n";
     }
 
 }

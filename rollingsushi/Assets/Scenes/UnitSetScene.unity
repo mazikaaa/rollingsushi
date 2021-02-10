@@ -178,7 +178,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &5844395
@@ -1038,7 +1038,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1049,7 +1049,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &231756500
@@ -1161,7 +1161,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1172,7 +1172,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &342574055
@@ -1518,7 +1518,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1529,7 +1529,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &442605326
@@ -1598,7 +1598,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1609,7 +1609,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &461853151
@@ -1845,7 +1845,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1856,7 +1856,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &510324674
@@ -2017,7 +2017,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -2028,7 +2028,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &666558621
@@ -2097,7 +2097,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -2108,7 +2108,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &699100586
@@ -2921,7 +2921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012562719
@@ -3102,7 +3102,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -3113,7 +3113,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &1040188740
@@ -3952,7 +3952,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -3963,7 +3963,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &1381259354
@@ -4534,7 +4534,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -4545,7 +4545,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &1592482874
@@ -4657,7 +4657,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -4668,7 +4668,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &1669543769
@@ -4737,7 +4737,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -4748,7 +4748,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &1702030717
@@ -4982,7 +4982,7 @@ GameObject:
   - component: {fileID: 1748682621}
   - component: {fileID: 1748682620}
   m_Layer: 0
-  m_Name: JK
+  m_Name: couple
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5030,8 +5030,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: -6292593149745393162, guid: 1f47d2051955e354286be7bf3ae03cb1,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63d273482d9bca34a93fe0effae81d49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5052,7 +5051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06ad4556d65853459655b8cc68d494e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconname: JK
+  iconname: couple
   findunit: {fileID: 0}
 --- !u!222 &1748682622
 CanvasRenderer:
@@ -5696,7 +5695,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -5707,7 +5706,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &2035834789
@@ -5776,7 +5775,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -5787,7 +5786,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &2044387422
@@ -5913,7 +5912,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -5924,7 +5923,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.1
   m_Text: "\u540D\u524D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\u597D\u304D\u306A\u5BFF\u53F8:\u30DE\u30B0\u30ED\n\u5F85\u6A5F\u6642\u9593:6.5\u79D2\n\u98DF\u3079\u308B\u91CF:6\u679A\n\u98DF\u3079\u308B\u78BA\u7387
     70%\n\u30EA\u30AD\u30E3\u30B9\u30C8\u6642\u9593:2.5\u79D2\n\u7740\u5E2D\u6642\u9593:25\u79D2\n\u30B3\u30B9\u30C8:2\n\u7279\u6B8A\u80FD\u529B:\u306A\u3057\n\n"
 --- !u!222 &755987338136584629
@@ -7399,7 +7398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6644215488493633347

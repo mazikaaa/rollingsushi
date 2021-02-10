@@ -103,7 +103,9 @@ MonoBehaviour:
   - salarypair
   - wifeparty
   - oldwoman
+  - couple
   unitimage:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
