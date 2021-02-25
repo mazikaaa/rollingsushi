@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class unitBase : MonoBehaviour
 {
     //ユニットごとの情報
-    public float probability_like;
-    public float probability_normal;
-    public float waittime_like;
-    public float waittime_normal;
-    public string like;
-    public string dislike;
-    public int cost;
-    public int skillNo = 0;
+    protected float probability_like;
+    protected float probability_normal;
+    protected float waittime_like;
+    protected float waittime_normal;
+    protected string like;
+    protected string dislike;
+    protected int cost;
+    protected Skill skill;
     public int eatamount=0;
     public float leavetime=0.0f,eventtime=0.0f;//eventによる時間の上下
-    public bool setUnit=false;
-    public int unittype;//1なら一人,2ならペア,4ならグループ
+    protected bool setUnit=false;
+    protected int unittype;//1なら一人,2ならペア,4ならグループ
 
     public GameObject clock_image; 
     public Image amount_guage,clock_guage;
@@ -32,7 +32,6 @@ public class unitBase : MonoBehaviour
     protected float volume;
 
     protected bool skillflag = true;//スキルによる判定
-    protected float eat_flag;//寿司を食べるかどうかの乱数を生成
     public bool poisonflag = false;
     
     protected RectTransform clockhand;//時計の針の角度を決める
@@ -41,35 +40,25 @@ public class unitBase : MonoBehaviour
     protected Skill nowskill;
     protected List<Skill> skillList;
 
-    protected GameObject gamemanager;
+    protected GameManager gamemanager;
+    protected UnitManager unitmanager;
     protected AudioSource audiosource;
 
-    public string sushi_like
+    public float Eat_Flag
     {
         get
         {
-            return _like;
+            return eat_flag;
         }
         set
         {
-            _like = value;
-           // Debug.Log(_like);
+            eat_flag = value;
         }
     }
-    protected string _like;
-    public string sushi_dislike
-    {
-        get
-        {
-            return _dislike;
-        }
-        set
-        {
-            _dislike = value;
-        }
-    }
-    protected string _dislike;
-    protected float waittime_base
+    protected float eat_flag;
+
+
+    public float waittime_base
     {
         get
         {
@@ -82,16 +71,37 @@ public class unitBase : MonoBehaviour
     }
     protected float _waittime;
 
+    public float Rate_Like
+    {
+        get
+        {
+            return rate_like;
+        }
+        set
+        {
+            rate_like = value;
+        }
+    }
+    protected float rate_like;
 
+    public float Rate_Normal
+    {
+        get
+        {
+            return rate_normal;
+        }
+        set
+        {
+            rate_normal = value;
+        }
+    }
+    protected float rate_normal;
 
     protected void Start()
     {
         waittime_base = 0;
-       
-        sushi_like=like;
-        sushi_dislike=dislike;
 
-        gamemanager = GameObject.Find("GameManager");
+        gamemanager = GameObject.Find("GameManager").GetComponent<GameManager>();
         audiosource = GetComponent<AudioSource>();
         volume = PlayerPrefs.GetFloat("SE", 1.0f);
         audiosource.volume *= volume;
@@ -99,44 +109,39 @@ public class unitBase : MonoBehaviour
     }
 
     [System.Obsolete]
-    public void Eat(GameObject sushi)
+    public bool Eat(sushidata sushidata)
     {
-        GameObject sushiobj = sushi.transform.Find("shshi_info").gameObject;
-        sushidata sushi_data = sushiobj.GetComponent<sushidata>();
 
-        eat_flag = Random.Range(0.0f, 10.0f);
-        sushi_like = like;
-        sushi_dislike = dislike;
+        Eat_Flag = Random.Range(0.0f, 10.0f);
 
         //寿司のデータを所得
-        string name = sushi_data.sushi_name;
-        string type = sushi_data.sushi_type;
-        int price = sushi_data.price;
+        string name = sushidata.sushi_name;
+        string type = sushidata.sushi_type;
+        int price = sushidata.price;
 
         //寿司の値段が高いなら食べる確率を少し減らす
         if (price >= 200)
         {
-            eat_flag += 1.5f;
+            Eat_Flag += 1.5f;
         }
         else if (price >= 180)
         {
-            eat_flag += 1.0f;
+            Eat_Flag += 1.0f;
         }
         else if (price >= 150)
         {
-            eat_flag += 0.5f;
+            Eat_Flag += 0.5f;
         }
 
         //スキルによって食べない判定をする
-        skillflag = nowskill.BeforeEat(price);
+        skillflag = skill.BeforeEat(price,unitmanager);
         if (!skillflag)
-            return;
+            return false;
 
-        if (name == sushi_like || type == sushi_like)
+        if (CheckLike(name,type,price))
         {
-            if (eat_flag < probability_like && eattime>waittime_base)
+            if (Eat_Flag < Rate_Like && eattime>waittime_base)
             {
-                Destroy(sushi);
                 if (poisonflag)
                 {
                     int poison = Random.Range(0, 20);
@@ -153,16 +158,15 @@ public class unitBase : MonoBehaviour
                 waittime_base = waittime_like;
                 eattime = 0;
                 audiosource.PlayOneShot(eat_SE);
-                gamemanager.GetComponent<GameManager>().GainProfit(price);
+                skill.AfterEat(price,gamemanager,unitmanager,true);
+                gamemanager.GainProfit(price);
+                return true;
             }
-        }
-        else if (name == sushi_dislike || type == sushi_dislike)
-        {
-
+            return false;
         }
         else
         {
-            if (eat_flag < probability_normal&& eattime > waittime_base)
+            if (Eat_Flag < Rate_Normal && eattime > waittime_base)
             {
                 if (poisonflag)
                 {
@@ -173,23 +177,26 @@ public class unitBase : MonoBehaviour
                     }
                 }
                 amount += 1;
-                Destroy(sushi);
                 float per = (float)amount / (float)eatamount;
                 amount_guage.fillAmount = per;
                 waittime_base = waittime_normal;
                 eattime = 0;
                 audiosource.PlayOneShot(eat_SE);
-                gamemanager.GetComponent<GameManager>().GainProfit(price);
+                skill.AfterEat(price,gamemanager,unitmanager,false);
+                gamemanager.GainProfit(price);
+                return true;
             }
+            return false;
         }
     }
-    protected void Leave()
+    public void Leave()
     {
+        skill.LeaveSkill(amount,gamemanager,unitmanager);
         amount = 0;
         leave = 0.0f;
         this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
         this.gameObject.GetComponent<Drop>().ExitImage();
-        this.gameObject.GetComponent<UnitManagr>().setUnit = false;
+        this.gameObject.GetComponent<UnitManager>().setUnit = false;
 
         amount_guage.fillAmount = 0.0f;
         clock_guage.fillAmount = 0.0f;
@@ -203,20 +210,49 @@ public class unitBase : MonoBehaviour
         Leave();
     }
 
-
-
-    public void SetSkill(int No)
+    //食べる寿司が好きかどうかを判定
+    protected bool CheckLike(string name,string type,int price)
     {
-        skillList = new List<Skill>()
-        {
-            new NoneSkill(),
-            new NotEatExpensive(),
-        };
+        int i;
 
-        nowskill = skillList[No];
-        //Debug.Log(nowskill);
+        string[] names = name.Split(',');
+
+        switch (like)
+        {
+            case"cheap":
+                if (price < 150)
+                    return true;
+                return false;
+            case "rich":
+                if (price >= 180)
+                    return true;
+                return false;
+            default:
+                for (i = 0; i < names.Length; i++)
+                {
+                    if (names[i] == like || type == like)
+                        return true;
+                }
+                return false;
+        }
     }
 
+    //ユニットをセットした時に、各データを入れ込む
+    public void SetUnit(Unitdata unitdata)
+    {
+        Rate_Like = unitdata.probability_like;
+        Rate_Normal = unitdata.probability_normal;
+        waittime_like = unitdata.waittime_like;
+        waittime_normal = unitdata.waittime_normal;
+        like = unitdata.like;
+        skill = unitdata.skill;
+        eatamount = unitdata.eatamount;
+        setUnit = true;
+        SetTime(unitdata.leavetime);
+
+    }
+
+    //着席時間をセットする
     public void SetTime(float time)
     {
         leavetime = time - eventtime;

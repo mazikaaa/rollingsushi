@@ -154,7 +154,7 @@ public class Menu_Tutorial : MonoBehaviour
         {
             foreach (GameObject drop in GameObject.FindGameObjectsWithTag("drop"))
             {
-                drop.GetComponent<UnitManagr>().enabled = false;
+                drop.GetComponent<UnitManager>().enabled = false;
             }
         }
 
@@ -198,7 +198,7 @@ public class Menu_Tutorial : MonoBehaviour
         {
             foreach (GameObject drop in GameObject.FindGameObjectsWithTag("drop"))
             {
-                drop.GetComponent<UnitManagr>().enabled = true;
+                drop.GetComponent<UnitManager>().enabled = true;
             }
         }
 

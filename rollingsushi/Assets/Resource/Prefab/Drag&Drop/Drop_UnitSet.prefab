@@ -104,7 +104,9 @@ MonoBehaviour:
   - wifeparty
   - oldwoman
   - couple
+  - couple
   unitimage:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

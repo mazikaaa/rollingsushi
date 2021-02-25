@@ -190,7 +190,7 @@ public class MenuManager : MonoBehaviour
 
         foreach (GameObject drop in GameObject.FindGameObjectsWithTag("drop"))
         {
-            drop.GetComponent<UnitManagr>().enabled = false;
+            drop.GetComponent<UnitManager>().enabled = false;
         }
 
         refresh.SetActive(false);
@@ -224,7 +224,7 @@ public class MenuManager : MonoBehaviour
 
         foreach (GameObject drop in GameObject.FindGameObjectsWithTag("drop"))
         {
-            drop.GetComponent<UnitManagr>().enabled = true;
+            drop.GetComponent<UnitManager>().enabled = true;
         }
 
         refresh.SetActive(true);

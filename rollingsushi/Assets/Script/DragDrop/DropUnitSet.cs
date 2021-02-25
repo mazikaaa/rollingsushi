@@ -107,7 +107,8 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
 }
 
-    private void Init_SetUnit()
+    //現状のユニット編成を表示する（初期化）
+    public void Init_SetUnit()
     {
         int i;
         int length = unitname.Length;
@@ -123,6 +124,5 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             }
         }
     }
-
 
 }

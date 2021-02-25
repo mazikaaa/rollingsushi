@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class textdata : MonoBehaviour
 {
-    public string name, like,leavetime ,amount,rate ,recast,cost,eattime,skill,skill_detail;
+    public string name, like, leavetime, amount, rate, recast, cost, eattime, skill,skill_detail;
     // Start is called before the first frame update
     void Start()
     {

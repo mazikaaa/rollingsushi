@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00914247a2627d54eb76a8e0d689e5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Generateicon: {fileID: 21300000, guid: 46fe866cbc5433b49aadba07e4818d5a, type: 3}
-  unitname: sararypair
+  Generateicon: {fileID: 21300000, guid: dcf71ddbcb956ef4f85d19978eb93623, type: 3}
+  unitname: salarypair
   deletespan: 7
   generatelack: 0
 --- !u!1 &5848101918098229056
@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 5848101918098229070}
   - component: {fileID: 235346805541450508}
   - component: {fileID: 5848101918098229071}
+  - component: {fileID: 3546970787687182111}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
   m_Name: salarypair
@@ -101,7 +102,7 @@ MonoBehaviour:
   recast: "2\u79D2"
   cost: 3
   eattime: "30\u79D2"
-  skill: "\u597D\u304D\u5ACC\u3044\u306A\u3057"
+  skill: "\u306A\u3057"
   skill_detail: 
 --- !u!114 &5848101918098229071
 MonoBehaviour:
@@ -122,20 +123,27 @@ MonoBehaviour:
   like: 
   dislike: 
   cost: 3
-  skillNo: 0
   eatamount: 9
   leavetime: 30
   eventtime: 0
   setUnit: 0
   unittype: 2
-  clock_image: {fileID: 0}
-  amount_guage: {fileID: 0}
-  clock_guage: {fileID: 0}
-  eat_SE: {fileID: 0}
-  poisonflag: 0
+  skill: {fileID: 3546970787687182111}
   Separate_image:
   - {fileID: 7425211186445207693, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
   - {fileID: -780144253442858131, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
+--- !u!114 &3546970787687182111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf52c79ed3f48b0448b77d2d63f4e98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -31,8 +31,6 @@ public class StartManager : MonoBehaviour
             SE_default = audioSource.volume;
             PlayerPrefs.SetFloat("BGM_DE",BGM_default);
             PlayerPrefs.SetFloat("SE_DE", SE_default);
-
-            Debug.Log(BGM_default);
         }
         else
         {
@@ -40,8 +38,6 @@ public class StartManager : MonoBehaviour
             BGM_audio = Audio.GetComponent<AudioSource>();
             BGM_default = PlayerPrefs.GetFloat("BGM_DE", 1.0f);
             SE_default= PlayerPrefs.GetFloat("SE_DE", 1.0f);
-
-            Debug.Log(BGM_default);
 
         }
 

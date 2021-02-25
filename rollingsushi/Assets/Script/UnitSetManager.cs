@@ -14,6 +14,7 @@ public class UnitSetManager : MonoBehaviour
     private string[] dropname = new string[8];
     private int pageNo=0;
     private float volume;
+    private int i, j;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -30,9 +31,9 @@ public class UnitSetManager : MonoBehaviour
 
     }
 
+    //セットしたユニットに編成を確定するボタン(ステージ選択画面に戻る)
     public void SetCompleteButton()
     {
-        int i, j;
         drops = GameObject.FindGameObjectsWithTag("drop");
 
         i = 0;
@@ -58,7 +59,20 @@ public class UnitSetManager : MonoBehaviour
 
         audioSource.PlayOneShot(drum_dd);
 
-        Invoke("GoSelect", 0.5f);
+        Invoke("GoSelect", 0.2f);
+    }
+
+    //編成を最初の状態に戻す
+    public void UnitResetButton()
+    {
+        drops = GameObject.FindGameObjectsWithTag("drop");
+
+        foreach(GameObject drop in drops)
+        {
+            drop.GetComponent<DropUnitSet>().Init_SetUnit();
+        }
+
+        audioSource.PlayOneShot(drum_d);
     }
 
     private void GoSelect()
@@ -72,6 +86,7 @@ public class UnitSetManager : MonoBehaviour
         cautionpanel.SetActive(false);
     }
 
+    //次のページに進む
     public void AdvancePage()
     {
         audioSource.PlayOneShot(drum_d);
@@ -80,9 +95,10 @@ public class UnitSetManager : MonoBehaviour
         page[pageNo].SetActive(true);
 
         backbutton.SetActive(true);
-        if (pageNo == 5)
+        if (pageNo == page.Length-1)
             nextbutton.SetActive(false);
     }
+    //前のページに戻る
     public void RetrunPage()
     {
         audioSource.PlayOneShot(drum_d);

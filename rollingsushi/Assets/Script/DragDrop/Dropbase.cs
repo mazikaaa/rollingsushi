@@ -21,10 +21,12 @@ public class Dropbase : MonoBehaviour
     protected Sprite[] unitsprite = new Sprite[4];
 
     private GameObject unitdatabase;
+    private UnitManager unitmanager;
 
     protected void Start()
     {
         unitdatabase = GameObject.Find("UnitDataBase");
+        unitmanager = GetComponent<UnitManager>();
         SetUnit();
        // UnitSort();
     }
@@ -93,27 +95,17 @@ public class Dropbase : MonoBehaviour
     public void UnitSearch(string name)
     {
         int i;
-        UnitManagr unitmanager = GetComponent<UnitManagr>();
 
         for (i = 0; i < unitname.Length; i++)
         {
             if (name == unitname[i])
             {
                 Unitdata unitdata = unitobject[i].GetComponent<Unitdata>();
-                //ユニットの情報を書き込む
-                    unitmanager.probability_like = unitdata.probability_like;
-                    unitmanager.probability_normal =unitdata.probability_normal;
-                    unitmanager.waittime_like = unitdata.waittime_like;
-                    unitmanager.waittime_normal = unitdata.waittime_normal;
-                    unitmanager.like = unitdata.like;
-                    unitmanager.dislike = unitdata.dislike;
-                    unitmanager.SetSkill(unitdata.skillNo);
-                    unitmanager.eatamount = unitdata.eatamount;
-                    unitmanager.setUnit = true;
-                    unitmanager.SetTime(unitdata.leavetime);
 
+                //ユニットの情報を書き込む
+                unitmanager.SetUnit(unitdata);
                 this.gameObject.GetComponentInChildren<UnitCollider>().setUnitManager(unitmanager);
-                    setUnit = true;
+                setUnit = true;
             }
         }
     }

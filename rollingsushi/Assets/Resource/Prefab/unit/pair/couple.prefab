@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00914247a2627d54eb76a8e0d689e5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Generateicon: {fileID: 21300000, guid: 46fe866cbc5433b49aadba07e4818d5a, type: 3}
-  unitname: sararypair
+  Generateicon: {fileID: 21300000, guid: 63d273482d9bca34a93fe0effae81d49, type: 3}
+  unitname: couple
   deletespan: 7
   generatelack: 0
 --- !u!1 &5848101918098229056
@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 5848101918098229070}
   - component: {fileID: 235346805541450508}
   - component: {fileID: 5848101918098229071}
+  - component: {fileID: 4843301983656653494}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
   m_Name: couple
@@ -94,15 +95,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u30AB\u30C3\u30D7\u30EB"
-  like: "\u306A\u3057"
+  like: "\u767D\u8EAB\u7CFB"
   leavetime: "9\u79D2"
   amount: "9\u679A"
   rate: 75%
   recast: "2.5\u79D2"
   cost: 3
   eattime: "40\u79D2"
-  skill: "\u597D\u304D\u5ACC\u3044\u306A\u3057"
-  skill_detail: 
+  skill: "\u898B\u6804\u3063\u5F35\u308A"
+  skill_detail: "180\u5186\u4EE5\u4E0A\u306E\u5BFF\u53F8\u3092\u5FC5\u305A\u98DF\u3079\u308B\u304C\u3001\u98DF\u3079\u308B\u9593\u9694\u304C3\u79D2\u4F38\u3073\u308B"
 --- !u!114 &5848101918098229071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,25 +118,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   probability_like: 8.5
   probability_normal: 7.5
-  waittime_like: 2.5
-  waittime_normal: 3.5
+  waittime_like: 2
+  waittime_normal: 2.5
   like: siromi
   dislike: 
   cost: 3
-  skillNo: 0
   eatamount: 9
   leavetime: 40
   eventtime: 0
   setUnit: 0
   unittype: 2
-  clock_image: {fileID: 0}
-  amount_guage: {fileID: 0}
-  clock_guage: {fileID: 0}
-  eat_SE: {fileID: 0}
-  poisonflag: 0
+  skill: {fileID: 4843301983656653494}
   Separate_image:
   - {fileID: 1814383998193500042, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
   - {fileID: -6292593149745393162, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
+--- !u!114 &4843301983656653494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf52c79ed3f48b0448b77d2d63f4e98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

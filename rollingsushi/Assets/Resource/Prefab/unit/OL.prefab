@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 5848101918098229070}
   - component: {fileID: 2611384373319473050}
   - component: {fileID: 5848101918098229071}
+  - component: {fileID: 837515406101045759}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
   m_Name: OL
@@ -103,7 +104,7 @@ MonoBehaviour:
   cost: 2
   eattime: "25\u79D2"
   skill: "\u306A\u3057"
-  skill_detail: 
+  skill_detail: "\u306A\u3057"
 --- !u!114 &5848101918098229071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,20 +124,27 @@ MonoBehaviour:
   like: sarmon
   dislike: 
   cost: 2
-  skillNo: 0
   eatamount: 5
   leavetime: 25
   eventtime: 0
   setUnit: 0
   unittype: 1
-  clock_image: {fileID: 0}
-  amount_guage: {fileID: 0}
-  clock_guage: {fileID: 0}
-  eat_SE: {fileID: 0}
-  poisonflag: 0
+  skill: {fileID: 837515406101045759}
   Separate_image:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &837515406101045759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf52c79ed3f48b0448b77d2d63f4e98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

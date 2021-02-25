@@ -124,6 +124,7 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
         string eattime = data.eattime;
         string cost = data.cost;
         string skill = data.skill;
+        string skilldetail = data.skill_detail;
 
         textdetail.text = "名前:" + name + "\n" +
                       "好きな寿司:" + like + "\n" +
@@ -132,8 +133,11 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
                       "待機時間:" + leavetime + "\n" +
                       "リキャスト:" + recast + "\n" +
                        "着席時間:" + eattime + "\n" +
-                       "コスト:" + cost + "\n" +
                        "特殊能力:" +skill +"\n";
+        if (skill != "なし")
+        {
+            textdetail.text += skilldetail;
+        }
     }
 
 }

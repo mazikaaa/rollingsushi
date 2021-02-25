@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 5848101918098229070}
   - component: {fileID: 6503583761624727911}
   - component: {fileID: 5848101918098229071}
+  - component: {fileID: 4525041310975130173}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
   m_Name: oldwoman
@@ -123,20 +124,27 @@ MonoBehaviour:
   like: anago
   dislike: 
   cost: 1
-  skillNo: 0
   eatamount: 4
   leavetime: 30
   eventtime: 0
   setUnit: 0
   unittype: 1
-  clock_image: {fileID: 0}
-  amount_guage: {fileID: 0}
-  clock_guage: {fileID: 0}
-  eat_SE: {fileID: 0}
-  poisonflag: 0
+  skill: {fileID: 4525041310975130173}
   Separate_image:
   - {fileID: 378111159965400423, guid: 1f47d2051955e354286be7bf3ae03cb1, type: 3}
   - {fileID: 0}
+--- !u!114 &4525041310975130173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf52c79ed3f48b0448b77d2d63f4e98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0

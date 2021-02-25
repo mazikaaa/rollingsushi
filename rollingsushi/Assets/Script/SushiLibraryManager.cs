@@ -26,6 +26,7 @@ public class SushiLibraryManager : MonoBehaviour
         
     }
 
+    //次のページに進むボタン
     public void AdvancePage()
     {
         audio.PlayOneShot(drum_d);
@@ -34,9 +35,11 @@ public class SushiLibraryManager : MonoBehaviour
         page[pageNo].SetActive(true);
 
         backbutton.SetActive(true);
-        if (pageNo == 4)
+        if (pageNo == page.Length-1)
            nextbutton.SetActive(false);
     }
+
+    //前のページに戻るボタン
     public void RetrunPage()
     {
         audio.PlayOneShot(drum_d);
@@ -60,8 +63,11 @@ public class SushiLibraryManager : MonoBehaviour
         PlayerPrefs.SetInt("MUSIC", 0);
     }
 
+    //ステージ選択画面に戻る
     private void GoSelectScene()
     {
         SceneManager.LoadScene("SelectScene");
     }
+
+
 }

@@ -53,8 +53,18 @@ MonoBehaviour:
   - {fileID: 5848101918098229056, guid: 6ad3ee4da05e84c409ff843866ad40e5, type: 3}
   - {fileID: 5848101918098229056, guid: ef5be4986e2e7484283ccfd3c9a62e66, type: 3}
   - {fileID: 5848101918098229056, guid: 9b5f4fda3bc4c5f43b4d67be24e21fe6, type: 3}
-  - {fileID: 5848101918098229056, guid: ae4b0ca7ec8dbea4cabc3d7f7d8eff85, type: 3}
+  - {fileID: 5848101918098229056, guid: e53b057af9b033841b28082223e6e6c2, type: 3}
   - {fileID: 5848101918098229056, guid: cf317e4926ea0214ea8ed871319bb0f0, type: 3}
+  - {fileID: 5848101918098229056, guid: b79bc65e877504a49a109f1009431975, type: 3}
+  - {fileID: 5848101918098229056, guid: 2e95c830e565a294586a3df20a75d37b, type: 3}
+  - {fileID: 5848101918098229056, guid: ef36311d21944564e8423f5028002be0, type: 3}
+  - {fileID: 5848101918098229056, guid: d573c50c799208f4c9dde1a6075a3d60, type: 3}
+  - {fileID: 5848101918098229056, guid: 742ac7ee11c6b4d46bb09539c940e236, type: 3}
+  - {fileID: 5848101918098229056, guid: ae4b0ca7ec8dbea4cabc3d7f7d8eff85, type: 3}
+  - {fileID: 5848101918098229056, guid: f4b290c719545c64495ff4fcdc2510bd, type: 3}
+  - {fileID: 5848101918098229056, guid: a9000ba7a5489e54981d6753ae8ade47, type: 3}
+  - {fileID: 5848101918098229056, guid: 853cae01d084b5c4f914e3abdd0eb485, type: 3}
+  - {fileID: 5848101918098229056, guid: b55bdfb84cce2524ea55eb97eca27694, type: 3}
   unitname:
   - JK
   - oldman
@@ -67,3 +77,13 @@ MonoBehaviour:
   - oldwoman
   - wifeparty
   - couple
+  - debu
+  - celebrity
+  - foreign
+  - bigcouple
+  - foreigncouple
+  - family
+  - sportsparty
+  - oldcouple
+  - launchparty
+  - JKpair

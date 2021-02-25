@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitCollider :MonoBehaviour
 {
-    private UnitManagr unitmanager;
+    private UnitManager unitmanager;
     void Start()
     {
     }
@@ -14,11 +14,15 @@ public class UnitCollider :MonoBehaviour
         //GameObject unit = transform.parent.gameObject;
         if (collision.gameObject.tag == "sushi.type")
         {
-            unitmanager.Eat(collision.gameObject.transform.parent.gameObject);
+
+            if (unitmanager.Eat(collision.gameObject.GetComponent<sushidata>()))
+            {
+                Destroy(collision.gameObject.transform.parent.gameObject);
+            }
         }
     }
 
-    public void setUnitManager(UnitManagr unitmanager)
+    public void setUnitManager(UnitManager unitmanager)
     {
         this.unitmanager = unitmanager;
     }

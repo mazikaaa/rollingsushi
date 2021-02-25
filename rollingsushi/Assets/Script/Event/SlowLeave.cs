@@ -12,7 +12,7 @@ public class SlowLeave : Event
 
         foreach (GameObject drop in drops)
         {
-            drop.GetComponent<UnitManagr>().eventtime = -5.0f;
+            drop.GetComponent<UnitManager>().eventtime = -5.0f;
         }
 
     }
@@ -21,7 +21,7 @@ public class SlowLeave : Event
     {
         foreach (GameObject drop in drops)
         {
-            drop.GetComponent<UnitManagr>().eventtime = 0.0f;
+            drop.GetComponent<UnitManager>().eventtime = 0.0f;
         }
     }
 

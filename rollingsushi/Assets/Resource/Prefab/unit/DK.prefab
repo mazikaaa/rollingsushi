@@ -57,6 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848101918098229070}
+  - component: {fileID: 4201999842001251118}
   - component: {fileID: 511523828719749162}
   - component: {fileID: 5848101918098229071}
   - component: {fileID: 5848101918098229069}
@@ -82,6 +83,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4201999842001251118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d184ed33589de44b8316fcf68206f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &511523828719749162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,8 +115,8 @@ MonoBehaviour:
   recast: "2\u79D2"
   cost: 1
   eattime: "27\u79D2"
-  skill: "\u306A\u3057"
-  skill_detail: 
+  skill: "\u7BC0\u7D04"
+  skill_detail: "150\u5186\u3088\u308A\u9AD8\u3044\u5BFF\u53F8\u306F\u98DF\u3079\u306A\u3044"
 --- !u!114 &5848101918098229071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,17 +136,12 @@ MonoBehaviour:
   like: maguro
   dislike: 
   cost: 1
-  skillNo: 1
   eatamount: 7
   leavetime: 27
   eventtime: 0
   setUnit: 0
   unittype: 1
-  clock_image: {fileID: 0}
-  amount_guage: {fileID: 0}
-  clock_guage: {fileID: 0}
-  eat_SE: {fileID: 0}
-  poisonflag: 0
+  skill: {fileID: 4201999842001251118}
   Separate_image:
   - {fileID: 0}
   - {fileID: 0}

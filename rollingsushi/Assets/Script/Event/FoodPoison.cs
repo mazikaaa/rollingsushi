@@ -12,7 +12,7 @@ public class FoodPoison : Event
 
         foreach (GameObject drop in drops)
         {
-            drop.GetComponent<UnitManagr>().poisonflag = true;
+            drop.GetComponent<UnitManager>().poisonflag = true;
         }
 
     }
@@ -21,7 +21,7 @@ public class FoodPoison : Event
     {
         foreach (GameObject drop in drops)
         {
-            drop.GetComponent<UnitManagr>().poisonflag = false;
+            drop.GetComponent<UnitManager>().poisonflag = false;
         }
     }
 

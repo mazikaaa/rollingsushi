@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 5848101918098229070}
   - component: {fileID: 1783184775860429874}
   - component: {fileID: 5848101918098229071}
+  - component: {fileID: 1998583206449783599}
   - component: {fileID: 5848101918098229069}
   m_Layer: 0
   m_Name: oldman
@@ -123,20 +124,27 @@ MonoBehaviour:
   like: tamago
   dislike: 
   cost: 1
-  skillNo: 0
   eatamount: 5
   leavetime: 30
   eventtime: 0
   setUnit: 0
   unittype: 1
-  clock_image: {fileID: 0}
-  amount_guage: {fileID: 0}
-  clock_guage: {fileID: 0}
-  eat_SE: {fileID: 0}
-  poisonflag: 0
+  skill: {fileID: 1998583206449783599}
   Separate_image:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &1998583206449783599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848101918098229056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf52c79ed3f48b0448b77d2d63f4e98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5848101918098229069
 SpriteRenderer:
   m_ObjectHideFlags: 0
