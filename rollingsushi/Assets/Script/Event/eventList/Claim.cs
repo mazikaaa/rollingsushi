@@ -10,9 +10,13 @@ public class Claim : Event
     {
         gamemanager = GameObject.Find("GameManager");
         eventmanager = GameObject.Find("EventManager");
+    }
 
+    public override void ActionEvent()
+    {
         gamemanager.GetComponent<GameManager>().LowerRep();
-        eventmanager.GetComponent<EventManager>().eventTime += 30.0f;
+        //このイベントは評価を下げるだけで終わるため、少し次のイベントまで時間を短くする
+        eventmanager.GetComponent<EventManager>().eventTime +=20.0f;
     }
 
     public override void ExitEvent()

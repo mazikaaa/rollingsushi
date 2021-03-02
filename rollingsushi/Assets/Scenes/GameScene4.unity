@@ -837,7 +837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profit_text: {fileID: 716362828}
   disposal_text: {fileID: 716362827}
-  time_text: {fileID: 0}
   Gameclear: {fileID: 1677669188}
   Gameover: {fileID: 405784890}
   star:
@@ -848,6 +847,7 @@ MonoBehaviour:
   - {fileID: 716362822}
   - {fileID: 716362821}
   - {fileID: 716362818}
+  eventflag: 0
   discard_SE: {fileID: 8300000, guid: 68ca24170a439b84c9699a36da4f52ee, type: 3}
   gameover_disposal: 7
   gameclear_profit: 7000
@@ -5010,11 +5010,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ContinueButton
       objectReference: {fileID: 0}
-    - target: {fileID: 8090067537289244501, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8295174747823106155, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -5141,6 +5136,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba,
         type: 3}
+    - target: {fileID: 8090067537289244501, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc0f3d37eaf8e6146b7cc821bb8f2412, type: 3}
 --- !u!224 &1808785620 stripped
@@ -5430,11 +5430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 387084202, guid: b365e2f9e75cd69439552bbb08740e2b, type: 3}
       propertyPath: m_Offset.y
-      value: -65.10132
+      value: -81.65187
       objectReference: {fileID: 0}
     - target: {fileID: 387084202, guid: b365e2f9e75cd69439552bbb08740e2b, type: 3}
       propertyPath: m_Size.y
-      value: 27.517334
+      value: 32.447296
       objectReference: {fileID: 0}
     - target: {fileID: 6411640822685184206, guid: b365e2f9e75cd69439552bbb08740e2b,
         type: 3}

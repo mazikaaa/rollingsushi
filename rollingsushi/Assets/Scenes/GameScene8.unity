@@ -788,19 +788,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 31
       objectReference: {fileID: 0}
-    - target: {fileID: 1451421195392491773, guid: 56154c8de9b0e0247adf694d7174871e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
-      propertyPath: m_Offset.y
-      value: -78.76674
-      objectReference: {fileID: 0}
-    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
-      propertyPath: m_Size.y
-      value: 28.662842
-      objectReference: {fileID: 0}
     - target: {fileID: 8256891544871657070, guid: 56154c8de9b0e0247adf694d7174871e,
         type: 3}
       propertyPath: iconImage.Array.data[0]
@@ -821,6 +808,19 @@ PrefabInstance:
       propertyPath: iconImage.Array.data[3]
       value: 
       objectReference: {fileID: 297329418}
+    - target: {fileID: 1451421195392491773, guid: 56154c8de9b0e0247adf694d7174871e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
+      propertyPath: m_Offset.y
+      value: -78.76674
+      objectReference: {fileID: 0}
+    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
+      propertyPath: m_Size.y
+      value: 28.662842
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
 --- !u!224 &297329415 stripped
@@ -1465,7 +1465,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profit_text: {fileID: 882375322}
   disposal_text: {fileID: 882375321}
-  time_text: {fileID: 0}
   Gameclear: {fileID: 119035628}
   Gameover: {fileID: 1292774601}
   star:
@@ -1476,6 +1475,7 @@ MonoBehaviour:
   - {fileID: 882375316}
   - {fileID: 882375315}
   - {fileID: 882375314}
+  eventflag: 0
   discard_SE: {fileID: 8300000, guid: 68ca24170a439b84c9699a36da4f52ee, type: 3}
   gameover_disposal: 10
   gameclear_profit: 12000
@@ -3216,11 +3216,11 @@ PrefabInstance:
       value: "\u30AF\u30EA\u30A2\u6761\u4EF6: \u58F2\u4E0A\u309212000\u5186\u4EE5\u4E0A\u306B\u3059\u308B\n\n\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC\u6761\u4EF6:
         \u5EC3\u68C4\u6570\u304C10\u4EE5\u4E0A\u306B\u306A\u308B\n\n\u767A\u751F\u3059\u308B\u30A4\u30D9\u30F3\u30C8:
         \u30CD\u30BF\u306E\u9AD8\u9A30\u30FB\u304A\u8CA1\u5E03\u306B\u512A\u3057\u304F\n
-        \                               \u8D64\u8EAB\u796D\u308A\u30FB\u30AF\u30EC\u30FC\u30E0\u767A\u751F\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u30DE\u30B0\u30ED
-        \  15%  \u30B5\u30FC\u30E2\u30F3  10%  \u30A8\u30D3         10%   \u7389\u5B50
-        \    10%\n\u30BF\u30B3       10%  \u30A4\u30AB         10%  \u30CD\u30AE\u30C8\u30ED
-        \   8%   \u3044\u306A\u308A   5%\n\u8304\u5B50         5%  \u30A6\u30CB           5%
-        \  \u30A4\u30AF\u30E9       5%   \u5927\u30C8\u30ED   5%"
+        \                                     \u8D64\u8EAB\u796D\u308A\u30FB\u30AF\u30EC\u30FC\u30E0\u767A\u751F\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u30DE\u30B0\u30ED
+        \  15%  \u30B5\u30FC\u30E2\u30F3  10%  \u30A8\u30D3          10%   \u7389\u5B50
+        \    10%\n\u30BF\u30B3       10%  \u30A4\u30AB           10%  \u30CD\u30AE\u30C8\u30ED
+        \   8%   \u3044\u306A\u308A   5%\n\u8304\u5B50         5%  \u30A6\u30CB             5%
+        \  \u30A4\u30AF\u30E9        5%   \u5927\u30C8\u30ED   5%"
       objectReference: {fileID: 0}
     - target: {fileID: 8090067537289244507, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
         type: 3}
@@ -3241,11 +3241,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 471.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090067535589863700, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8295174747823106155, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
         type: 3}
@@ -3373,6 +3368,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 5f70fa9848fce274ca6a2e680d4677ba,
         type: 3}
+    - target: {fileID: 8090067535589863700, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc0f3d37eaf8e6146b7cc821bb8f2412, type: 3}
 --- !u!224 &1082544321 stripped

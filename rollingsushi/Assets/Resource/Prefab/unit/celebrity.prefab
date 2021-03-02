@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u30BB\u30EC\u30D6"
-  like: "\u9AD8\u7D1A\u306A\u5BFF\u53F8"
+  like: "\u304B\u305A\u306E\u3053"
   leavetime: "5\u79D2"
   amount: "5\u679A"
   rate: 60%
@@ -132,9 +132,7 @@ MonoBehaviour:
   probability_normal: 6
   waittime_like: 2.5
   waittime_normal: 3.5
-  like: rich
-  dislike: 
-  cost: 4
+  like: kazunoko,uni
   eatamount: 5
   leavetime: 35
   eventtime: 0

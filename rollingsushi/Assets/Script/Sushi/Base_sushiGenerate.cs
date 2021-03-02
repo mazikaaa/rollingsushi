@@ -6,24 +6,8 @@ using UnityEngine.UI;
 
 public class Base_sushiGenerate : MonoBehaviour
 {
-    /*
-    //各値段帯の寿司が出る比率
-    public float cheaprate;
-    public float normalrate;
-    public float expensiverate;
 
-    protected float[] rates = new float[3];
-
-    //出てくる寿司の種類を決める辞書
-    Dictionary<int, float> generatesushirate;
-    */
     int i,j;
-
-    /*
-    public GameObject[] cheapsushi = new GameObject[4];
-    public GameObject[] normalsushi = new GameObject[4];
-    public GameObject[] expensivesushi = new GameObject[4];
-    */
 
     //出てくる寿司を決める辞書
     Dictionary<int, float> choosesushirate;

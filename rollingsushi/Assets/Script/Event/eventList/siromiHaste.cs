@@ -2,35 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnlyCheapSushi : Event
+public class siromiHaste : Event
 {
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;
-    float[] ratestack=new float[16];
-    int i,j;
+    float[] ratestack = new float[16];
+    private List<string> sushitypes = new List<string>();
+    int i, j;
 
     public override void InitEvent()
     {
+        sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
+        foreach (GameObject sushigenerator in sushigenerators)
+        {
+            sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
+        }
+
+        sushitypes.Clear();
+        for (i = 0; i < sushis.Length; i++)
+        {
+            sushitypes.Add(sushis[i].GetComponentInChildren<sushidata>().sushi_type);
+        }
+    }
+
+
+    public override void ActionEvent()
+    {
         i = 0;
         j = 0;
-        sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
-
         foreach (GameObject sushigenerator in sushigenerators)
         {
             sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
             rate = sushigenerator.GetComponent<sushiGenerator>().sushirate;
-            foreach(GameObject sushi in sushis)
+            foreach (string sushitype in sushitypes)
             {
-                if (sushi.GetComponentInChildren<sushidata>().price >= 150)
+                if (sushitype == "siromi")
                 {
                     ratestack[j] = rate[i];//元の確率を保持しておく
-                    rate[i] = 0;
+                    rate[i] = ratestack[j] + 20.0f;
                     j++;
                 }
                 i++;
             }
-            i = 0;
             j = 0;
         }
     }
@@ -41,9 +55,9 @@ public class OnlyCheapSushi : Event
         j = 0;
         foreach (GameObject sushigenerator in sushigenerators)
         {
-            foreach (GameObject sushi in sushis)
+            foreach (string sushitype in sushitypes)
             {
-                if (sushi.GetComponentInChildren<sushidata>().price >= 150)
+                if (sushitype == "siromi")
                 {
                     rate[i] = ratestack[j];//元の確率に戻す
                     j++;
@@ -57,11 +71,11 @@ public class OnlyCheapSushi : Event
 
     public override string GetTitle()
     {
-        return "お財布に優しく";
+        return "巻物祭り";
     }
 
     public override string GetText()
     {
-        return "150円未満の寿司しか登場しなくなる";
+        return "種類が「巻物」の寿司の出てくる確率が増えます";
     }
 }

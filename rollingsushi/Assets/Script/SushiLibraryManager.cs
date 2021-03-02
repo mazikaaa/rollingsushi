@@ -8,7 +8,7 @@ public class SushiLibraryManager : MonoBehaviour
     public GameObject backbutton, nextbutton;
     public AudioClip drum_d, drum_dd;
     public GameObject[] page = new GameObject[5];
-    public AudioSource audio;
+    public new AudioSource audio;
 
     private int pageNo = 0;
     private float volume;

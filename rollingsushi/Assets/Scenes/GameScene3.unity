@@ -640,7 +640,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u30AF\u30EA\u30A2\u6761\u4EF6: \u58F2\u4E0A\u309210000\u5186\u4EE5\u4E0A\u306B\u3059\u308B\n\n\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC\u6761\u4EF6:
         \u5EC3\u68C4\u6570\u304C10\u4EE5\u4E0A\u306B\u306A\u308B\n\n\u767A\u751F\u3059\u308B\u30A4\u30D9\u30F3\u30C8:\u3059\u3057\u3056\u3093\u307E\u3044\u30FB\u512A\u96C5\u306A\u4F11\u65E5\n
-        \                             \u30AF\u30EC\u30FC\u30E0\u767A\u751F\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u7389\u5B50
+        \                                   \u30AF\u30EC\u30FC\u30E0\u767A\u751F\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u7389\u5B50
         \     15%   \u30DE\u30B0\u30ED    15%   \u30A8\u30D3     15%  \u30A2\u30CA\u30B4
         \ 10%\n\u30DB\u30BF\u30C6  10%    \u8D64\u8C9D       10%   \u30A6\u30CB       8%
         \ \u30A4\u30AF\u30E9    7%\n\u30A6\u30CA\u30AE    5%    \u5927\u30C8\u30ED
@@ -1616,7 +1616,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profit_text: {fileID: 142851493}
   disposal_text: {fileID: 142851492}
-  time_text: {fileID: 381183493}
   Gameclear: {fileID: 1766264018}
   Gameover: {fileID: 1469341195}
   star:
@@ -1627,6 +1626,7 @@ MonoBehaviour:
   - {fileID: 142851487}
   - {fileID: 142851486}
   - {fileID: 142851485}
+  eventflag: 0
   discard_SE: {fileID: 8300000, guid: 68ca24170a439b84c9699a36da4f52ee, type: 3}
   gameover_disposal: 10
   gameclear_profit: 10000

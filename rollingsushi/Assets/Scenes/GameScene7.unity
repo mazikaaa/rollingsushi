@@ -705,19 +705,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 31
       objectReference: {fileID: 0}
-    - target: {fileID: 1451421195392491773, guid: 56154c8de9b0e0247adf694d7174871e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
-      propertyPath: m_Offset.y
-      value: -78.76674
-      objectReference: {fileID: 0}
-    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
-      propertyPath: m_Size.y
-      value: 28.662842
-      objectReference: {fileID: 0}
     - target: {fileID: 8256891544871657070, guid: 56154c8de9b0e0247adf694d7174871e,
         type: 3}
       propertyPath: iconImage.Array.data[0]
@@ -738,6 +725,19 @@ PrefabInstance:
       propertyPath: iconImage.Array.data[3]
       value: 
       objectReference: {fileID: 297329418}
+    - target: {fileID: 1451421195392491773, guid: 56154c8de9b0e0247adf694d7174871e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
+      propertyPath: m_Offset.y
+      value: -78.76674
+      objectReference: {fileID: 0}
+    - target: {fileID: 387084202, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
+      propertyPath: m_Size.y
+      value: 28.662842
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56154c8de9b0e0247adf694d7174871e, type: 3}
 --- !u!224 &297329415 stripped
@@ -1308,7 +1308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profit_text: {fileID: 1561922167}
   disposal_text: {fileID: 1561922166}
-  time_text: {fileID: 0}
   Gameclear: {fileID: 119035628}
   Gameover: {fileID: 1292774601}
   star:
@@ -1319,6 +1318,7 @@ MonoBehaviour:
   - {fileID: 1561922161}
   - {fileID: 1561922160}
   - {fileID: 1561922159}
+  eventflag: 0
   discard_SE: {fileID: 8300000, guid: 68ca24170a439b84c9699a36da4f52ee, type: 3}
   gameover_disposal: 10
   gameclear_profit: 10000
@@ -2392,11 +2392,11 @@ PrefabInstance:
       value: "\u30AF\u30EA\u30A2\u6761\u4EF6: \u58F2\u4E0A\u309210000\u5186\u4EE5\u4E0A\u306B\u3059\u308B\n\n\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC\u6761\u4EF6:
         \u5EC3\u68C4\u6570\u304C10\u4EE5\u4E0A\u306B\u306A\u308B\n\n\u767A\u751F\u3059\u308B\u30A4\u30D9\u30F3\u30C8:
         \u512A\u96C5\u306A\u4F11\u65E5\u30FB\u30AF\u30EC\u30FC\u30E0\u767A\u751F\n
-        \                               \u9AD8\u901F\u30EC\u30FC\u30F3\u30FB\u305F\u304F\u3055\u3093\u3054\u63D0\u4F9B\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u7389\u5B50
-        \        15%  \u30DE\u30B0\u30ED   15%  \u7A74\u5B50     10%  \u30DB\u30BF\u30C6
-        \ 10%\n\u30B5\u30FC\u30E2\u30F3  10%  \u30BF\u30B3      10%  \u30A4\u30AF\u30E9
-        \ 10%  \u30BF\u30A4     10%\n\u725B\u5BFF\u53F8       5%   \u5927\u30C8\u30ED
-        \   5%"
+        \                                    \u9AD8\u901F\u30EC\u30FC\u30F3\u30FB\u305F\u304F\u3055\u3093\u3054\u63D0\u4F9B\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u7389\u5B50
+        \         15%  \u30DE\u30B0\u30ED   15%  \u7A74\u5B50       10%    \u30DB\u30BF\u30C6
+        \ 10%\n\u30B5\u30FC\u30E2\u30F3  10%  \u30BF\u30B3      10%   \u30A4\u30AF\u30E9
+        \ 10%    \u30BF\u30A4       10%\n\u725B\u5BFF\u53F8        5%   \u5927\u30C8\u30ED
+        \   5%  "
       objectReference: {fileID: 0}
     - target: {fileID: 8090067537289244507, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
         type: 3}
@@ -3040,12 +3040,12 @@ MonoBehaviour:
   - {fileID: 3086683871337179711, guid: 13b974a25ca50a246a7b861e173cbcb1, type: 3}
   - {fileID: 3086683871337179711, guid: 3968b386440f7e14e99cc102c8f9b466, type: 3}
   - {fileID: 3086683871337179711, guid: b4e884b02d3983b4eb52638c5a061a85, type: 3}
-  - {fileID: 3086683871337179711, guid: 75f559e766be79348865727254db1dcf, type: 3}
-  - {fileID: 3086683871337179711, guid: 7d304dd2b9686f8449defa99fed057f5, type: 3}
+  - {fileID: 3086683871337179711, guid: c7f3d5cee9aefe94cae311986464ae48, type: 3}
+  - {fileID: 3086683871337179711, guid: 17bcee4e894c9214cb7f4bb999b17d6a, type: 3}
   - {fileID: 3086683871337179711, guid: 0b42f3f258a8b164bacd162c91edb449, type: 3}
   - {fileID: 3086683871337179711, guid: 030e043ec7c8bd3479312a155793cbde, type: 3}
-  - {fileID: 3086683871337179711, guid: 8c9dad9baee6d7545872b9d5373ee849, type: 3}
-  - {fileID: 3086683871337179711, guid: ab954d4c5a976fd488258916aab82a6e, type: 3}
+  - {fileID: 3086683871337179711, guid: 4d2bd07d029a2944e94ebb9048e671e5, type: 3}
+  - {fileID: 3086683871337179711, guid: 719558efbe5dd0349a4f825fc5d448af, type: 3}
   sushirate:
   - 15
   - 15
@@ -6683,11 +6683,11 @@ MonoBehaviour:
   - {fileID: 3086683871337179711, guid: 13b974a25ca50a246a7b861e173cbcb1, type: 3}
   - {fileID: 3086683871337179711, guid: 3968b386440f7e14e99cc102c8f9b466, type: 3}
   - {fileID: 3086683871337179711, guid: b4e884b02d3983b4eb52638c5a061a85, type: 3}
-  - {fileID: 3086683871337179711, guid: 75f559e766be79348865727254db1dcf, type: 3}
-  - {fileID: 3086683871337179711, guid: 7d304dd2b9686f8449defa99fed057f5, type: 3}
+  - {fileID: 3086683871337179711, guid: c7f3d5cee9aefe94cae311986464ae48, type: 3}
+  - {fileID: 3086683871337179711, guid: 17bcee4e894c9214cb7f4bb999b17d6a, type: 3}
   - {fileID: 3086683871337179711, guid: 0b42f3f258a8b164bacd162c91edb449, type: 3}
   - {fileID: 3086683871337179711, guid: 030e043ec7c8bd3479312a155793cbde, type: 3}
-  - {fileID: 3086683871337179711, guid: 8c9dad9baee6d7545872b9d5373ee849, type: 3}
+  - {fileID: 3086683871337179711, guid: 4d2bd07d029a2944e94ebb9048e671e5, type: 3}
   - {fileID: 3086683871337179711, guid: 719558efbe5dd0349a4f825fc5d448af, type: 3}
   sushirate:
   - 15

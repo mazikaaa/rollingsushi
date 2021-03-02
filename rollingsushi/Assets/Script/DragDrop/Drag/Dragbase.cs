@@ -66,6 +66,8 @@ public class Dragbase : UnitDataBase
         this.gameObject.GetComponent<Image>().sprite = null;
         this.gameObject.GetComponent<Image>().color = Vector4.zero;
         guageflag = "generate";
+
+        //評判の値,イベントによる効果によって次のお客が来るまでの時間を決める
         generateicon_time = 11.0f - gamemanager.GetComponent<GameManager>().Rep * 0.6f+eventplustime+time;
         guage.fillOrigin = 1;
         unittype = 0;

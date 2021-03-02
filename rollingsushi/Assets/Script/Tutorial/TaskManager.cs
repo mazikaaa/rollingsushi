@@ -25,7 +25,7 @@ public class TaskManager : MonoBehaviour
     private bool isEnabled;
 
     //音楽系
-    AudioSource audio;
+    private new AudioSource audio;
     public AudioClip drum_d;
 
     void Start()

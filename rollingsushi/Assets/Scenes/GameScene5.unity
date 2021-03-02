@@ -825,7 +825,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profit_text: {fileID: 1299833410}
   disposal_text: {fileID: 1299833409}
-  time_text: {fileID: 0}
   Gameclear: {fileID: 1677669188}
   Gameover: {fileID: 405784890}
   star:
@@ -836,6 +835,7 @@ MonoBehaviour:
   - {fileID: 1299833404}
   - {fileID: 1299833403}
   - {fileID: 1299833402}
+  eventflag: 0
   discard_SE: {fileID: 8300000, guid: 68ca24170a439b84c9699a36da4f52ee, type: 3}
   gameover_disposal: 10
   gameclear_profit: 10000
@@ -1830,7 +1830,7 @@ PrefabInstance:
         \u9752\u9B5A\u796D\u308A\u30FB\u305F\u304F\u3055\u3093\u3054\u63D0\u4F9B\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u30A8\u30D3
         \          15%  \u8D64\u8C9D          13%  \u30DB\u30BF\u30C6  13%  \u30B5\u30F3\u30DE
         \   12%\n\u30B5\u30D0           12%  \u30A4\u30EF\u30B7      12%  \u30A2\u30B8
-        \     12%  \u30DF\u30EB\u8C9D      8%\n\u30DB\u30C3\u30AD\u8C9D      8%  \u304B\u305A\u306E\u3053
+        \     12%  \u30DF\u30EB\u8C9D      8%\n\u30DB\u30C3\u30AD\u8C9D     8%  \u304B\u305A\u306E\u3053
         \   5%"
       objectReference: {fileID: 0}
     - target: {fileID: 8090067537289244507, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
@@ -5409,11 +5409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 387084202, guid: b365e2f9e75cd69439552bbb08740e2b, type: 3}
       propertyPath: m_Offset.y
-      value: -65.10132
+      value: -83.238525
       objectReference: {fileID: 0}
     - target: {fileID: 387084202, guid: b365e2f9e75cd69439552bbb08740e2b, type: 3}
       propertyPath: m_Size.y
-      value: 27.517334
+      value: 31.145264
       objectReference: {fileID: 0}
     - target: {fileID: 6411640822685184206, guid: b365e2f9e75cd69439552bbb08740e2b,
         type: 3}

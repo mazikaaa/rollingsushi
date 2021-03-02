@@ -10,8 +10,8 @@ public class GameManager : GameSystemBase
     [SerializeField] int gameover_disposal=2;//ゲームオーバーになる廃棄数
     [SerializeField] int gameclear_profit=500;//ゲームクリアになる売り上げ
 
-    private float MainTime,BGM_volume;
-    private bool timeflag=true,gameoverflag=false,gameclearflag=false;
+    private float BGM_volume;
+    private bool gameoverflag=false,gameclearflag=false;
     private GameObject menumanager,audio_BGM;
     private AudioSource audiosource,BGM;
 
@@ -32,64 +32,63 @@ public class GameManager : GameSystemBase
     // Update is called once per frame
     void Update()
     {
+         //廃棄数が上限を超えたらゲームオーバー
         if (Disposal >= gameover_disposal&&!gameoverflag)
         {
             GameOver();
             gameoverflag = true;
         }
-
+        
+        //利益が上限を超えたらゲームクリア
         if (Profit > gameclear_profit && !gameclearflag)
         {
             GameClear();
             gameclearflag = true;
         }
-        if (timeflag)
-        {
-            MainTime += Time.deltaTime;
-        }
-       // time_text.GetComponent<Text>().text = MainTime.ToString();
     }
 
 
+    //待機席にいるお客さんを入れ替える
     public void RefreshUnitButton() { 
      
         GameObject[] drags = GameObject.FindGameObjectsWithTag("drag");
 
         foreach(GameObject drag in drags)
         {
+            //次のお客さんが来るまでの時間を少し短くする
             drag.GetComponentInChildren<Drag>().DeleteUnit(-5.0f);
         }
         LowerRep();
     }
 
+    //ステージを最初からやり直す
     public void ReplayButtton(int i)
     {
         BGM.PlayOneShot(drum_d);
         SceneManager.LoadScene("GameScene"+i);
     }
 
+    //ステージセレクト画面に戻る
     public void  StageSelectButton()
     {
         BGM.PlayOneShot(drum_dd);
         SceneManager.LoadScene("SelectScene");
     }
 
+    //ゲームクリア処理
     private void GameClear()
     {
         Gameclear.gameObject.SetActive(true);
         menumanager.SetActive(false);
-        MainTime = 0;
-        timeflag = false;
         BGM.Stop();
         Audio.PlayOneShot(GameClear_SE);
         AllObjectFalse();
     }
 
+    //ゲームオーバー処理
     private void GameOver()
     {
         Gameover.gameObject.SetActive(true);
-        MainTime = 0;
-        timeflag = false;
         menumanager.SetActive(false);
         BGM.Stop();
         Audio.PlayOneShot(GameOver_SE);

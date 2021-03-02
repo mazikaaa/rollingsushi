@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u5916\u56FD\u4EBA"
-  like: "\u8ECD\u8266"
+  like: "\u30CD\u30AE\u30C8\u30ED"
   leavetime: "6\u79D2"
   amount: "8\u679A"
   rate: 75%
@@ -103,7 +103,7 @@ MonoBehaviour:
   cost: 3
   eattime: "30\u79D2"
   skill: "\u30A2\u30E1\u30A4\u30B8\u30F3\u30B0"
-  skill_detail: "\u597D\u304D\u306A\u5BFF\u53F8\u3092\u98DF\u3079\u305F\u6642\u3001\u307E\u308C\u306B\u8A55\u4FA1\u3092\u4E0A\u3052\u308B\u3002"
+  skill_detail: "\u597D\u304D\u306A\u5BFF\u53F8\u3092\u98DF\u3079\u305F\u6642\u307E\u308C\u306B\u8A55\u4FA1\u3092\u4E0A\u3052\u308B\u3002"
 --- !u!114 &5848101918098229071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,9 +120,7 @@ MonoBehaviour:
   probability_normal: 75
   waittime_like: 1.5
   waittime_normal: 2.5
-  like: gunkan
-  dislike: 
-  cost: 3
+  like: negitoro
   eatamount: 7
   leavetime: 30
   eventtime: 0

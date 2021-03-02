@@ -121,8 +121,6 @@ MonoBehaviour:
   waittime_like: 0.5
   waittime_normal: 1.5
   like: cheap
-  dislike: 
-  cost: 5
   eatamount: 14
   leavetime: 35
   eventtime: 0

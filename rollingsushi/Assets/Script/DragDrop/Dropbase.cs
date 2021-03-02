@@ -30,30 +30,6 @@ public class Dropbase : MonoBehaviour
         SetUnit();
        // UnitSort();
     }
-
-
-    //ユニットのオブジェクトを名前の順にソート
-    /*
-    public void UnitSort()
-    {
-        string[] unitname_copy = new string[unitname.Length];
-        GameObject[] unitobject_copy = new GameObject[unitobject.Length];
-        Array.Copy(unitname, unitname_copy, unitname.Length);
-        Array.Copy(unitobject, unitobject_copy, unitname.Length);
-        Array.Sort(unitname);
-
-        for (i = 0; i < unitname.Length; i++)
-        {
-            for (j=0; j < unitname_copy.Length; j++)
-            {
-                if (unitname[i] == unitname_copy[j])
-                    unitobject[i] = unitobject_copy[j];
-
-            }
-        }
-        
-    }
-    */
     
     //ユニットのタイプを確認
     public bool CheckUnitType(string name)

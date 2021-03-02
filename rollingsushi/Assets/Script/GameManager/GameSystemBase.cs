@@ -6,15 +6,19 @@ using UnityEngine.UI;
 public class GameSystemBase : MonoBehaviour
 {
 
-    public GameObject profit_text, disposal_text, time_text;
+    public GameObject profit_text, disposal_text;
     public GameObject Gameclear, Gameover;
     public GameObject[] star = new GameObject[7];
+
+    public bool expensiveflag = false;//ネタの高騰(イベント)による変化を起こすフラグ
+    public bool saleflag = false;//ネタの高騰(イベント)による変化を起こすフラグ
 
     public AudioClip discard_SE;
     protected AudioSource Audio;
 
     private float volume;
 
+    //(廃棄数)
     public int Disposal
     {
         set
@@ -28,6 +32,7 @@ public class GameSystemBase : MonoBehaviour
     }
     private int disposal = 0;
 
+    //(利益)
     public int Profit
     {
         set
@@ -43,7 +48,7 @@ public class GameSystemBase : MonoBehaviour
     }
     private int profit = 0;
 
-    //ユニットの生成時間に上下させる変数。
+    //(評価)ユニットの生成時間を上下させる変数。
     public int Rep
     {
         set
@@ -76,12 +81,26 @@ public class GameSystemBase : MonoBehaviour
         disposal_text.GetComponent<Text>().text = Disposal.ToString();
     }
 
+    //利益を増やす
     public void GainProfit(int price)
     {
-        Profit = price;
+        //イベント発生中は得られる利益が20%減る
+        if (expensiveflag)
+        {
+            Profit = (int)(price * 0.8f);
+        }
+        else if (saleflag)
+        {
+            Profit = (int)(price * 0.7f);
+        }
+        else
+        {
+            Profit = price;
+        }
         profit_text.GetComponent<Text>().text = Profit.ToString();
     }
 
+    //評価を上げる
     public void RaiseRep()
     {
         Rep += 1;
@@ -90,6 +109,7 @@ public class GameSystemBase : MonoBehaviour
         star[Rep - 1].SetActive(true);
     }
 
+    //評価を下げる
     public void LowerRep()
     {
         Rep -= 1;

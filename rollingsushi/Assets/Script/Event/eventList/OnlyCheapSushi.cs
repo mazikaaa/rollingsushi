@@ -2,30 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AoHaste : Event
+public class OnlyCheapSushi : Event
 {
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;
-    float[] ratestack = new float[16];
-    int i, j;
+    float[] ratestack=new float[16];
+    List<int> prices = new List<int>();
+
+    int i,j;
 
     public override void InitEvent()
     {
+        sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
+        foreach (GameObject sushigenerator in sushigenerators)
+        {
+            sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
+        }
+
+        prices.Clear();
+        for (i = 0; i < sushis.Length; i++)
+        {
+            prices.Add(sushis[i].GetComponentInChildren<sushidata>().price);
+        }
+    }
+
+    public override void ActionEvent()
+    {
         i = 0;
         j = 0;
-        sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
 
         foreach (GameObject sushigenerator in sushigenerators)
         {
             sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
             rate = sushigenerator.GetComponent<sushiGenerator>().sushirate;
-            foreach (GameObject sushi in sushis)
+            foreach(int price in prices)
             {
-                if (sushi.GetComponentInChildren<sushidata>().sushi_type == "ao")
+                if (price >= 150)
                 {
                     ratestack[j] = rate[i];//元の確率を保持しておく
-                    rate[i] = ratestack[j]+20.0f;
+                    rate[i] = 0;
                     j++;
                 }
                 i++;
@@ -41,9 +57,9 @@ public class AoHaste : Event
         j = 0;
         foreach (GameObject sushigenerator in sushigenerators)
         {
-            foreach (GameObject sushi in sushis)
+            foreach (int price in prices)
             {
-                if (sushi.GetComponentInChildren<sushidata>().sushi_type == "ao")
+                if (price >= 150)
                 {
                     rate[i] = ratestack[j];//元の確率に戻す
                     j++;
@@ -57,11 +73,11 @@ public class AoHaste : Event
 
     public override string GetTitle()
     {
-        return "青魚祭り";
+        return "お財布に優しく";
     }
 
     public override string GetText()
     {
-        return "種類が「青魚」の寿司の出てくる確率が増えます";
+        return "150円未満の寿司しか登場しなくなる";
     }
 }

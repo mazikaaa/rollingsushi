@@ -7,8 +7,8 @@ public class UnitCollider :MonoBehaviour
     private UnitManager unitmanager;
     void Start()
     {
+        unitmanager= this.gameObject.GetComponent<UnitManager>();
     }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         //GameObject unit = transform.parent.gameObject;

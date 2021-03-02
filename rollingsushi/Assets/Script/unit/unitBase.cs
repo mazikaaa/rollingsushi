@@ -108,7 +108,6 @@ public class unitBase : MonoBehaviour
         clockhand = clock_image.GetComponent<RectTransform>();
     }
 
-    [System.Obsolete]
     public bool Eat(sushidata sushidata)
     {
 

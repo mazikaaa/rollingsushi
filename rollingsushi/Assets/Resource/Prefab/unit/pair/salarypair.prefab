@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\u30DA\u30A2"
-  like: "\u306A\u3057"
+  like: "\u9752\u9B5A"
   leavetime: "7\u79D2"
   amount: "9\u679A"
   rate: 80%
@@ -116,13 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5241a74223619409627eca4e0428e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probability_like: 8
+  probability_like: 8.5
   probability_normal: 8
-  waittime_like: 2
+  waittime_like: 1.5
   waittime_normal: 2
-  like: 
-  dislike: 
-  cost: 3
+  like: ao
   eatamount: 9
   leavetime: 30
   eventtime: 0

@@ -41,7 +41,6 @@ public class Drag : Dragbase, IBeginDragHandler, IDragHandler, IEndDragHandler
             guage.fillAmount = deletetime / deleteicon_time;
             if (deletetime >= deleteicon_time)
             {
-               // gamemanager.GetComponent<GameManager>().LowerRep(); 評判を下げる
                 DeleteUnit();
                 if (draggingObject)
                 {

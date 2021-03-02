@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u8001\u592B\u5A66"
-  like: "\u7389\u5B50/\u3044\u306A\u308A"
+  like: "\u7A74\u5B50/\u30A6\u30CA\u30AE"
   leavetime: "10\u79D2"
   amount: "9\u679A"
   rate: 70%
@@ -132,9 +132,7 @@ MonoBehaviour:
   probability_normal: 7
   waittime_like: 2.5
   waittime_normal: 3
-  like: 
-  dislike: 
-  cost: 3
+  like: anago,unagi
   eatamount: 8
   leavetime: 45
   eventtime: 0

@@ -40,6 +40,7 @@ public class EventManager : MonoBehaviour
         foreach(Event eve in events)
         {
             eventList.Add(eve);
+            eve.InitEvent();
         }
         nowEvent = eventList[0];
     }
@@ -51,7 +52,7 @@ public class EventManager : MonoBehaviour
 
         if (eventNo == 0)
         {
-            if (eventTime > eventspan/3.0f)
+            if (eventTime > eventspan/2.0f)
             {
                 nowEvent.ExitEvent();//前のイベントの効果を消す
 
@@ -78,7 +79,7 @@ public class EventManager : MonoBehaviour
 
     protected void SetCurrentEvent(Event task)
     {
-        task.InitEvent();
+        task.ActionEvent();
 
         event_title2.text = task.GetTitle();
         event_text.text = task.GetText();

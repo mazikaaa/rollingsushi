@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class SushiParty : Event
 {
-    GameObject[] sushigenerators;
+    List<sushiGenerator> sushigenerators=new List<sushiGenerator>();
     float vx, vy;
 
     public override void InitEvent()
     {
-        sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
 
-        foreach (GameObject sushigenerator in sushigenerators)
+        foreach(GameObject sushigene in GameObject.FindGameObjectsWithTag("sushigenerator"))
         {
-            sushigenerator.GetComponent<sushiGenerator>().sushigeneratetime -= 0.5f;
+            sushigenerators.Add(sushigene.GetComponent<sushiGenerator>());
+        }
+    }
 
-            vx = sushigenerator.GetComponent<sushiGenerator>().speed_x;
-            vy = sushigenerator.GetComponent<sushiGenerator>().speed_y;
+    public override void ActionEvent()
+    {
+        foreach (sushiGenerator sushigenerator in sushigenerators)
+        {
+            sushigenerator.sushigeneratetime -= 0.5f;
 
-            sushigenerator.GetComponent<sushiGenerator>().speed_x = vx + 0.7f;
-            sushigenerator.GetComponent<sushiGenerator>().speed_y = vy + 0.7f;
+            vx = sushigenerator.speed_x;
+            vy = sushigenerator.speed_y;
+
+            sushigenerator.speed_x = vx + 0.7f;
+            sushigenerator.speed_y = vy + 0.7f;
         }
 
         GameObject[] sushis = GameObject.FindGameObjectsWithTag("sushi");
@@ -32,12 +39,12 @@ public class SushiParty : Event
 
     public override void ExitEvent()
     {
-        foreach (GameObject sushigenerator in sushigenerators)
+   
+        foreach (sushiGenerator sushigenerator in sushigenerators)
         {
-            sushigenerator.GetComponent<sushiGenerator>().sushigeneratetime += 0.5f;
-
-            sushigenerator.GetComponent<sushiGenerator>().speed_x = vx;
-            sushigenerator.GetComponent<sushiGenerator>().speed_y = vy;
+            sushigenerator.sushigeneratetime += 0.5f;
+            sushigenerator.speed_x = vx;
+            sushigenerator.speed_y = vy;
         }
 
         GameObject[] sushis = GameObject.FindGameObjectsWithTag("sushi");

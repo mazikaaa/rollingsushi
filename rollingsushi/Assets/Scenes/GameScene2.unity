@@ -1257,7 +1257,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profit_text: {fileID: 339958239}
   disposal_text: {fileID: 339958238}
-  time_text: {fileID: 381183493}
   Gameclear: {fileID: 1766264018}
   Gameover: {fileID: 1469341195}
   star:
@@ -1268,6 +1267,7 @@ MonoBehaviour:
   - {fileID: 339958242}
   - {fileID: 339958241}
   - {fileID: 339958240}
+  eventflag: 0
   discard_SE: {fileID: 8300000, guid: 68ca24170a439b84c9699a36da4f52ee, type: 3}
   gameover_disposal: 7
   gameclear_profit: 7000
@@ -5906,14 +5906,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sushis:
-  - {fileID: 3086683871337179711, guid: a1adeeb9a7d25bc4d86ee40b3d184a26, type: 3}
+  - {fileID: 3086683871337179711, guid: cddefe749989ced408e8452e4298be6c, type: 3}
   - {fileID: 3086683871337179711, guid: 13b974a25ca50a246a7b861e173cbcb1, type: 3}
   - {fileID: 3086683871337179711, guid: 70070ef782cba1a4d8677c736d288223, type: 3}
   - {fileID: 3086683871337179711, guid: f0f28c2d6cb28944aa8634a23aa99082, type: 3}
   - {fileID: 3086683871337179711, guid: d248befb6ee6e7f49b2b30e275a257a5, type: 3}
   - {fileID: 3086683871337179711, guid: b8e5eb3c37608ce4c9f58dde86bbc572, type: 3}
   - {fileID: 3086683871337179711, guid: b4e884b02d3983b4eb52638c5a061a85, type: 3}
-  - {fileID: 3086683871337179711, guid: 17bcee4e894c9214cb7f4bb999b17d6a, type: 3}
+  - {fileID: 3086683871337179711, guid: ab954d4c5a976fd488258916aab82a6e, type: 3}
   sushirate:
   - 20
   - 20
@@ -7126,7 +7126,7 @@ PrefabInstance:
       value: "\u30AF\u30EA\u30A2\u6761\u4EF6: \u58F2\u4E0A\u30927000\u5186\u4EE5\u4E0A\u306B\u3059\u308B\n\n\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC\u6761\u4EF6:
         \u5EC3\u68C4\u6570\u304C7\u4EE5\u4E0A\u306B\u306A\u308B\n\n\u767A\u751F\u3059\u308B\u30A4\u30D9\u30F3\u30C8:
         \u305F\u304F\u3055\u3093\u3054\u63D0\u4F9B\u30FB\u9AD8\u901F\u30EC\u30FC\u30F3\n
-        \                               \u5BA2\u8DB3\u306E\u6E1B\u5C11\u30FB\u30CD\u30BF\u306E\u9AD8\u9A30\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u7389\u5B50
+        \                                    \u5BA2\u8DB3\u306E\u6E1B\u5C11\u30FB\u30CD\u30BF\u306E\u9AD8\u9A30\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u7389\u5B50
         \     20%  \u30DE\u30B0\u30ED    20%  \u304B\u3063\u3071\u5DFB\u304D   15%
         \ \u7D0D\u8C46\u8ECD\u8266  15%\n\u30DB\u30BF\u30C6  10%   \u30D6\u30EA       10%
         \ \u9244\u706B\u5DFB\u304D         5%  \u3044\u306A\u308A       7%"

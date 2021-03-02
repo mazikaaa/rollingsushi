@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class FoodPoison : Event
 {
-    GameObject[] drops;
+    List<UnitManager> unitmanagers = new List<UnitManager>();
 
     public override void InitEvent()
     {
-        drops = GameObject.FindGameObjectsWithTag("drop");
-
-        foreach (GameObject drop in drops)
+        foreach (GameObject drop in GameObject.FindGameObjectsWithTag("drop"))
         {
-            drop.GetComponent<UnitManager>().poisonflag = true;
+            unitmanagers.Add(drop.GetComponent<UnitManager>());
+        }
+    }
+
+
+    public override void ActionEvent()
+    {
+        foreach (UnitManager unitmanager in unitmanagers)
+        {
+            unitmanager.poisonflag = true;
         }
 
     }
 
     public override void ExitEvent()
     {
-        foreach (GameObject drop in drops)
+        foreach (UnitManager unitmanager in unitmanagers)
         {
-            drop.GetComponent<UnitManager>().poisonflag = false;
+            unitmanager.poisonflag = false;
         }
     }
 

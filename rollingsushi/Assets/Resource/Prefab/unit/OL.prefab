@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: OL
-  like: "\u30B5\u30FC\u30E2\u30F3"
+  like: "\u8D64\u8C9D/\u30DF\u30EB\u8C9D"
   leavetime: "6.5\u79D2"
   amount: "5\u679A"
   rate: 70%
@@ -121,9 +121,7 @@ MonoBehaviour:
   probability_normal: 7
   waittime_like: 2
   waittime_normal: 2.5
-  like: sarmon
-  dislike: 
-  cost: 2
+  like: miru,akagai
   eatamount: 5
   leavetime: 25
   eventtime: 0

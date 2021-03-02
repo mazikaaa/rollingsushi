@@ -9,7 +9,7 @@ public class UnitManager : unitBase
     public GameObject Status;
     Text status_text;
     Animator anim;
-    public AudioClip RepUp_SE,RepDown_SE,Skill_SE;
+    public AudioClip RepUp_SE,RepDown_SE,Skill_SE,Poison_SE;
 
     // Start is called before the first frame update
     new void Start()
@@ -83,5 +83,16 @@ public class UnitManager : unitBase
         audiosource.PlayOneShot(Skill_SE);
         anim.SetTrigger("Skill");
     }
+
+    public void PoisonAnim()
+    {
+        status_text.text = "食あたり…";
+        status_text.color = new Vector4(50, 150, 0, 255);
+
+        audiosource.PlayOneShot(Poison_SE);
+        anim.SetTrigger("Poison");
+    }
+
+
 
 }
