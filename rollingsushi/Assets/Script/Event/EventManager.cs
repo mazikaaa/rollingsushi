@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour
    // public Event[] events=new Event[5];//発生するイベント格納する
     
     private Event nowEvent;
-    [SerializeField] private List<Event> eventList=new List<Event>();
+    [SerializeField] List<Event> eventList=new List<Event>();
 
     private float volume;
   //  private bool  eventflag = false;
@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
     public float eventspan,eventTime;
 
     //イベント用のUI
-    public Text event_text,event_title,event_title2;
+    public Text event_text, event_title, event_title2;
     public AudioClip kakeziku_SE;
 
 
@@ -37,19 +37,21 @@ public class EventManager : MonoBehaviour
 
         Event[] events = eventBox.GetComponents<Event>();
 
-        foreach(Event eve in events)
+        foreach (Event eve in events)
         {
             eventList.Add(eve);
             eve.InitEvent();
         }
+
+
         nowEvent = eventList[0];
+
     }
 
     // Update is called once per frame
     void Update()
     {
         eventTime += Time.deltaTime;
-
         if (eventNo == 0)
         {
             if (eventTime > eventspan/2.0f)

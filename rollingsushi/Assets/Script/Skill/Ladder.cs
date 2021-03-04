@@ -9,6 +9,7 @@ public class Ladder : Skill
 
         if (random == 0)
         {
+            unitmanager.SkillAnim();
             unitmanager.Leave();
         }
     }

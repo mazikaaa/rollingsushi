@@ -6,11 +6,9 @@ public class SushiSpeedUp : Event
 {
     List<sushiGenerator> sushigenerators = new List<sushiGenerator>();
     float vx,vy;
-    int i;
 
     public override void InitEvent()
     {
-        i = 0;
         foreach (GameObject sushigene in GameObject.FindGameObjectsWithTag("sushigenerator"))
         {
             sushigenerators.Add(sushigene.GetComponent<sushiGenerator>());

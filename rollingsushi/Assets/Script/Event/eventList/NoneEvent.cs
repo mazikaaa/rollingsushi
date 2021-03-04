@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NoneEvent : Event
 {
+    GameObject test;
     public override void InitEvent()
+    {
+       
+
+    }
+    
+    public override void ActionEvent()
     {
 
     }

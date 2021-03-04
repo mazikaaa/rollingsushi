@@ -14,8 +14,12 @@ public class OnlyExpenSushi : Event
     public override void InitEvent()
     {
         sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
+        foreach (GameObject sushigenerator in sushigenerators)
+        {
+            sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
+        }
 
-        prices.Clear();
+
         for (i = 0; i < sushis.Length; i++)
         {
             prices.Add(sushis[i].GetComponentInChildren<sushidata>().price);
@@ -51,6 +55,8 @@ public class OnlyExpenSushi : Event
         j = 0;
         foreach (GameObject sushigenerator in sushigenerators)
         {
+            sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
+            rate = sushigenerator.GetComponent<sushiGenerator>().sushirate;
             foreach (int price in prices)
             {
                 if (price < 150)
@@ -67,7 +73,7 @@ public class OnlyExpenSushi : Event
 
     public override string GetTitle()
     {
-        return "リッチにいこう";
+        return "高級志向";
     }
 
     public override string GetText()

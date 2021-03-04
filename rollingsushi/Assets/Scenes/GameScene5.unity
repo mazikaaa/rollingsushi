@@ -835,9 +835,10 @@ MonoBehaviour:
   - {fileID: 1299833404}
   - {fileID: 1299833403}
   - {fileID: 1299833402}
-  eventflag: 0
+  expensiveflag: 0
+  saleflag: 0
   discard_SE: {fileID: 8300000, guid: 68ca24170a439b84c9699a36da4f52ee, type: 3}
-  gameover_disposal: 10
+  gameover_disposal: 7
   gameclear_profit: 10000
   GameOver_SE: {fileID: 8300000, guid: 3769ed4d4d6828841bade9f2356dc9dd, type: 3}
   GameClear_SE: {fileID: 8300000, guid: 2770186ba1c208b4b8a4de237b4f89b0, type: 3}
@@ -1826,11 +1827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: "\u30AF\u30EA\u30A2\u6761\u4EF6: \u58F2\u4E0A\u309210000\u5186\u4EE5\u4E0A\u306B\u3059\u308B\n\n\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC\u6761\u4EF6:
-        \u5EC3\u68C4\u6570\u304C10\u4EE5\u4E0A\u306B\u306A\u308B\n\n\u767A\u751F\u3059\u308B\u30A4\u30D9\u30F3\u30C8:\u8C9D\u796D\u308A\u30FB\u5BA2\u8DB3\u306E\u6E1B\u5C11\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000
+        \u5EC3\u68C4\u6570\u304C7\u4EE5\u4E0A\u306B\u306A\u308B\n\n\u767A\u751F\u3059\u308B\u30A4\u30D9\u30F3\u30C8:\u8C9D\u796D\u308A\u30FB\u5BA2\u8DB3\u306E\u6E1B\u5C11\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000
         \u9752\u9B5A\u796D\u308A\u30FB\u305F\u304F\u3055\u3093\u3054\u63D0\u4F9B\n\u51FA\u3066\u304F\u308B\u5BFF\u53F8\n\u30A8\u30D3
-        \          15%  \u8D64\u8C9D          13%  \u30DB\u30BF\u30C6  13%  \u30B5\u30F3\u30DE
-        \   12%\n\u30B5\u30D0           12%  \u30A4\u30EF\u30B7      12%  \u30A2\u30B8
-        \     12%  \u30DF\u30EB\u8C9D      8%\n\u30DB\u30C3\u30AD\u8C9D     8%  \u304B\u305A\u306E\u3053
+        \          15%   \u8D64\u8C9D          13%  \u30DB\u30BF\u30C6  13%  \u30B5\u30F3\u30DE
+        \   12%\n\u30B5\u30D0           12%   \u30A4\u30EF\u30B7      12%  \u30A2\u30B8
+        \     12%  \u30DF\u30EB\u8C9D      8%\n\u30DB\u30C3\u30AD\u8C9D     8%   \u304B\u305A\u306E\u3053
         \   5%"
       objectReference: {fileID: 0}
     - target: {fileID: 8090067537289244507, guid: dc0f3d37eaf8e6146b7cc821bb8f2412,
@@ -2806,7 +2807,7 @@ PrefabInstance:
     - target: {fileID: 6411640822685184206, guid: b365e2f9e75cd69439552bbb08740e2b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3959813649611392331, guid: b365e2f9e75cd69439552bbb08740e2b,
         type: 3}
@@ -4816,6 +4817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameClear
       objectReference: {fileID: 0}
+    - target: {fileID: 2561738657646863290, guid: cd3d958976866274297e7cd459613ce2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2561738657646863269, guid: cd3d958976866274297e7cd459613ce2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5812,7 +5818,7 @@ PrefabInstance:
     - target: {fileID: 6411640822685184206, guid: b365e2f9e75cd69439552bbb08740e2b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129746847, guid: b365e2f9e75cd69439552bbb08740e2b, type: 3}
       propertyPath: eat_SE

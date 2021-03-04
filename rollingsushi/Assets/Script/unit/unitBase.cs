@@ -205,6 +205,7 @@ public class unitBase : MonoBehaviour
     //食あたりを発生させる。
     protected void GetPoison()
     {
+        unitmanager.PoisonAnim();
         gamemanager.GetComponent<GameManager>().LowerRep();
         Leave();
     }

@@ -1987,7 +1987,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 837618121, guid: 0cee073916ad29c46a30bd78c37949ad, type: 3}
       propertyPath: m_Text
-      value: "\u540D\u524D:\u30BF\u30B3\n\n\u7A2E\u985E:\u8EDF\u4F53\n\n\u4FA1\u683C:150\u5186"
+      value: "\u540D\u524D:\u30BF\u30B3\n\n\u7A2E\u985E:\u30BF\u30B3\n\n\u4FA1\u683C:150\u5186"
       objectReference: {fileID: 0}
     - target: {fileID: 837618121, guid: 0cee073916ad29c46a30bd78c37949ad, type: 3}
       propertyPath: m_FontData.m_Font
@@ -2139,7 +2139,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 837618121, guid: 0cee073916ad29c46a30bd78c37949ad, type: 3}
       propertyPath: m_Text
-      value: "\u540D\u524D:\u30A4\u30AB\n\n\u7A2E\u985E:\u8EDF\u4F53\n\n\u4FA1\u683C:120\u5186"
+      value: "\u540D\u524D:\u30A4\u30AB\n\n\u7A2E\u985E:\u30A4\u30AB\n\n\u4FA1\u683C:120\u5186"
       objectReference: {fileID: 0}
     - target: {fileID: 837618121, guid: 0cee073916ad29c46a30bd78c37949ad, type: 3}
       propertyPath: m_FontData.m_Font

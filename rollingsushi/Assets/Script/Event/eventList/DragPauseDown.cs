@@ -37,7 +37,6 @@ public class DragPauseDown : Event
 
     public override string GetText()
     {
-        return "一定時間，待ち席にお客がやってくるまでの時間が\n" +
-            "長くなってしまいます. ";
+        return "一定時間，待ち席にお客がやってくるまでの時間が長くなってしまいます. ";
     }
 }

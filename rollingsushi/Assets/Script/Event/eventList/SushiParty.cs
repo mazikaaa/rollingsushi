@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SushiParty : Event
 {
     List<sushiGenerator> sushigenerators=new List<sushiGenerator>();
+    GameObject[] sushigenes;
+    GameObject test;
     float vx, vy;
 
     public override void InitEvent()
     {
-
-        foreach(GameObject sushigene in GameObject.FindGameObjectsWithTag("sushigenerator"))
+        foreach (GameObject sushigene in GameObject.FindGameObjectsWithTag("sushigenerator"))
         {
             sushigenerators.Add(sushigene.GetComponent<sushiGenerator>());
         }

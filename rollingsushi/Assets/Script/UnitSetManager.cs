@@ -59,7 +59,7 @@ public class UnitSetManager : MonoBehaviour
 
         audioSource.PlayOneShot(drum_dd);
 
-        Invoke("GoSelect", 0.2f);
+        Invoke("GoSelect", 0.4f);
     }
 
     //編成を最初の状態に戻す
