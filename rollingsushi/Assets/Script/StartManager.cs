@@ -18,9 +18,13 @@ public class StartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //画面サイズの固定化
+        Screen.SetResolution(1600, 900, false, 60);
+
         audioSource = GetComponent<AudioSource>();
         music = PlayerPrefs.GetInt("MUSIC", 0);
         
+        //ゲーム開始時に音楽を流すオブジェクトを生成
         if (music == 0)
         {
             GameObject Audio = Instantiate(AudioPrefab);
@@ -48,6 +52,7 @@ public class StartManager : MonoBehaviour
         }
         */
 
+        //予め設定した音量に効果音・BGMを調整
         BGM_volume = PlayerPrefs.GetFloat("BGM", 1.0f);
         SE_volume= PlayerPrefs.GetFloat("SE", 1.0f);
         Sli_BGM.value = BGM_volume;
@@ -103,6 +108,7 @@ public class StartManager : MonoBehaviour
         }
     }
 
+    //スライダーの調整でBGMの音量を調整する
     public void BGM_Setting()
     {
         float volume;
@@ -113,10 +119,12 @@ public class StartManager : MonoBehaviour
         PlayerPrefs.SetFloat("BGM", volume);
     }
 
+    //スライダーの調整で効果音の音量を調整する
     public void SE_Setting()
     {
         float volume;
 
+       
         volume = Sli_SE.value;
         audioSource.volume =SE_default* volume;
 

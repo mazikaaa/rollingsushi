@@ -19,7 +19,7 @@ public class OnlyExpenSushi : Event
             sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
         }
 
-
+        prices.Clear();
         for (i = 0; i < sushis.Length; i++)
         {
             prices.Add(sushis[i].GetComponentInChildren<sushidata>().price);

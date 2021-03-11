@@ -7,8 +7,8 @@ public class OnlyCheapSushi : Event
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;
-    float[] ratestack=new float[32];
-    List<int> prices = new List<int>();
+    float[] ratestack=new float[16];
+    public List<int> prices = new List<int>();
 
     int i,j,k;
 
@@ -20,6 +20,7 @@ public class OnlyCheapSushi : Event
             sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
         }
 
+        prices.Clear();
         for (i = 0; i < sushis.Length; i++)
         {
             prices.Add(sushis[i].GetComponentInChildren<sushidata>().price);
@@ -39,7 +40,6 @@ public class OnlyCheapSushi : Event
             {
                 if (price >= 150)
                 {
-                    if (k == 0) //出てくる寿司は同じなので2週目は元の確率を保持しておく必要がない
                     ratestack[j] = rate[i];//元の確率を保持しておく
                     rate[i] = 0;
                     j++;

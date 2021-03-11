@@ -20,6 +20,7 @@ public class GunkanHaste : Event
             sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
         }
 
+        sushitypes.Clear();
         for (i = 0; i < sushis.Length; i++)
         {
             sushitypes.Add(sushis[i].GetComponentInChildren<sushidata>().sushi_type);

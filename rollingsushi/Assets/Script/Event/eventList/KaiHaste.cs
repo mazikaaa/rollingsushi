@@ -7,7 +7,7 @@ public class KaiHaste : Event
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;
-    float[] ratestack = new float[20];
+    float[] ratestack = new float[16];
     List<string> sushitypes = new List<string>();
     int i, j;
 
@@ -19,6 +19,7 @@ public class KaiHaste : Event
             sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
         }
 
+        sushitypes.Clear();
         for (i = 0; i < sushis.Length; i++)
         {
             sushitypes.Add(sushis[i].GetComponentInChildren<sushidata>().sushi_type);

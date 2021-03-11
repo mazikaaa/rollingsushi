@@ -19,6 +19,7 @@ public class AoHaste : Event
             sushis = sushigenerator.GetComponent<sushiGenerator>().sushis;
         }
 
+        sushitypes.Clear();
         for (i = 0; i < sushis.Length; i++)
         {
             sushitypes.Add(sushis[i].GetComponentInChildren<sushidata>().sushi_type);
@@ -41,7 +42,9 @@ public class AoHaste : Event
                     ratestack[j] = rate[i];//元の確率を保持しておく
                     rate[i] = ratestack[j]+20.0f;
                     j++;
+                    
                 }
+
                 i++;
             }
             i = 0;

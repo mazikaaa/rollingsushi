@@ -93,6 +93,12 @@ public class SelectManager : MonoBehaviour
         Invoke("GoSushiLibraly", 0.3f);
     }
 
+    public void BackStartSceneButton()
+    {
+        audioSource.PlayOneShot(drum_dd);
+        Invoke("BackStartScene", 0.3f);
+    }
+
     public void BackStartScene()
     {
         SceneManager.LoadScene("StartScene");
