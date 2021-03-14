@@ -5,24 +5,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+//お客さんを編成する画面でのドロップの機構
+public class DropUnitSet : DropBase
 {
+    //画像関連
     public Image iconImage;
     public Sprite nowSprite;
 
-    /*
-    private GameObject[] unit_sub = new GameObject[10];
-    private string[] name_sub = new string[10];
-    private Sprite[] img_sub = new Sprite[10];
-    */
-
+    //お客さん関連
     public GameObject[] unitobject = new GameObject[10];
     public string[] unitname = new string[10];
     public Sprite[] unitimage = new Sprite[10];
 
     private int i;
-    private GameObject unitdatabase;
+    private UnitDataBase unitdatabase;
 
+    //ドロップの機構が持っている情報
     public int DropNo;
     public string dropname;
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
@@ -31,31 +29,27 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     // Start is called before the first frame update
     void Start()
     {
+        //画像の初期化
         nowSprite = null;
         iconImage.sprite = nowSprite;
 
-        unitdatabase = GameObject.Find("UnitDataBase");
-        this.unitobject = unitdatabase.GetComponent<UnitDataBase>().unitobject;
-        this.unitname = unitdatabase.GetComponent<UnitDataBase>().unitname;
+        //お客さんの候補をデータベースより取得
+        unitdatabase = GameObject.Find("UnitDataBase").GetComponent<UnitDataBase>();
+        this.unitobject = unitdatabase.unitobject;
+        this.unitname = unitdatabase.unitname;
 
         this.unitimage = new Sprite[unitobject.Length];
-
         for (i = 0; i < unitobject.Length; i++)
         {
             unitimage[i] = unitobject[i].GetComponent<SpriteRenderer>().sprite;
         }
 
+        //お客さんをドロップの機構にセットしておく
         UnitSort();
         Init_SetUnit();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnPointerEnter(PointerEventData pointerEventData)
+    public override void OnPointerEnter(PointerEventData pointerEventData)
     {
         if (pointerEventData.pointerDrag == null) return;
 
@@ -63,7 +57,7 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         iconImage.sprite = droppedImage.sprite;
         iconImage.color = Vector4.one * 0.6f;
      }
-    public void OnPointerExit(PointerEventData pointerEventData)
+    public override void OnPointerExit(PointerEventData pointerEventData)
     {
 
         if (pointerEventData.pointerDrag == null)
@@ -76,7 +70,7 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             iconImage.color = Vector4.one;
     }
 
-    public void OnDrop(PointerEventData pointerEventData)
+    public override void OnDrop(PointerEventData pointerEventData)
     {
             dropname = pointerEventData.pointerDrag.name;
             
@@ -86,6 +80,7 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             iconImage.color = Vector4.one;
      }
 
+    //お客さんを名前の順にソートする
     private void UnitSort()
     {
         int i,j;
@@ -104,9 +99,7 @@ public class DropUnitSet : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
                     unitimage[i] = guestsprite_copy[j];
             }
         }
-
-}
-
+　　}
     //現状のユニット編成を表示する（初期化）
     public void Init_SetUnit()
     {

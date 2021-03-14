@@ -5,36 +5,42 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class Drag_UnitSet : Dragbase
 {
+    //座標関連
     private Transform canvasTran;
     private RectTransform dragTransform, rectTransform;
+
+    //お客さん関連
     private GameObject draggingObject;
     public string iconname;
+    [SerializeField] GameObject findunit;//機構にセットされているお客さんを確認する
+
+    //テキスト関連
     Transform text;
     Text textdetail;
-    GameObject textobj, unitdatabase;
-    [SerializeField] GameObject findunit;
+
+    GameObject textobj;
+    UnitDataBase unitdatabase;
+    
     // Start is called before the first frame update
     void Start()
     {
         canvasTran = this.gameObject.transform;
         rectTransform = GetComponent<RectTransform>();
+
+
         text = transform.Find("Text");
         textobj = text.gameObject;
         textdetail = textobj.GetComponent<Text>();
-        unitdatabase = GameObject.Find("UnitDataBase");
+
+        unitdatabase = GameObject.Find("UnitDataBase").GetComponent<UnitDataBase>();
         FindUnitObj();
         TextSet();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
-
-    public void OnBeginDrag(PointerEventData pointerEventData)
+    public override void OnBeginDrag(PointerEventData pointerEventData)
     {
          CreateDragObject();
         dragTransform = draggingObject.GetComponent<RectTransform>();
@@ -42,19 +48,19 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
          dragTransform.localPosition = localPosition;
     }
 
-    public void OnDrag(PointerEventData pointerEventData)
+    public override void OnDrag(PointerEventData pointerEventData)
     {
         Vector2 localPosition = GetLocalPosition(pointerEventData.position);
         dragTransform.localPosition = localPosition;
     }
 
-    public void OnEndDrag(PointerEventData pointerEventData)
+    public override void OnEndDrag(PointerEventData pointerEventData)
     {
         gameObject.GetComponent<Image>().color = Vector4.one;
         Destroy(draggingObject);
     }
 
-    private void CreateDragObject()
+    public override void CreateDragObject()
     {
         draggingObject = new GameObject("Dragging Object");
         draggingObject.name = iconname;
@@ -78,17 +84,17 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
         gameObject.GetComponent<Image>().color = Vector4.one * 0.6f;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void OnPointerEnter(PointerEventData eventData)
     {
         textobj.SetActive(true);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public override void OnPointerExit(PointerEventData eventData)
     {
         textobj.SetActive(false);
     }
 
-    private Vector2 GetLocalPosition(Vector2 screenPosition)
+    public override Vector2 GetLocalPosition(Vector2 screenPosition)
     {
         Vector2 result;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, screenPosition, Camera.main, out result);
@@ -96,11 +102,12 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
         return result;
     }
 
+    //適切なお客さんを見つけてくる
     private void FindUnitObj()
     {
         int i;
-        GameObject[] unitobject_copy = unitdatabase.GetComponent<UnitDataBase>().unitobject;
-        string[] unitname_copy = unitdatabase.GetComponent<UnitDataBase>().unitname;
+        GameObject[] unitobject_copy = unitdatabase.unitobject;
+        string[] unitname_copy = unitdatabase.unitname;
 
         for (i = 0; i < unitname_copy.Length; i++)
         {
@@ -111,6 +118,7 @@ public class Drag_UnitSet : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDra
         }
     }
 
+    //テキストデータの取得
     private void TextSet()
     {
         textdata data = findunit.GetComponent<textdata>();

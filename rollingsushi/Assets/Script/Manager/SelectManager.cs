@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectManager : MonoBehaviour
 {
-
+    //サウンド関連
     public GameObject[] Gameframe;
     public GameObject AudioPrefab;
     public AudioClip drum_d, drum_dd;
@@ -28,12 +28,6 @@ public class SelectManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetTrueGame(int i)
     {
       audioSource.PlayOneShot(drum_d);
@@ -46,12 +40,14 @@ public class SelectManager : MonoBehaviour
         frame.SetActive(false);
     }
 
+    //指定したステージに移る
     public void GoGameScene(int i)
     {
         audioSource.PlayOneShot(drum_dd);
         PlayerPrefs.SetInt("MUSIC", 0);
         SceneManager.LoadScene("GameScene"+i);
     }
+    //ゲームを終了する
     public void GameEndButton()
     {
         #if UNITY_EDITOR
@@ -64,6 +60,7 @@ public class SelectManager : MonoBehaviour
 
     }
 
+    //チュートリアル画面に移る
     public void TutorialButton()
     {
         audioSource.PlayOneShot(drum_dd);
@@ -76,6 +73,7 @@ public class SelectManager : MonoBehaviour
         SceneManager.LoadScene("TutorialScene");
     }
 
+    //ユニット編成画面に移る
     public void UnitSetSceneButton()
     {
         audioSource.PlayOneShot(drum_dd);
@@ -87,6 +85,7 @@ public class SelectManager : MonoBehaviour
         SceneManager.LoadScene("UnitSetScene");
     }
 
+    //お品書き画面へ移る
     public void SushiLibralySceneButton()
     {
         audioSource.PlayOneShot(drum_dd);

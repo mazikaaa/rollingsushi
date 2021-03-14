@@ -6,18 +6,19 @@ using UnityEngine.UI;
 public class EventManager : MonoBehaviour
 {
    [SerializeField] int eventNo=0;
-   // public Event[] events=new Event[5];//発生するイベント格納する
     
     private Event nowEvent;
+
     [SerializeField] List<Event> eventList=new List<Event>();
+    public GameObject eventBox; //発生するイベントを格納するオブジェクト
 
     private float volume;
   //  private bool  eventflag = false;
 
+ 　//掛け軸関連
     Animator kakeziku_anime;
     new AudioSource audio;
 
-    public GameObject eventBox;
     public float eventspan,eventTime;
 
     //イベント用のUI
@@ -28,22 +29,22 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //掛け軸の初期化
         GameObject kakeziku = GameObject.Find("kakeziku");
         kakeziku_anime = kakeziku.GetComponent<Animator>();
 
+        //サウンドの初期化
         audio = GetComponent<AudioSource>();
         volume = PlayerPrefs.GetFloat("SE", 1.0f);
         audio.volume *= volume;
 
+        //イベントの初期化
         Event[] events = eventBox.GetComponents<Event>();
-
         foreach (Event eve in events)
         {
             eventList.Add(eve);
             eve.InitEvent();
         }
-
-
         nowEvent = eventList[0];
 
     }
@@ -52,6 +53,8 @@ public class EventManager : MonoBehaviour
     void Update()
     {
         eventTime += Time.deltaTime;
+
+        //何もイベントが発生していないとき
         if (eventNo == 0)
         {
             if (eventTime > eventspan/2.0f)
@@ -65,7 +68,7 @@ public class EventManager : MonoBehaviour
             }
 
         }
-        else
+        else //イベントが発生している時
         {
             if (eventTime > eventspan)
             {
@@ -79,6 +82,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    //イベントを実際に発生する関数
     protected void SetCurrentEvent(Event task)
     {
         task.ActionEvent();

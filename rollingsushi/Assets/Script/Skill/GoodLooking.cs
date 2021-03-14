@@ -8,7 +8,7 @@ public class GoodLooking : Skill
 
         if (price >= 180)
         {
-            unitmanager.Eat_Flag -= 10.0f;
+            unitmanager.Eat_Rate -= 10.0f;
             unitmanager.SkillAnim();
         }
 

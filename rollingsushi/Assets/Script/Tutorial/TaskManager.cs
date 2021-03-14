@@ -21,8 +21,6 @@ public class TaskManager : MonoBehaviour
 
     protected int Tasknum = 0;//現在のリストの番号を保持する
 
-    // チュートリアル表示フラグ
-    private bool isEnabled;
 
     //音楽系
     private new AudioSource audio;
@@ -58,8 +56,6 @@ public class TaskManager : MonoBehaviour
 
         // 最初のチュートリアルを設定
         StartCoroutine(SetCurrentTask(currentTask));
-
-        isEnabled = true;
     }
 
     void Update()
@@ -74,7 +70,6 @@ public class TaskManager : MonoBehaviour
     }
 
     /// 新しいチュートリアルタスクを設定する
-
     protected IEnumerator SetCurrentTask(ITutorialTask task, float time = 0)
     {
 
@@ -111,19 +106,10 @@ public class TaskManager : MonoBehaviour
         StartCoroutine(SetCurrentTask(tutorialTask.ElementAt(Tasknum)));
     }
 
+
     public void MoveGoSelect()
     {
         SceneManager.LoadScene("SelectScene");
-    }
-    /// <summary>
-    /// チュートリアルの有効・無効の切り替え
-    /// </summary>
-    protected void SwitchEnabled()
-    {
-        isEnabled = !isEnabled;
-        // UIの表示切り替え
-        float alpha = isEnabled ? 1f : 0;
-        tutorialTextArea.GetComponent<CanvasGroup>().alpha = alpha;
     }
 
     private void OnApplicationQuit()

@@ -20,12 +20,6 @@ public class SushiLibraryManager : MonoBehaviour
         audio.volume *= volume;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //次のページに進むボタン
     public void AdvancePage()
     {
@@ -68,6 +62,5 @@ public class SushiLibraryManager : MonoBehaviour
     {
         SceneManager.LoadScene("SelectScene");
     }
-
 
 }

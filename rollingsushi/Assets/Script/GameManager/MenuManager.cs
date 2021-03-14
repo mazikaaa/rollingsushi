@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] bool menuflag = false;
     public GameObject menu,refresh;
-    GameObject gamemanager,sushigenerator,eventmanager;
+    GameObject gamemanager,eventmanager;
 
     public AudioClip drum_d,drum_dd;
     public Slider Sli_BGM, Sli_SE;
@@ -36,11 +36,12 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         gamemanager = GameObject.Find("GameManager");
-        sushigenerator = GameObject.Find("SushiGenerator");
         eventmanager = GameObject.Find("EventManager");
 
+        //サウンドの初期化
         BGM = audio_BGM.GetComponent<AudioSource>();
-        volume_BGM = PlayerPrefs.GetFloat("BGM", 1.0f);        
+        volume_BGM = PlayerPrefs.GetFloat("BGM", 1.0f);
+        BGM.volume *= volume_BGM;
 
         SE = GetComponent<AudioSource>();
         volume_SE = PlayerPrefs.GetFloat("SE", 1.0f);
@@ -51,6 +52,8 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
     }
+
+    //メニュー画面を開く
     public void setMenu()
     {
         game_detail = menu.transform.Find("Game");
@@ -80,6 +83,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    //もう一度続きから始める
     public void ContinueButton()
     {
         SE.PlayOneShot(drum_d);
@@ -88,19 +92,21 @@ public class MenuManager : MonoBehaviour
         gamemanager.SetActive(true);
         AllObjectTrue();
     }
-
+    //チュートリアルを最初からやり直す
     public void ReplayTutorial()
     {
         SE.PlayOneShot(drum_d);
         SceneManager.LoadScene("TutorialScene");
     }
 
+    //ステージ選択画面に戻る
     public void GoSelectButton()
     {
         SE.PlayOneShot(drum_dd);
         SceneManager.LoadScene("SelectScene");
     }
 
+    //ステージを最初からやり直す
     public void ReplayGame(int i)
     {
         SE.PlayOneShot(drum_d);
@@ -118,6 +124,7 @@ public class MenuManager : MonoBehaviour
 #endif
     }
 
+    //ステージ情報画面を表示する
     public void Detail_Game()
     {
         SE.PlayOneShot(drum_d);
@@ -126,6 +133,7 @@ public class MenuManager : MonoBehaviour
         setting.gameObject.SetActive(false);
     }
 
+    //ユニット情報画面を表示する
     public void Detail_Unit()
     {
         SE.PlayOneShot(drum_d);
@@ -134,6 +142,7 @@ public class MenuManager : MonoBehaviour
         setting.gameObject.SetActive(false);
     }
 
+    //音量調整画面の表示
     public void Detail_Setting()
     {
         SE.PlayOneShot(drum_d);
@@ -142,6 +151,7 @@ public class MenuManager : MonoBehaviour
         setting.gameObject.SetActive(true);
     }
 
+    //BGMの音量調整
     public void BGM_Setting()
     {
         float volume;
@@ -152,6 +162,7 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetFloat("BGM", volume);
     }
 
+    //効果音の音量調整
     public void SE_Setting()
     {
         float volume;

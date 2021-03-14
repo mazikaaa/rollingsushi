@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//食事席に配置されたお客さんのアニメーションを制御する　＆　時間の管理をする
 public class UnitManager : unitBase
 {
-    GameManager gameManager;
+    //演出（アニメーション）関連
     public GameObject Status;
     Text status_text;
     Animator anim;
@@ -15,11 +16,10 @@ public class UnitManager : unitBase
     new void Start()
     {
         base.Start();
-        gameManager = gamemanager.GetComponent<GameManager>();
         unitmanager = GetComponent<UnitManager>();
 
+        //演出情報の初期化
         status_text = Status.GetComponent<Text>();
-
         anim = this.gameObject.GetComponent<Animator>();
 
     }
@@ -27,6 +27,7 @@ public class UnitManager : unitBase
     // Update is called once per frame
     void Update()
     {
+        //席にお客さんが配置されているなら時間を計測する
         if (setUnit == true)
         {
             leave += Time.deltaTime;
@@ -40,7 +41,7 @@ public class UnitManager : unitBase
         {
             //評判が上がる
             RaiseAnim();
-            gameManager.RaiseRep();
+            gamemanager.RaiseRep();
             Leave();
         }
 
@@ -51,15 +52,16 @@ public class UnitManager : unitBase
             {
                 //評判下がる
                 LowerAnim();
-                gameManager.LowerRep();
+                gamemanager.LowerRep();
             }
             Leave();
         }
     }
 
+
     private void RaiseAnim()
     {
-        status_text.text = "評価UP！！";
+        status_text.text = "評判UP！！";
         status_text.color = new Vector4(255, 0, 0, 255);
 
         audiosource.PlayOneShot(RepUp_SE);
@@ -68,7 +70,7 @@ public class UnitManager : unitBase
 
     private void LowerAnim()
     {
-        status_text.text = "評価DOWN……";
+        status_text.text = "評判DOWN……";
         status_text.color = new Vector4(0, 0, 255, 255);
 
         audiosource.PlayOneShot(RepDown_SE);

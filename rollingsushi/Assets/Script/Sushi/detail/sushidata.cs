@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class sushidata : MonoBehaviour
 {
-    public string sushi_name;
-    public string sushi_type;
-    public int price;
-    //public float rate=15.0f;//この寿司の出やすさを決める
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string sushi_name;//寿司の名前
+    public string sushi_type;//寿司の種類
+    public int price;//価格
+ 
 }

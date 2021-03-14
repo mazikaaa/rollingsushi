@@ -11,6 +11,6 @@ public class Skill:MonoBehaviour
     //寿司を食べた後に行う処理
     public virtual void AfterEat(int price,GameManager gamemanager,UnitManager unitmanager,bool like) { }
 
-    //
+    //席を離れる時に行う処理
     public virtual void LeaveSkill(int amount,GameManager gamemanager,UnitManager unitManager) { }
 }

@@ -5,51 +5,51 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+//メニュー画面のドラック機構
+public class Drag_Menu : Dragbase
 {
+    //テキストデータ関連
     Transform[] text=new Transform[3];
     GameObject[] textobj = new GameObject[3];
-    GameObject unitdatabase;
-   
+
+
+    UnitDataBase unitdatabase;
     int i;
    
+    //お客さん関連
     private GameObject[] unitobject = new GameObject[8];
-    private string[] unitname = new string[8];
-    private Sprite[] unitimage = new Sprite[8];
-
-    public Image iconImage;
-    public Sprite nowSprite;
     public int DropNo;
     public string dropname;
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
 
+    //画像関連
+    public Image iconImage;
+    public Sprite nowSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //テキスト表示のオブジェクトを所得
         for (i = 0; i < 3; i++)
         {
             text[i] = transform.Find("Text" + i);
             textobj[i] = text[i].gameObject;
         }
 
+        //画像の初期化
         nowSprite = null;
         iconImage.sprite = nowSprite;
 
-        //UnitSort();
+        //各ドロップの機構にお客さんをセットする
+        unitdatabase = GameObject.Find("UnitDataBase").GetComponent<UnitDataBase>();
         Init_SetUnit();
 
+        //テキストデータを付与する
         TextSet();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void OnPointerEnter(PointerEventData eventData)
     {
         for (i = 0; i < 3; i++)
         {
@@ -57,7 +57,7 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public override void OnPointerExit(PointerEventData eventData)
     {
         for (i = 0; i < 3; i++)
         {
@@ -65,37 +65,14 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
-    /*
-    private void UnitSort()
-    {
-        int i, j;
-
-        string[] guestname_copy = new string[unitname.Length];
-        Sprite[] guestsprite_copy = new Sprite[unitimage.Length];
-        Array.Copy(unitname, guestname_copy, unitname.Length);
-        Array.Copy(unitimage, guestsprite_copy, unitname.Length);
-        Array.Sort(unitname);
-
-        for (i = 0; i < unitname.Length; i++)
-        {
-            for (j = 0; j < guestname_copy.Length; j++)
-            {
-                if (unitname[i] == guestname_copy[j])
-                    unitimage[i] = guestsprite_copy[j];
-
-            }
-        }
-
-    }
-    */
+    //お客さんの初期化（各機構にお客さんのデータを付与する）
     public void Init_SetUnit()
     {
         int i;
         dropname = PlayerPrefs.GetString("Unit" + DropNo, default_unit[DropNo - 1]);
 
-        unitdatabase = GameObject.Find("UnitDataBase");
-        GameObject[] unitobject_copy= unitdatabase.GetComponent<UnitDataBase>().unitobject;
-        string[] unitname_copy = unitdatabase.GetComponent<UnitDataBase>().unitname;
+        GameObject[] unitobject_copy= unitdatabase.unitobject;
+        string[] unitname_copy = unitdatabase.unitname;
         Sprite[] unitimages = new Sprite[unitobject_copy.Length];
 
         for (i = 0; i < unitobject_copy.Length; i++)
@@ -117,6 +94,7 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
+　　//テキストデータの付与
     private void TextSet()
     {
         Text detail = textobj[0].GetComponent<Text>();
@@ -124,10 +102,6 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         Text detail3 = textobj[2].GetComponent<Text>();
 
         textdata data = unitobject[DropNo - 1].GetComponent<textdata>();
-        /*
-        int[] num = { 0,0,0,0,0,0,0};
-        int indent = 0; ;
-        */
 
         string name = data.name;
         string like = data.like;
@@ -137,74 +111,6 @@ public class Drag_Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         string recast = data.recast;
         string eattime = data.eattime;
         string skill = data.skill;
-
-        /*
-        num[0] = like.Length;
-        Debug.Log(num);
-        while (num[0] <= 5)
-        {
-            if (num[0] <= 5)
-            {
-                like += "　";
-                num[0]++;
-            }
-        }
-
-        num[1] = leavetime.Length;
-        while (num[1] <= 7)
-        {
-            if (num[1] <= 7)
-            {
-                leavetime += " ";
-                num[1]++;
-            }
-        }
-
-        num[2] = amount.Length;
-        indent = num[2];
-        while (num[2] <= 16-indent)
-        {
-            //字数合わせ
-            if (num[2] <= 16-indent)
-            {
-                amount += " ";
-                num[2]++;
-            }
-        }
-
-        num[3] = rate.Length;
-        while (num[3] <= 16)
-        {
-            if (num[3] <= 16)
-            {
-                rate += " ";
-                num[3]++;
-            }
-        }
-
-        num[4] = recast.Length;
-        indent = num[4];
-        while (num[4] <= 7-indent)
-        {
-            if (num[4] <= 7-indent)
-            {
-                recast += " ";
-                num[4]++;
-            }
-
-        }
-
-        num[5] = eattime.Length;
-        while (num[5]<= 5)
-        {
-            num[5] = leavetime.Length;
-            if (num[5] <= 5)
-            {
-                eattime += " ";
-                num[5]++;
-            }
-        }
-        */
 
         detail.text = "名前:" + name + "\n" +
                       "好きな寿司:" + like + "\n" +

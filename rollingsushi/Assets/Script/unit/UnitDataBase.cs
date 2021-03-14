@@ -4,10 +4,12 @@ using UnityEngine;
 using System.Linq;
 using System;
 
+//全お客さんの情報を格納しておくスクリプト
 public class UnitDataBase : MonoBehaviour
 {
 
     int i, j;
+
 
     public GameObject[] unitobject=new GameObject[10];
     public string[] unitname = new string[10];
@@ -17,17 +19,7 @@ public class UnitDataBase : MonoBehaviour
         UnitSort();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //お客さんを名前の順に整列させる
     private void UnitSort()
     {
         string name = null;

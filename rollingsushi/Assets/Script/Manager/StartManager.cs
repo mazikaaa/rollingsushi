@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
-    public GameObject AudioPrefab,setting_frame;
+    public GameObject AudioPrefab, setting_frame;
     public Slider Sli_BGM, Sli_SE;
     private int music;
-    static private float SE_default,BGM_default;
+    static private float SE_default, BGM_default;
     private float BGM_volume, SE_volume;
-    public AudioClip drum_d,drum_dd;
-    AudioSource audioSource,BGM_audio;
+    public AudioClip drum_d, drum_dd;
+    AudioSource audioSource, BGM_audio;
     protected string[] default_unit = { "DK", "JK", "OL", "salaryman", "wife", "oldman", "DKpair", "salarypair" };
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class StartManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         music = PlayerPrefs.GetInt("MUSIC", 0);
-        
+
         //ゲーム開始時に音楽を流すオブジェクトを生成
         if (music == 0)
         {
@@ -33,7 +33,7 @@ public class StartManager : MonoBehaviour
 
             BGM_default = BGM_audio.volume;
             SE_default = audioSource.volume;
-            PlayerPrefs.SetFloat("BGM_DE",BGM_default);
+            PlayerPrefs.SetFloat("BGM_DE", BGM_default);
             PlayerPrefs.SetFloat("SE_DE", SE_default);
         }
         else
@@ -41,7 +41,7 @@ public class StartManager : MonoBehaviour
             GameObject Audio = GameObject.Find("Audio_Menu(Clone)");
             BGM_audio = Audio.GetComponent<AudioSource>();
             BGM_default = PlayerPrefs.GetFloat("BGM_DE", 1.0f);
-            SE_default= PlayerPrefs.GetFloat("SE_DE", 1.0f);
+            SE_default = PlayerPrefs.GetFloat("SE_DE", 1.0f);
 
         }
 
@@ -54,7 +54,7 @@ public class StartManager : MonoBehaviour
 
         //予め設定した音量に効果音・BGMを調整
         BGM_volume = PlayerPrefs.GetFloat("BGM", 1.0f);
-        SE_volume= PlayerPrefs.GetFloat("SE", 1.0f);
+        SE_volume = PlayerPrefs.GetFloat("SE", 1.0f);
         Sli_BGM.value = BGM_volume;
         Sli_SE.value = SE_volume;
         BGM_audio.volume = BGM_default * BGM_volume;
@@ -73,7 +73,7 @@ public class StartManager : MonoBehaviour
         Invoke("Gostart", 0.3f);
     }
 
-    private void  Gostart()
+    private void Gostart()
     {
         SceneManager.LoadScene("SelectScene");
     }
@@ -85,7 +85,7 @@ public class StartManager : MonoBehaviour
 
     public void GameEndButton()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         PlayerPrefs.SetInt("MUSIC", 0);
 #elif UNITY_STANDALONE
@@ -114,7 +114,7 @@ public class StartManager : MonoBehaviour
         float volume;
 
         volume = Sli_BGM.value;
-        BGM_audio.volume = BGM_default*volume;
+        BGM_audio.volume = BGM_default * volume;
 
         PlayerPrefs.SetFloat("BGM", volume);
     }
@@ -123,10 +123,8 @@ public class StartManager : MonoBehaviour
     public void SE_Setting()
     {
         float volume;
-
-       
         volume = Sli_SE.value;
-        audioSource.volume =SE_default* volume;
+        audioSource.volume = SE_default * volume;
 
         PlayerPrefs.SetFloat("SE", volume);
     }

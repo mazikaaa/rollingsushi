@@ -9,13 +9,14 @@ public class UnitCollider :MonoBehaviour
     {
         unitmanager= this.gameObject.GetComponent<UnitManager>();
     }
+
+    //お客さんの前を寿司が通った時に、一定確率で寿司を食べる
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //GameObject unit = transform.parent.gameObject;
         if (collision.gameObject.tag == "sushi.type")
         {
 
-            if (unitmanager.Eat(collision.gameObject.GetComponent<sushidata>()))
+            if (unitmanager.Eat(collision.gameObject.GetComponent<sushidata>()))//寿司を食べるかどうか判定する
             {
                 Destroy(collision.gameObject.transform.parent.gameObject);
             }

@@ -3,36 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//食事席に配置されたお客さんのシステム部分を制御する
 public class unitBase : MonoBehaviour
 {
     //ユニットごとの情報
-    protected float probability_like;
-    protected float probability_normal;
-    protected float waittime_like;
-    protected float waittime_normal;
-    protected string like;
-    protected string dislike;
-    protected int cost;
-    protected Skill skill;
-    public int eatamount=0;
-    public float leavetime=0.0f,eventtime=0.0f;//eventによる時間の上下
-    protected bool setUnit=false;
+    protected float probability_like;//好きな寿司を食べる確率
+    protected float probability_normal;//普通の寿司を食べる確率
+    protected float waittime_like;//好きな寿司を食べた後、次の寿司を食べるまでの時間
+    protected float waittime_normal;//普通の寿司を食べた後、次の寿司を食べるまでの時間
+    protected string like;//好きな寿司の名前
+    public int eatamount = 0;//寿司を食べる量
+    protected float leavetime = 0.0f;//食事席を離れるまでの時間
+    public float eventtime = 0.0f;//eventによる時間の上下
     protected int unittype;//1なら一人,2ならペア,4ならグループ
+    protected bool setUnit = false;//お客さんが配置されているかどうか
+    protected Skill skill;//お客さんの特殊能力
 
+    //UI部分
     public GameObject clock_image; 
     public Image amount_guage,clock_guage;
 
     //効果音
     public AudioClip eat_SE;
 
-    //ユニットが変わるたびに初期化
+
     protected int amount;//食べた寿司の量を計測
-    protected float leave;//ドロップしてから離席までの時間を計測
+    protected float leave;//ドロップしてから離席までの時間を計測    
     protected float eattime;//寿司を食べてからの時間を計測
+
+    //サウンド関連
     protected float volume;
 
     protected bool skillflag = true;//スキルによる判定
-    public bool poisonflag = false;
+    public bool poisonflag = false;//食当たりの判定
     
     protected RectTransform clockhand;//時計の針の角度を決める
 
@@ -44,7 +47,8 @@ public class unitBase : MonoBehaviour
     protected UnitManager unitmanager;
     protected AudioSource audiosource;
 
-    public float Eat_Flag
+    //寿司を食べるかどうかを決める際に必要
+    public float Eat_Rate
     {
         get
         {
@@ -57,7 +61,7 @@ public class unitBase : MonoBehaviour
     }
     protected float eat_flag;
 
-
+    //次の寿司を食べるまで時間
     public float waittime_base
     {
         get
@@ -71,6 +75,7 @@ public class unitBase : MonoBehaviour
     }
     protected float _waittime;
 
+    //好きな寿司を食べる確率
     public float Rate_Like
     {
         get
@@ -84,6 +89,7 @@ public class unitBase : MonoBehaviour
     }
     protected float rate_like;
 
+    //普通の寿司を食べる確率
     public float Rate_Normal
     {
         get
@@ -108,10 +114,11 @@ public class unitBase : MonoBehaviour
         clockhand = clock_image.GetComponent<RectTransform>();
     }
 
+    //寿司を食べる処理
     public bool Eat(sushidata sushidata)
     {
 
-        Eat_Flag = Random.Range(0.0f, 10.0f);
+        Eat_Rate = Random.Range(0.0f, 10.0f);
 
         //寿司のデータを所得
         string name = sushidata.sushi_name;
@@ -121,15 +128,15 @@ public class unitBase : MonoBehaviour
         //寿司の値段が高いなら食べる確率を少し減らす
         if (price >= 200)
         {
-            Eat_Flag += 1.5f;
+            Eat_Rate += 1.5f;
         }
         else if (price >= 180)
         {
-            Eat_Flag += 1.0f;
+            Eat_Rate += 1.0f;
         }
         else if (price >= 150)
         {
-            Eat_Flag += 0.5f;
+            Eat_Rate += 0.5f;
         }
 
         //スキルによって食べない判定をする
@@ -137,16 +144,17 @@ public class unitBase : MonoBehaviour
         if (!skillflag)
             return false;
 
-        if (CheckLike(name,type,price))
+        if (CheckLike(name,type,price))//好きな寿司かどうかを判定する
         {
-            if (Eat_Flag < Rate_Like && eattime>waittime_base)
+            //好きな寿司の場合
+            if (Eat_Rate < Rate_Like && eattime>waittime_base)
             {
                 if (poisonflag)
                 {
                     int poison = Random.Range(0, 20);
                     if (poison == 0)
                     {
-                        GetPoison();
+                        GetPoison();//食当たりの発動
                     }
                 }
 
@@ -165,14 +173,15 @@ public class unitBase : MonoBehaviour
         }
         else
         {
-            if (Eat_Flag < Rate_Normal && eattime > waittime_base)
+            //普通の寿司の場合
+            if (Eat_Rate < Rate_Normal && eattime > waittime_base)
             {
                 if (poisonflag)
                 {
                     int poison = Random.Range(0, 20);
                     if (poison == 0)
                     {
-                        GetPoison();
+                        GetPoison();//食当たりの発動
                     }
                 }
                 amount += 1;
@@ -188,6 +197,8 @@ public class unitBase : MonoBehaviour
             return false;
         }
     }
+
+    //席を離れる時の処理
     public void Leave()
     {
         skill.LeaveSkill(amount,gamemanager,unitmanager);

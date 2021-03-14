@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+    //チュートリアルで流すアニメーションを制御する
 public class AnimationControler : MonoBehaviour
 {
     Animator frame_animator;
     GameObject frame, Drag;
-
     public bool dd1_flag , dd2_flag;
 
     // Start is called before the first frame update

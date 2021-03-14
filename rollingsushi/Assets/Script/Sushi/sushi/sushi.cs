@@ -4,38 +4,31 @@ using UnityEngine;
 
 public class sushi : MonoBehaviour
 {
-    /// <summary>
-    /// 移動関係
-    /// </summary>
-
     public float x, y;
+
+    //移動関連
     public float init_x, init_y;
     public float speed_x, speed_y;
-    public int direction = 0, other_direction = 0;
+    public int direction = 0;
 
-    Rigidbody2D sushirigidbody;
-
-    //otherdirection(進行方向との逆方向)は壁に衝突した際にその方向に進まないために必要
     void Start()
     {
         Invoke("Initmove", 0.1f);
-        //sushirigidbody = GetComponent<Rigidbody2D>();
-
     }
-    // Start is called before the first frame update
     void Update()
     {
         Vector3 pos = this.gameObject.transform.position;
-        //sushirigidbody.MovePosition(new Vector3(pos.x + x, pos.y + y, pos.z));
-        this.gameObject.transform.position = new Vector3(pos.x + x, pos.y + y, pos.z);
+        this.gameObject.transform.position = new Vector3(pos.x + x, pos.y + y, pos.z);//寿司の移動
     }
 
+    //移動のスピードの初期設定
     void Initmove()
     {
         x = init_x;
         y = init_y;
     }
 
+    //移動するスピードと方法を変更する
     public void MoveUpdate(TurnPoint turnpoint)
     {
         int new_direction = (int)turnpoint.direction;

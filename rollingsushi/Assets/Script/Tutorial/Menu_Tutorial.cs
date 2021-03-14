@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//チュートリアル用のメニュー画面
 public class Menu_Tutorial : MonoBehaviour
 {
     [SerializeField] bool menuflag = false;
@@ -54,6 +55,8 @@ public class Menu_Tutorial : MonoBehaviour
     void Update()
     {
     }
+
+    //メニュー画面の表示
     public void setMenu()
     {
         game_detail = menu.transform.Find("Game");
@@ -61,6 +64,7 @@ public class Menu_Tutorial : MonoBehaviour
         setting = menu.transform.Find("Setting");
 
         SE.PlayOneShot(drum_d);
+        //メニューを開いている状態
         if (menuflag)
         {
             menu.SetActive(false);
@@ -73,7 +77,7 @@ public class Menu_Tutorial : MonoBehaviour
             gamemanager.GetComponent<GameManager>().enabled = true;
             AllObjectTrue();
         }
-        else
+        else //開いていない状態
         {
             menu.SetActive(true);
             menuflag = true;
@@ -93,6 +97,7 @@ public class Menu_Tutorial : MonoBehaviour
         AllObjectTrue();
     }
 
+    //チュートリアルのやり直し
     public void ReplayTutorial()
     {
         SE.PlayOneShot(drum_d);
