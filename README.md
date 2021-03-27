@@ -2,7 +2,13 @@
 ① Code(黄緑色のボタン)→Download ZIPよりフォルダをダウンロード。  
 ②「gamefile_sushidou」のフォルダをクリック。  
 ③「rollingsushi.exe」をクリック。  
-※windowsでのゲームプレイを推奨します。
+
+### 動作環境
+OS:Windows10  
+CPU:Intel Core i5-8250U  
+メモリ:8.00GB  
+GPU:なし  
+以上の環境で動作を確認済み。
 
 ## ゲームタイトル:寿司道
 ### ジャンル:2Dシューティングゲーム
