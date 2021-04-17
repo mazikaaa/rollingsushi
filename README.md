@@ -2,7 +2,13 @@
 ① Code(黄緑色のボタン)→Download ZIPよりフォルダをダウンロード。  
 ②「gamefile_sushidou」のフォルダをクリック。  
 ③「rollingsushi.exe」をクリック。  
-※windowsでのゲームプレイを推奨します。
+
+### 動作環境
+OS:Windows10  
+CPU:Intel Core i5-8250U  
+メモリ:8.00GB  
+GPU:なし  
+以上の環境で動作を確認済み。
 
 ## ゲームタイトル:寿司道
 ### ジャンル:2Dシューティングゲーム
@@ -24,10 +30,6 @@
 ![寿司道＿タイトル](https://user-images.githubusercontent.com/45326553/106377542-0b1a5a80-63e1-11eb-8d13-594c09479f03.png)　![寿司道＿ゲーム画面](https://user-images.githubusercontent.com/45326553/106377545-0c4b8780-63e1-11eb-8de9-e1e8c7986457.png)
 ![寿司道＿客セレクト](https://user-images.githubusercontent.com/45326553/106377546-0c4b8780-63e1-11eb-9c41-dfe9e5e43201.png)　![寿司道＿セレクト (カスタム)](https://user-images.githubusercontent.com/45326553/106377584-60ef0280-63e1-11eb-964f-50fd0b6383a5.png)
 
-##### 使用上の注意
-画面サイズは16:9のサイズを選択してください。
-例1900×1080 1600×900
-
  ##### 作成期間
  120~130時間
  
@@ -40,6 +42,11 @@
 
  ##### 開発環境
  ・Unity(2019.1.14f)
+ 
+ 
+## プレイ動画  
+以下のURLから見ることが出来ます。  
+https://youtu.be/_gEl3I2RJLQ
  
 ## ソースコードについて
 以下のURLより見ることが出来ます。  
