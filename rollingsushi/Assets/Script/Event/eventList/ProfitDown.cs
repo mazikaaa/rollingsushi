@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProfitDown : Event
 {
+    //ここまでに得られた利益の2割を失うイベント
+
     GameObject gamemanager;
 
     public override void InitEvent()

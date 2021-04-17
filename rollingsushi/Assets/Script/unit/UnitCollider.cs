@@ -23,6 +23,7 @@ public class UnitCollider :MonoBehaviour
         }
     }
 
+    //席に配置されているお客さんの情報をセットする
     public void setUnitManager(UnitManager unitmanager)
     {
         this.unitmanager = unitmanager;

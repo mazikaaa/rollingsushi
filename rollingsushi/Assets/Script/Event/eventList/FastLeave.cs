@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class FastLeave : Event
 {
+    //お客さんが離席するまでの時間が短くなるイベント
+
     List<UnitManager> unitmanagers = new List<UnitManager>();
     public override void InitEvent()
     {

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NoneEvent : Event
 {
+    //イベントをリセットするため、何も起きないイベント
+
     GameObject test;
     public override void InitEvent()
     {

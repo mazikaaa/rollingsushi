@@ -8,6 +8,8 @@ using UnityEditor;
 [CanEditMultipleObjects]
 public class UnitDataEditor : Editor
 {
+    //ユニットデータを編集しやすくするため、エディターを拡張するために使用
+
     SerializedProperty nameProperty, likeProperty, leaveProperty, amountProperty, rateProperty, recastProperty, costProperty, eatProperty, skillProperty, skilldetailProperty;
 
     void OnEnable()
@@ -26,7 +28,7 @@ public class UnitDataEditor : Editor
 
     }
 
-
+    //エディターで編集したデータを保存する
     public override void OnInspectorGUI()
     {
         serializedObject.Update();

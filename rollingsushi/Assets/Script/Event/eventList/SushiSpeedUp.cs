@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SushiSpeedUp : Event
 {
+    //流れてくる寿司のスピードが上がるイベント
+
     List<sushiGenerator> sushigenerators = new List<sushiGenerator>();
     float vx,vy;
 

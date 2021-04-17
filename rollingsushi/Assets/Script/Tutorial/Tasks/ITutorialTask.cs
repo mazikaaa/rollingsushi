@@ -4,35 +4,27 @@ using UnityEngine;
 
 public interface ITutorialTask
 {
-    /// <summary>
-    /// チュートリアルのタイトルを取得する
-    /// </summary>
+    // チュートリアルのタイトルを取得する
     string GetTitle();
 
-    /// <summary>
-    /// 説明文を取得する
-    /// </summary>
+
+    // 説明文を取得する
     string GetText();
 
     //ボタンを所得する
     bool GetNextButton();
     bool GetBackButton();
 
-    /// <summary>
-    /// チュートリアルタスクが設定された際に実行される
-    /// </summary>
+
+    // チュートリアルタスクが設定された際に実行される
     void OnTaskSetting();
 
-    /// <summary>
-    /// 次のタスクに進めるかを判定する
-    /// </summary>
+    // 次のタスクに進めるかを判定する
     bool CheckTask();
 
     //次のタスクに進むときに行う処理
     void NextTask();
 
-    /// <summary>
-    /// 達成後に次のタスクへ遷移するまでの時間(秒)
-    /// </summary>
+    // 達成後に次のタスクへ遷移するまでの時間(秒)
     float GetTransitionTime();
 }

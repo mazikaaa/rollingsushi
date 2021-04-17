@@ -39,7 +39,6 @@ public class Drag_UnitSet : Dragbase
         TextSet();
     }
 
-
     public override void OnBeginDrag(PointerEventData pointerEventData)
     {
          CreateDragObject();
@@ -60,6 +59,7 @@ public class Drag_UnitSet : Dragbase
         Destroy(draggingObject);
     }
 
+    //ドラック中に、カーソルに合わせて動くお客さんを生成する
     public override void CreateDragObject()
     {
         draggingObject = new GameObject("Dragging Object");
@@ -102,7 +102,7 @@ public class Drag_UnitSet : Dragbase
         return result;
     }
 
-    //適切なお客さんを見つけてくる
+    //データベースから名前の一致しているお客さんを見つけてくる
     private void FindUnitObj()
     {
         int i;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DragPauseDown : Event
 {
+    //お客さんの来るペースが下がるイベント
+
     List<Drag> drags = new List<Drag>();
 
     public override void InitEvent()

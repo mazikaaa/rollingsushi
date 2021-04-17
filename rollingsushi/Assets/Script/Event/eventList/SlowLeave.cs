@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SlowLeave : Event
 {
+    //お客さんが離席するまでの時間が長くなるイベント
+
     List<UnitManager> unitmanagers = new List<UnitManager>();
 
     public override void InitEvent()

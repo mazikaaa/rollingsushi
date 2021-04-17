@@ -24,6 +24,8 @@ public class AnimationControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //フラグが立っているなら、指定のアニメーションを起動する。
         dd2_flag = !(Drag.GetComponentInChildren<Drag>().SetAnimation());
 
         dd1_flag = Drag.GetComponentInChildren<Drag>().SetAnimation();

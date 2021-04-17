@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SushiParty : Event
 {
+    //寿司の生成されるペース＆寿司が流れてくるスピードが速くなるイベント
+
     List<sushiGenerator> sushigenerators=new List<sushiGenerator>();
     GameObject[] sushigenes;
     GameObject test;

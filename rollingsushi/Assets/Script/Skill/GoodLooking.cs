@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GoodLooking : Skill
 {
+    //高級な寿司（180円以上）を食べる確率が上がる。ただし、リキャスト時間が長くなる
+
     public override bool BeforeEat(int price,UnitManager unitmanager) {
 
         if (price >= 180)

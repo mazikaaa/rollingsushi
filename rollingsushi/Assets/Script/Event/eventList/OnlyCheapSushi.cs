@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OnlyCheapSushi : Event
 {
+    //安価な寿司(150円未満)しか生成されなくなるイベント
+
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;

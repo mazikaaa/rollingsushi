@@ -91,6 +91,7 @@ public class TaskManager : MonoBehaviour
 
     }
 
+    //次のチュートリアルタスクに移る処理
     public void MoveNextTask()
     {
         Tasknum++;
@@ -99,6 +100,7 @@ public class TaskManager : MonoBehaviour
         StartCoroutine(SetCurrentTask(tutorialTask.ElementAt(Tasknum)));
     }
 
+    //一つ前のチュートリアルタスクに戻る処理
     public void MoveBackTask()
     {
         Tasknum--;

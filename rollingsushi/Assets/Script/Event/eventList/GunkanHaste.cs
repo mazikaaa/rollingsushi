@@ -14,6 +14,8 @@ public class GunkanHaste : Event
 
     public override void InitEvent()
     {
+        //軍艦系統の寿司の生成確率が上がるイベント
+
         sushigenerators = GameObject.FindGameObjectsWithTag("sushigenerator");
         foreach (GameObject sushigenerator in sushigenerators)
         {

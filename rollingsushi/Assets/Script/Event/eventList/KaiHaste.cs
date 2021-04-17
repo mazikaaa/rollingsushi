@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KaiHaste : Event
 {
+    //貝類の寿司の生成確率が上がるイベント
+
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;

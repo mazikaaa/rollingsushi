@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Claim : Event
 {
+    //評判を強制的に、１段階下げるイベント
+
     GameObject gamemanager,eventmanager;
 
     public override void InitEvent()

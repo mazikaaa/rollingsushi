@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AoHaste : Event
 {
+    //青魚系統の寿司の生成確率を上げるイベント
+
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;

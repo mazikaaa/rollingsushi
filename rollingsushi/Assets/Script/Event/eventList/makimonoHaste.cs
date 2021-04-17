@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class makimonoHaste : Event
 {
+    //巻物系統の寿司の生成確率が上がるイベント
+
     GameObject[] sushigenerators;
     GameObject[] sushis;
     float[] rate;

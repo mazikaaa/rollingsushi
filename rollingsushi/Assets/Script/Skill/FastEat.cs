@@ -8,6 +8,7 @@ public class FastEat : Skill
     protected float rate_like=0.0f;
     protected float rate_normal = 0.0f;
 
+    //一定確率で、寿司を食べた後のリキャスト時間を無くす
     public override void AfterEat(int price, GameManager gamemanager,UnitManager unitmanager,bool like) {
 
         if (flag)

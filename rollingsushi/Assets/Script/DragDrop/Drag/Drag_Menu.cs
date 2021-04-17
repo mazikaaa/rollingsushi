@@ -48,7 +48,7 @@ public class Drag_Menu : Dragbase
         TextSet();
     }
 
-
+    //カーソルが合ったユニットの情報を表示する
     public override void OnPointerEnter(PointerEventData eventData)
     {
         for (i = 0; i < 3; i++)
@@ -57,6 +57,7 @@ public class Drag_Menu : Dragbase
         }
     }
 
+    //カーソルが外れたら、ユニットの情報を隠す
     public override void OnPointerExit(PointerEventData eventData)
     {
         for (i = 0; i < 3; i++)

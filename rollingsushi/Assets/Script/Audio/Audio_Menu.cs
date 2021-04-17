@@ -23,6 +23,7 @@ public class Audio_Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //特定のシーンでのみ、オーディオオブジェクトを継続させる
         foreach (string name in scenename)
         {
             if (SceneManager.GetActiveScene().name == name)

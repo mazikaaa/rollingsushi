@@ -25,7 +25,7 @@ public class Dragbase : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
       
     }
 
-    // ドラッグオブジェクト作成
+    // ドラッグ中に、動くお客さんの画像を生成
     public virtual void CreateDragObject()
     {
        

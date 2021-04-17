@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Sale : Event
 {
+
+    //ここまで得られた利益が30%減る代わりに、お客さんの来るペースが上がる
+
     GameObject gamemanager;
     List<Drag> drags = new List<Drag>();
 

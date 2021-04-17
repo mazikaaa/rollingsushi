@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FoodPoison : Event
 {
+    //一定確率で、「食当たり(強制離席＆「評判」１段階ダウン)」が発生するイベント
+
     List<UnitManager> unitmanagers = new List<UnitManager>();
 
     public override void InitEvent()
